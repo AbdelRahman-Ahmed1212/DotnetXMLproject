@@ -18,7 +18,7 @@ namespace DotnetXmlProject.Classes
         
       public string password { set; get; }
       
-      public Role role { get; set; }
+      public Role role { get; set;}
     
     }
 }

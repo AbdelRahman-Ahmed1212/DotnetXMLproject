@@ -1,3 +1,4 @@
+﻿using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -5,14 +6,15 @@ namespace DotnetXmlProject
 {
     public partial class Form1 : Form
     {
-       
+
 
         public Form1()
         {
+
             InitializeComponent();
 
 
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace DotnetXmlProject
             var username = textBox1.Text;
             var password = textBox2.Text;
 
-            using (var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml")) 
+            using (var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml"))
             {
                 var Doc = XElement.Load(reader);
 
@@ -46,7 +48,8 @@ namespace DotnetXmlProject
                     if (storedPassword == password)
                     {
                         MessageBox.Show("Login successful");
-                        switch(user.Element("role")?.Value) {
+                        switch (user.Element("role")?.Value)
+                        {
                             case "Admin":
                                 Admin admin = new Admin();
                                 admin.Show();
@@ -72,6 +75,15 @@ namespace DotnetXmlProject
                     MessageBox.Show("User does not exist");
                 }
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("Ar-eg");
+
+            this.Controls.Clear();
+            this.InitializeComponent();
 
         }
     }

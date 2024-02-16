@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label1 = new Label();
@@ -38,63 +39,45 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(120, 58);
+            resources.ApplyResources(textBox1, "textBox1");
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(239, 27);
-            textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(120, 117);
+            resources.ApplyResources(textBox2, "textBox2");
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(239, 27);
-            textBox2.TabIndex = 1;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(32, 61);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new Size(82, 20);
-            label1.TabIndex = 2;
-            label1.Text = "User Name";
             label1.Click += label1_Click;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(32, 120);
+            resources.ApplyResources(label2, "label2");
             label2.Name = "label2";
-            label2.Size = new Size(70, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Password";
             label2.Click += label2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(52, 247);
+            resources.ApplyResources(button1, "button1");
             button1.Name = "button1";
-            button1.Size = new Size(116, 51);
-            button1.TabIndex = 4;
-            button1.Text = "login";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(243, 247);
+            resources.ApplyResources(button2, "button2");
             button2.Name = "button2";
-            button2.Size = new Size(116, 51);
-            button2.TabIndex = 5;
-            button2.Text = "cancel";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = button2;
-            ClientSize = new Size(424, 358);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label2);
@@ -102,7 +85,6 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "Form1";
-            Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
         }
