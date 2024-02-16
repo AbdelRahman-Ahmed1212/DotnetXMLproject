@@ -80,11 +80,12 @@ namespace DotnetXmlProject
 
         private void button2_Click(object sender, EventArgs e)
         {
+            /*
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("Ar-eg");
 
             this.Controls.Clear();
             this.InitializeComponent();
-
+            */
         }
     }
 }
