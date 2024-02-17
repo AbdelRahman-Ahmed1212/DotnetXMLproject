@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DotnetXmlProject.Classes
 {
-    enum Role {
+    public enum Role {
         Admin,
         Student,
         Teacher
         }
-    internal class User
+    public class User
     {
        public int id {  get; set; }
        public string UserName { get; set; }

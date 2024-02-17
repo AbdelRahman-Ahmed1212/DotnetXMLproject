@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<attendanceRecords xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="attendanceRecordValidate.xsd">
+  <attendanceRecord>
+    <id>1</id>
+    <stdId>123</stdId>
+    <date>2024-02-16</date>
+    <status>present</status>
+  </attendanceRecord>
+  <attendanceRecord>
+    <id>2</id>
+    <stdId>456</stdId>
+    <date>2024-02-16</date>
+    <status>absent</status>
+  </attendanceRecord>
+  <attendanceRecord>
+    <id>3</id>
+    <stdId>24</stdId>
+    <date>2024-02-18T01:44:37.3543932+02:00</date>
+    <status>absent</status>
+  </attendanceRecord>
+</attendanceRecords>
