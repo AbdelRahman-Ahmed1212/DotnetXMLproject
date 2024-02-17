@@ -18,17 +18,7 @@ namespace DotnetXmlProject
         public Admin()
         {
             InitializeComponent();
-            var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml");
-            var Users = XElement.Load(reader);
-            var source = Users.Elements().Select(
-                x => new User
-                {
-                    id = x.Element("id").Value,
-                    UserName = x.Element("username").Value,
-                    password = x.Element("password").Value,
-                }
-                ).ToList();
-            dataGridView1.DataSource = source;
+
 
         }
 
@@ -40,6 +30,12 @@ namespace DotnetXmlProject
         private void Admin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reports r1 = new Reports();
+            r1.Show();
         }
     }
 }

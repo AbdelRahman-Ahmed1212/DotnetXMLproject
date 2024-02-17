@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DotnetXmlProject.Classes
 {
-    internal class Teacher:User
+    internal class stdClass
     {
-        List<int> classes { set; get; }
+       public int id { set; get; }
+        public int TeacherId { set; get; }
+        public string name {  set; get; }
     }
 }
