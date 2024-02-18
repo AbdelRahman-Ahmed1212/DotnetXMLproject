@@ -15,8 +15,8 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class attendanceMangement : UserControl
     {
-        string recordPath = "D:\\C#XML\\Data\\attendanceRecord.xml";
-        string userPath = "D:\\C#XML\\Data\\users.xml";
+        string recordPath = "..\\..\\..\\Data\\attendanceRecord.xml";
+        string userPath = "..\\..\\..\\Data\\users.xml";
         public attendanceMangement()
         {
             InitializeComponent();

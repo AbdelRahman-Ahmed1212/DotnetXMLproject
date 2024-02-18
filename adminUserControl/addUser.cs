@@ -10,12 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Xml.Schema;
 
 namespace DotnetXmlProject.adminUserControl
 {
     public partial class addUser : UserControl
     {
-        string pathUser = "D:\\C#XML\\Data\\users.xml";
+        string pathUser = "..\\..\\..\\Data\\users.xml";
 
         public addUser()
         {
@@ -140,6 +141,7 @@ namespace DotnetXmlProject.adminUserControl
                                             new XElement("userName", userName),
                                             new XElement("password", password),
                                             new XElement("role", role.ToString()));
+                   // newUserElement.Validate()
 
                     if (xmlDoc.Root == null)
                     {

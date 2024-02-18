@@ -26,7 +26,7 @@ namespace DotnetXmlProject.adminUserControl
 
         public void PopulateDataGridViewClass()
         {
-            using (var readerClass = XmlReader.Create("D:\\C#XML\\Data\\users.xml"))
+            using (var readerClass = XmlReader.Create("..\\..\\..\\Data\\users.xml"))
             {
                 var classes = XElement.Load(readerClass);
                 var sourceClass = classes.Elements("user")
@@ -44,7 +44,7 @@ namespace DotnetXmlProject.adminUserControl
 
         public void comboxTeacherData(ComboBox cb)
         {
-            using (var reader = XmlReader.Create("D:\\C#XML\\Data\\users.xml"))
+            using (var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml"))
             {
                 var Users = XElement.Load(reader);
                 var teacherIds = Users.Elements("user")
