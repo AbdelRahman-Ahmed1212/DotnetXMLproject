@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace DotnetXmlProject
 {
@@ -15,6 +17,9 @@ namespace DotnetXmlProject
         public Student()
         {
             InitializeComponent();
+            var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml");
+            var XE = XElement.Load(reader);
+
         }
     }
 }
