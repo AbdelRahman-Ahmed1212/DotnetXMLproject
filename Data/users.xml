@@ -1,3 +1,134 @@
+
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="userValidate.xsd">
+  <user>
+    <id>1</id>
+    <name>John Doe</name>
+    <userName>john_doe</userName>
+    <password>john123</password>
+    <role>Admin</role>
+  </user>
+  <user>
+    <id>2</id>
+    <name>Alice Smith</name>
+    <userName>alice_smith</userName>
+    <password>alice456</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>3</id>
+    <name>Bob Johnson</name>
+    <userName>bob_johnsonnn</userName>
+    <password>bob789</password>
+    <role>Student</role>
+  </user>
+  <user>
+    <id>4</id>
+    <name>asma</name>
+    <userName>asma</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>5</id>
+    <name>mahmoud</name>
+    <userName>mahmoud</userName>
+    <password>123456</password>
+    <role>Student</role>
+  </user>
+  <user>
+    <id>6</id>
+    <name>mai</name>
+    <userName>mai</userName>
+    <password>12345</password>
+    <role>Student</role>
+  </user>
+  <user>
+    <id>7</id>
+    <name>mona</name>
+    <userName>mona</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>8</id>
+    <name>amal</name>
+    <userName>amal</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>10</id>
+    <name></name>
+    <userName>oooooll</userName>
+    <password>1234</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>14</id>
+    <name>lkjhgf</name>
+    <userName>hamzeh</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>15</id>
+    <name>mmmmmmmm</name>
+    <userName>nnn</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>16</id>
+    <name>ioioio</name>
+    <userName>uuu</userName>
+    <password>12345</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>17</id>
+    <name>pp</name>
+    <userName>pppopo</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>20</id>
+    <name>asoma</name>
+    <userName>asomaaa</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>21</id>
+    <name>smsm</name>
+    <userName>smsmmm</userName>
+    <password>123</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>23</id>
+    <name>asmao</name>
+    <userName>asmao</userName>
+    <password>12345</password>
+    <role>Teacher</role>
+  </user>
+  <user>
+    <id>24</id>
+    <name>uuu</name>
+    <userName>ppp</userName>
+    <password>123</password>
+    <role>Student</role>
+  </user>
+  <user>
+    <id>26</id>
+    <name>smsma</name>
+    <userName>smsma</userName>
+    <password>12345</password>
+    <role>Teacher</role>
+  </user>
+</Users>
+=======
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./userValidate.xsd">
     <user>
         <id>1</id>
@@ -27,3 +158,4 @@
     </teacher>
     <!-- You can add more user, student, and teacher entries as needed -->
 </Users>
+
