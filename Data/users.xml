@@ -1,3 +1,4 @@
+
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="userValidate.xsd">
   <user>
@@ -127,3 +128,34 @@
     <role>Teacher</role>
   </user>
 </Users>
+=======
+<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./userValidate.xsd">
+    <user>
+        <id>1</id>
+        <name>John Doe</name>
+        <username>john_doe</username>
+        <password>john123</password>
+        <role>Admin</role>
+    </user>
+    <student>
+        <id>2</id>
+        <name>Alice Smith</name>
+        <username>alice_smith</username>
+        <password>alice456</password>
+        <role>Student</role>
+        <class>Math101</class>
+    </student>
+    <teacher>
+        <id>3</id>
+        <name>Bob Johnson</name>
+        <username>bob_johnson</username>
+        <password>bob789</password>
+        <role>Teacher</role>
+        <classes>
+            <class>Math101</class>
+            <class>Chemistry101</class>
+        </classes>
+    </teacher>
+    <!-- You can add more user, student, and teacher entries as needed -->
+</Users>
+

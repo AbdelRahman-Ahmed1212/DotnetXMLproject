@@ -518,6 +518,7 @@
             panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel10.ResumeLayout(false);
+
             ResumeLayout(false);
         }
 
@@ -562,5 +563,6 @@
         private adminUserControl.ClassManagement classManagement1;
         private Panel panel10;
         private adminUserControl.addUser addUser2;
+
     }
 }

@@ -1,18 +1,12 @@
+
 ﻿using DotnetXmlProject.adminUserControl;
 using DotnetXmlProject.Classes;
 using Microsoft.VisualBasic.ApplicationServices;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
+
+﻿using DotnetXmlProject.Classes;
+
 using User = DotnetXmlProject.Classes.User;
+
 
 namespace DotnetXmlProject
 {
@@ -21,6 +15,7 @@ namespace DotnetXmlProject
         public Admin()
         {
             InitializeComponent();
+
             addUser2.Visible = false;
             attendanceMangement1.Visible = false;
             classManagement1.Visible = false;
@@ -29,7 +24,6 @@ namespace DotnetXmlProject
 
 
 
-            //==========================================================================
 
 
 
@@ -99,6 +93,7 @@ namespace DotnetXmlProject
 
         private void attendanceMangement1_Load(object sender, EventArgs e)
         {
+
 
         }
     }

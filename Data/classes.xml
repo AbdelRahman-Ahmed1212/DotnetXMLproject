@@ -1,0 +1,19 @@
+<classes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./classValidation.xsd"> 
+    <stdClass>
+        <id>1</id>
+        <teacherId>3</teacherId>
+        <name>A1</name>
+    </stdClass>
+    
+    <stdClass>
+        <id>2</id>
+        <teacherId>4</teacherId>
+        <name>B2</name>
+    </stdClass>
+    
+    <stdClass>
+        <id>3</id>
+        <teacherId>1</teacherId>
+        <name>C3</name>
+    </stdClass>
+</classes>

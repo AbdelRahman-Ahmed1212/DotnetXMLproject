@@ -37,7 +37,7 @@ namespace DotnetXmlProject
                 var Doc = XElement.Load(reader);
 
                 var user = Doc.Elements()
-                              .Where(item => (string)item.Element("userName") == username)
+                              .Where(item => (string)item.Element("username") == username)
                               .FirstOrDefault();
 
                 if (user != null)
@@ -80,11 +80,12 @@ namespace DotnetXmlProject
 
         private void button2_Click(object sender, EventArgs e)
         {
+            /*
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("Ar-eg");
 
             this.Controls.Clear();
             this.InitializeComponent();
-
+            */
         }
     }
 }

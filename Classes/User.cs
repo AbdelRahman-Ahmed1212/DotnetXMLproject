@@ -13,7 +13,7 @@ namespace DotnetXmlProject.Classes
         }
     public class User
     {
-       public int id {  get; set; }
+       public string id {  get; set; }
        public string UserName { get; set; }
         
       public string password { set; get; }
