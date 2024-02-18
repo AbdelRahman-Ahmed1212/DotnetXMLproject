@@ -2,8 +2,8 @@
     <user>
         <id>1</id>
         <name>John Doe</name>
-        <username>john_doe</username>
-        <password>john123</password>
+        <username>Ali</username>
+        <password>Ali123</password>
         <role>Admin</role>
     </user>
     <student>

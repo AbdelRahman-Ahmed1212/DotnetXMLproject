@@ -20,11 +20,21 @@ namespace DotnetXmlProject
             InitializeComponent();
             var usersReader = XmlReader.Create("..\\..\\..\\Data\\users.xml");
             var classesReader = XmlReader.Create("..\\..\\..\\Data\\classes.xml");
+            var Attendence = XmlReader.Create("..\\..\\..\\Data\\attendence.xml");
             var UsersDoc = XElement.Load(usersReader);
             var classesDoc = XElement.Load(classesReader);
+            var AttendenceDoc = XElement.Load(Attendence);
             classes.DataSource = classesDoc.Elements().Select(
              x => x.Element("name").Value
-                ).ToList(); ;
+                ).ToList();
+            attendeceGrid.DataSource = AttendenceDoc.Elements().Select(
+                x => new
+                {
+                    id = x.Element("id").Value,
+                    status = x.Element("status").Value,
+                    classId = x.Element("classId").Value
+                }
+                );
         }
 
         private void Export_Click(object sender, EventArgs e)

@@ -33,10 +33,10 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             Export = new Button();
-            dataGridView1 = new DataGridView();
+            attendeceGrid = new DataGridView();
             classes = new ComboBox();
             label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)attendeceGrid).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -59,6 +59,7 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(253, 27);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
@@ -66,6 +67,7 @@
             // 
             // dateTimePicker2
             // 
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
             dateTimePicker2.Location = new Point(538, 27);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(250, 27);
@@ -81,14 +83,14 @@
             Export.UseVisualStyleBackColor = true;
             Export.Click += Export_Click;
             // 
-            // dataGridView1
+            // attendeceGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 72);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(776, 321);
-            dataGridView1.TabIndex = 5;
+            attendeceGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            attendeceGrid.Location = new Point(12, 72);
+            attendeceGrid.Name = "attendeceGrid";
+            attendeceGrid.RowHeadersWidth = 51;
+            attendeceGrid.Size = new Size(776, 321);
+            attendeceGrid.TabIndex = 5;
             // 
             // classes
             // 
@@ -114,7 +116,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(label3);
             Controls.Add(classes);
-            Controls.Add(dataGridView1);
+            Controls.Add(attendeceGrid);
             Controls.Add(Export);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
@@ -122,7 +124,7 @@
             Controls.Add(label1);
             Name = "Reports";
             Text = "Reports";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)attendeceGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -134,7 +136,7 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private Button Export;
-        private DataGridView dataGridView1;
+        private DataGridView attendeceGrid;
         private ComboBox classes;
         private Label label3;
     }
