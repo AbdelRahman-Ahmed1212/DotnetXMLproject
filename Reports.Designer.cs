@@ -34,7 +34,7 @@
             dateTimePicker2 = new DateTimePicker();
             Export = new Button();
             attendeceGrid = new DataGridView();
-            classes = new ComboBox();
+            classList = new ComboBox();
             label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)attendeceGrid).BeginInit();
             SuspendLayout();
@@ -64,6 +64,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 2;
+            dateTimePicker1.ValueChanged += datePickerChanged;
             // 
             // dateTimePicker2
             // 
@@ -72,6 +73,7 @@
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(250, 27);
             dateTimePicker2.TabIndex = 3;
+            dateTimePicker2.ValueChanged += datePickerChanged;
             // 
             // Export
             // 
@@ -92,13 +94,13 @@
             attendeceGrid.Size = new Size(776, 321);
             attendeceGrid.TabIndex = 5;
             // 
-            // classes
+            // classList
             // 
-            classes.FormattingEnabled = true;
-            classes.Location = new Point(49, 24);
-            classes.Name = "classes";
-            classes.Size = new Size(151, 28);
-            classes.TabIndex = 6;
+            classList.FormattingEnabled = true;
+            classList.Location = new Point(49, 24);
+            classList.Name = "classList";
+            classList.Size = new Size(151, 28);
+            classList.TabIndex = 6;
             // 
             // label3
             // 
@@ -115,7 +117,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label3);
-            Controls.Add(classes);
+            Controls.Add(classList);
             Controls.Add(attendeceGrid);
             Controls.Add(Export);
             Controls.Add(dateTimePicker2);
@@ -137,7 +139,7 @@
         private DateTimePicker dateTimePicker2;
         private Button Export;
         private DataGridView attendeceGrid;
-        private ComboBox classes;
+        private ComboBox classList;
         private Label label3;
     }
 }

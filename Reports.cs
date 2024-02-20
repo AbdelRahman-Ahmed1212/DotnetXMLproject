@@ -1,4 +1,5 @@
 ﻿using DotnetXmlProject.Classes;
+using DotnetXmlProject.UtilClasses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,7 @@ namespace DotnetXmlProject
             var UsersDoc = XElement.Load(usersReader);
             var classesDoc = XElement.Load(classesReader);
             var AttendenceDoc = XElement.Load(Attendence);
-            classes.DataSource = classesDoc.Elements().Select(
+            classList.DataSource = classesDoc.Elements().Select(
              x => x.Element("name").Value
                 ).ToList();
             attendeceGrid.DataSource = AttendenceDoc.Elements().Select(
@@ -42,6 +43,14 @@ namespace DotnetXmlProject
             GenerateReport gr1 = new GenerateReport();
             gr1.Show();
 
+        }
+
+        private void datePickerChanged(object sender, EventArgs e)
+        {
+            var Date1 = dateTimePicker1.Value;
+            var Date2 = dateTimePicker2.Value;
+            
+            UpdateReportView.getAllClassesReports(Date1, Date2);
         }
     }
 }

@@ -5,7 +5,6 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 ﻿using DotnetXmlProject.Classes;
 
-using User = DotnetXmlProject.Classes.User;
 
 
 namespace DotnetXmlProject
@@ -69,6 +68,8 @@ namespace DotnetXmlProject
             addUser2.Visible = false;
             attendanceMangement1.Visible = false;
             classManagement1.Visible = false;
+            Reports r1 = new Reports();
+            r1.Show();
         }
 
         private void addUser1_Load(object sender, EventArgs e)
