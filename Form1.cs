@@ -38,7 +38,7 @@ namespace DotnetXmlProject
                 var Doc = XElement.Load(reader);
 
                 var user = Doc.Elements()
-                              .Where(item => (string)item.Element("userName") == username)
+                              .Where(item => (string)item.Element("username") == username)
                               .FirstOrDefault();
 
                 if (user != null)

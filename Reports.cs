@@ -50,7 +50,6 @@ namespace DotnetXmlProject
             var Date1 = dateTimePicker1.Value;
             var Date2 = dateTimePicker2.Value;
             
-            UpdateReportView.getAllClassesReports(Date1, Date2);
         }
     }
 }
