@@ -1,7 +1,8 @@
-﻿using System.Globalization;
+﻿using DotnetXmlProject.Classes;
+using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
-
+using static DotnetXmlProject.Teacher;
 namespace DotnetXmlProject
 {
     public partial class Form1 : Form
@@ -57,10 +58,16 @@ namespace DotnetXmlProject
                             case "Student":
                                 Student student = new Student();
                                 student.Show();
+                                //amr edited here
+                                student.userName = textBox1.Text;
+                                student.role = "Student";
                                 break;
                             case "Teacher":
                                 Teacher teacher = new Teacher();
                                 teacher.Show();
+                                //amr edited here
+                                teacher.userName = textBox1.Text;
+                                teacher.role = "Teacher";
                                 break;
                         }
                         this.Hide();
@@ -86,6 +93,11 @@ namespace DotnetXmlProject
             this.Controls.Clear();
             this.InitializeComponent();
             */
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
