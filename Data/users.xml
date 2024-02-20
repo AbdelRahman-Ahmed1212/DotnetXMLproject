@@ -2,26 +2,27 @@
   <user>
       <id>1</id>
       <name>John Doe</name>
-      <username>john_doe</username>
+      <email>john_doe</email>
       <password>john123</password>
       <role>Admin</role>
   </user>
   <student>
       <id>2</id>
       <name>Alice Smith</name>
-      <username>alice_smith</username>
+      <email>alice_smith</email>
       <password>alice456</password>
       <role>Student</role>
-      <class>Math101</class>
-      <attendanceIds>
-        <attendanceId>101</attendanceId>
-        <attendanceId>102</attendanceId>
-      </attendanceIds>
+      <classes>
+          <class>
+            <className>A</className>
+            <classID>1</classID>
+          </class>
+      </classes>
   </student>
   <teacher>
       <id>3</id>
       <name>Bob Johnson</name>
-      <username>bob_johnson</username>
+      <email>bob_johnson</email>
       <password>bob789</password>
       <role>Teacher</role>
       <classes>

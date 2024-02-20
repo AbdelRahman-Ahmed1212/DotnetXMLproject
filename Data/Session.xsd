@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="AttendenceRecordType">
+    <xs:sequence>
+      <xs:element name="stdid" type="xs:integer"/>
+      <xs:element name="stdName" type="xs:string"/>
+      <xs:element name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SessionType">
+    <xs:sequence>
+      <xs:element name="AttendenceRecord" type="AttendenceRecordType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer" use="required"/>
+    <xs:attribute name="date" type="xs:string" use="required"/>
+    <xs:attribute name="class" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="SessionsType">
+    <xs:sequence>
+      <xs:element name="Session" type="SessionType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Sessions" type="SessionsType"/>
+
+</xs:schema>

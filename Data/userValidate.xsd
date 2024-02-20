@@ -5,7 +5,7 @@
     <xs:sequence>
       <xs:element name="id" type="xs:string"/>
       <xs:element name="name" type="xs:string"/>
-      <xs:element name="username" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
       <xs:element name="password" type="xs:string"/>
       <xs:element name="role" type="xs:string"/>
     </xs:sequence>
@@ -15,11 +15,17 @@
     <xs:complexContent>
       <xs:extension base="User">
         <xs:sequence>
-          <xs:element name="class" type="xs:string"/>
-          <xs:element name="attendanceIds">
+          <xs:element name="classes">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="attendanceId" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="class">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="className" type="xs:string"/>
+                      <xs:element name="classID" type="xs:integer"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
               </xs:sequence>
             </xs:complexType>
           </xs:element>
@@ -27,6 +33,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <!-- Derive 'Teacher' type from 'User' -->
   <xs:complexType name="Teacher">
     <xs:complexContent>
