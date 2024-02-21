@@ -16,6 +16,11 @@
             <stdName>Kamil</stdName>
             <status>not Asssigned</status>
         </AttendenceRecord>
+		<AttendenceRecord>
+			<stdid>3</stdid>
+			<stdName>bob</stdName>
+			<status>present</status>
+		</AttendenceRecord>
     </Session>
     <Session id="2" date="24/12/2024" class="A">
         <AttendenceRecord>
@@ -33,5 +38,10 @@
             <stdName>Kamil</stdName>
             <status>not Asssigned</status>
         </AttendenceRecord>
+		<AttendenceRecord>
+			<stdid>3</stdid>
+			<stdName>bob</stdName>
+			<status>abbscent</status>
+		</AttendenceRecord>
     </Session>
 </Sessions>

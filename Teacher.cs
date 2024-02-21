@@ -27,20 +27,11 @@ namespace DotnetXmlProject
 
         private void Teacher_Load(object sender, EventArgs e)
         {
+            teacher_classesv1.Visible = false;
             usernamelabel.Text = userName;
             rolelabel.Text = role;
         }
-
-        private void Logoutbutton_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Do you want logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Close();
-            }
-            else
-                return;
-        }
+       
         private void MoveSidePanel(Control button)
         {
             TchSidepanel.Location = new Point(button.Location.X - button.Location.X, button.Location.Y - 180);
@@ -48,7 +39,7 @@ namespace DotnetXmlProject
 
         private void TchClassesbutton_Click(object sender, EventArgs e)
         {
-
+            teacher_classesv1.Visible=true;
             MoveSidePanel(TchClassesbutton);
 
         }
@@ -63,10 +54,16 @@ namespace DotnetXmlProject
         {
             MoveSidePanel(TchReportbutton);
         }
-
-        private void teacher_classesv1_Load(object sender, EventArgs e)
+        private void Logoutbutton_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = MessageBox.Show("Do you want logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
+            else
+                return;
         }
+
     }
 }

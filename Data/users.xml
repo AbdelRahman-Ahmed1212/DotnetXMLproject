@@ -17,8 +17,8 @@
   <user>
     <id>3</id>
     <name>Bob Johnson</name>
-    <userName>bob_johnsonnn</userName>
-    <password>bob789</password>
+    <userName>bob</userName>
+    <password>bob123</password>
     <role>Student</role>
   </user>
   <user>
