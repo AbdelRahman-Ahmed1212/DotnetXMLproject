@@ -17,8 +17,9 @@ namespace DotnetXmlProject
             InitializeComponent();
 
             addUser2.Visible = false;
-            attendanceMangement1.Visible = false;
-            classManagement1.Visible = false;
+            attendanceMangement2.Visible = false;
+            classManagement2.Visible = false;
+            manageClasses1.Visible = false;
 
 
 
@@ -44,31 +45,34 @@ namespace DotnetXmlProject
         private void addUserBtn_Click(object sender, EventArgs e)
         {
             addUser2.Visible = true;
-            attendanceMangement1.Visible = false;
-            classManagement1.Visible = false;
-
+            attendanceMangement2.Visible = false;
+            classManagement2.Visible = false;
+            manageClasses1.Visible = false;
 
         }
 
         private void addClassBtn_Click(object sender, EventArgs e)
         {
             addUser2.Visible = false;
-            attendanceMangement1.Visible = false;
-            classManagement1.Visible = true;
+            attendanceMangement2.Visible = false;
+            classManagement2.Visible = true;
+            manageClasses1.Visible = false;
         }
 
         private void attendanveBtn_Click(object sender, EventArgs e)
         {
             addUser2.Visible = false;
-            attendanceMangement1.Visible = true;
-            classManagement1.Visible = false;
+            attendanceMangement2.Visible = true;
+            classManagement2.Visible = false;
+            manageClasses1.Visible = false;
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
             addUser2.Visible = false;
-            attendanceMangement1.Visible = false;
-            classManagement1.Visible = false;
+            attendanceMangement2.Visible = false;
+            classManagement2.Visible = false;
+            manageClasses1.Visible = false;
         }
 
         private void addUser1_Load(object sender, EventArgs e)
@@ -95,6 +99,14 @@ namespace DotnetXmlProject
         {
 
 
+        }
+
+        private void manageBtn_Click(object sender, EventArgs e)
+        {
+            manageClasses1.Visible = true;
+            addUser2.Visible = false;
+            attendanceMangement2.Visible = false;
+            classManagement2.Visible = false;
         }
     }
 }

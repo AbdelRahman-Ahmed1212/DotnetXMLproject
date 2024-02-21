@@ -33,32 +33,16 @@
             studentPage = new TabPage();
             studentData = new DataGridView();
             panel8 = new Panel();
-            label1 = new Label();
-            UsernameStudentText = new TextBox();
             deleteStdBtn = new Button();
             stdEditBtn = new Button();
-            label8 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            PassStudentText = new TextBox();
-            nameStudentText = new TextBox();
-            IDStudentText = new TextBox();
             pictureBox2 = new PictureBox();
             panel9 = new Panel();
             stdSearchText = new TextBox();
             label14 = new Label();
             tabPage2 = new TabPage();
             panel6 = new Panel();
-            label7 = new Label();
             teacherDeleteBtn = new Button();
             teacherEditBtn = new Button();
-            nameTecherText = new TextBox();
-            label10 = new Label();
-            label9 = new Label();
-            ID = new Label();
-            PassTeacherText = new TextBox();
-            usernameTeacherText = new TextBox();
-            IDTeacherText = new TextBox();
             pictureBox1 = new PictureBox();
             panel7 = new Panel();
             teacherSearchText = new TextBox();
@@ -67,7 +51,7 @@
             teacherData = new DataGridView();
             tabPage1 = new TabPage();
             panel1 = new Panel();
-            NameText = new TextBox();
+            EmailText = new TextBox();
             label11 = new Label();
             label5 = new Label();
             button1 = new Button();
@@ -110,47 +94,24 @@
             // 
             studentData.BackgroundColor = Color.White;
             studentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            studentData.Location = new Point(0, 156);
+            studentData.Location = new Point(0, 73);
             studentData.Name = "studentData";
-            studentData.Size = new Size(598, 136);
+            studentData.Size = new Size(598, 219);
             studentData.TabIndex = 4;
+            studentData.CellBeginEdit += studentData_CellBeginEdit;
             // 
             // panel8
             // 
-            panel8.Controls.Add(label1);
-            panel8.Controls.Add(UsernameStudentText);
             panel8.Controls.Add(deleteStdBtn);
             panel8.Controls.Add(stdEditBtn);
-            panel8.Controls.Add(label8);
-            panel8.Controls.Add(label12);
-            panel8.Controls.Add(label13);
-            panel8.Controls.Add(PassStudentText);
-            panel8.Controls.Add(nameStudentText);
-            panel8.Controls.Add(IDStudentText);
             panel8.Controls.Add(pictureBox2);
             panel8.Controls.Add(panel9);
             panel8.Controls.Add(stdSearchText);
             panel8.Controls.Add(label14);
             panel8.Location = new Point(3, 3);
             panel8.Name = "panel8";
-            panel8.Size = new Size(595, 137);
+            panel8.Size = new Size(595, 64);
             panel8.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(322, 111);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 15);
-            label1.TabIndex = 13;
-            label1.Text = "Username :";
-            // 
-            // UsernameStudentText
-            // 
-            UsernameStudentText.Location = new Point(427, 111);
-            UsernameStudentText.Name = "UsernameStudentText";
-            UsernameStudentText.Size = new Size(131, 23);
-            UsernameStudentText.TabIndex = 12;
             // 
             // deleteStdBtn
             // 
@@ -175,54 +136,6 @@
             stdEditBtn.Text = "Edit";
             stdEditBtn.UseVisualStyleBackColor = false;
             stdEditBtn.Click += stdEditBtn_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(322, 67);
-            label8.Name = "label8";
-            label8.Size = new Size(63, 15);
-            label8.TabIndex = 11;
-            label8.Text = "Password :";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(32, 111);
-            label12.Name = "label12";
-            label12.Size = new Size(45, 15);
-            label12.TabIndex = 10;
-            label12.Text = "Name :";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(32, 67);
-            label13.Name = "label13";
-            label13.Size = new Size(24, 15);
-            label13.TabIndex = 3;
-            label13.Text = "ID :";
-            // 
-            // PassStudentText
-            // 
-            PassStudentText.Location = new Point(427, 64);
-            PassStudentText.Name = "PassStudentText";
-            PassStudentText.Size = new Size(131, 23);
-            PassStudentText.TabIndex = 7;
-            // 
-            // nameStudentText
-            // 
-            nameStudentText.Location = new Point(143, 111);
-            nameStudentText.Name = "nameStudentText";
-            nameStudentText.Size = new Size(131, 23);
-            nameStudentText.TabIndex = 8;
-            // 
-            // IDStudentText
-            // 
-            IDStudentText.Location = new Point(143, 64);
-            IDStudentText.Name = "IDStudentText";
-            IDStudentText.Size = new Size(138, 23);
-            IDStudentText.TabIndex = 6;
             // 
             // pictureBox2
             // 
@@ -276,33 +189,16 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(label7);
             panel6.Controls.Add(teacherDeleteBtn);
             panel6.Controls.Add(teacherEditBtn);
-            panel6.Controls.Add(nameTecherText);
-            panel6.Controls.Add(label10);
-            panel6.Controls.Add(label9);
-            panel6.Controls.Add(ID);
-            panel6.Controls.Add(PassTeacherText);
-            panel6.Controls.Add(usernameTeacherText);
-            panel6.Controls.Add(IDTeacherText);
             panel6.Controls.Add(pictureBox1);
             panel6.Controls.Add(panel7);
             panel6.Controls.Add(teacherSearchText);
             panel6.Controls.Add(label6);
-            panel6.Location = new Point(1, 2);
+            panel6.Location = new Point(6, 2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(595, 137);
+            panel6.Size = new Size(595, 67);
             panel6.TabIndex = 2;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(32, 106);
-            label7.Name = "label7";
-            label7.Size = new Size(45, 15);
-            label7.TabIndex = 13;
-            label7.Text = "Name :";
             // 
             // teacherDeleteBtn
             // 
@@ -327,61 +223,6 @@
             teacherEditBtn.Text = "Edit";
             teacherEditBtn.UseVisualStyleBackColor = false;
             teacherEditBtn.Click += teacherEditBtn_Click;
-            // 
-            // nameTecherText
-            // 
-            nameTecherText.Location = new Point(143, 103);
-            nameTecherText.Name = "nameTecherText";
-            nameTecherText.Size = new Size(131, 23);
-            nameTecherText.TabIndex = 12;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(322, 67);
-            label10.Name = "label10";
-            label10.Size = new Size(63, 15);
-            label10.TabIndex = 11;
-            label10.Text = "Password :";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(316, 111);
-            label9.Name = "label9";
-            label9.Size = new Size(66, 15);
-            label9.TabIndex = 10;
-            label9.Text = "Username :";
-            // 
-            // ID
-            // 
-            ID.AutoSize = true;
-            ID.Location = new Point(32, 67);
-            ID.Name = "ID";
-            ID.Size = new Size(24, 15);
-            ID.TabIndex = 3;
-            ID.Text = "ID :";
-            // 
-            // PassTeacherText
-            // 
-            PassTeacherText.Location = new Point(427, 64);
-            PassTeacherText.Name = "PassTeacherText";
-            PassTeacherText.Size = new Size(132, 23);
-            PassTeacherText.TabIndex = 7;
-            // 
-            // usernameTeacherText
-            // 
-            usernameTeacherText.Location = new Point(427, 106);
-            usernameTeacherText.Name = "usernameTeacherText";
-            usernameTeacherText.Size = new Size(132, 23);
-            usernameTeacherText.TabIndex = 8;
-            // 
-            // IDTeacherText
-            // 
-            IDTeacherText.Location = new Point(143, 64);
-            IDTeacherText.Name = "IDTeacherText";
-            IDTeacherText.Size = new Size(132, 23);
-            IDTeacherText.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -431,16 +272,17 @@
             // 
             teacherData.BackgroundColor = Color.White;
             teacherData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            teacherData.Location = new Point(3, 157);
+            teacherData.Location = new Point(6, 75);
             teacherData.Name = "teacherData";
-            teacherData.Size = new Size(593, 141);
+            teacherData.Size = new Size(593, 223);
             teacherData.TabIndex = 0;
+            teacherData.CellBeginEdit += teacherData_CellBeginEdit;
             // 
             // tabPage1
             // 
             tabPage1.BackColor = Color.White;
             tabPage1.Controls.Add(panel1);
-            tabPage1.Controls.Add(NameText);
+            tabPage1.Controls.Add(EmailText);
             tabPage1.Controls.Add(label11);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(button1);
@@ -459,7 +301,6 @@
             tabPage1.Size = new Size(613, 298);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Add User";
-            tabPage1.Click += tabPage1_Click;
             // 
             // panel1
             // 
@@ -469,13 +310,13 @@
             panel1.Size = new Size(200, 2);
             panel1.TabIndex = 7;
             // 
-            // NameText
+            // EmailText
             // 
-            NameText.BorderStyle = BorderStyle.None;
-            NameText.Location = new Point(54, 118);
-            NameText.Name = "NameText";
-            NameText.Size = new Size(200, 16);
-            NameText.TabIndex = 9;
+            EmailText.BorderStyle = BorderStyle.None;
+            EmailText.Location = new Point(54, 118);
+            EmailText.Name = "EmailText";
+            EmailText.Size = new Size(200, 16);
+            EmailText.TabIndex = 9;
             // 
             // label11
             // 
@@ -483,9 +324,9 @@
             label11.Font = new Font("Segoe UI", 12F);
             label11.Location = new Point(54, 83);
             label11.Name = "label11";
-            label11.Size = new Size(59, 21);
+            label11.Size = new Size(55, 21);
             label11.TabIndex = 8;
-            label11.Text = "Name :";
+            label11.Text = "Email :";
             // 
             // label5
             // 
@@ -633,12 +474,6 @@
         private Panel panel8;
         private Button deleteStdBtn;
         private Button stdEditBtn;
-        private Label label8;
-        private Label label12;
-        private Label label13;
-        private TextBox PassStudentText;
-        private TextBox nameStudentText;
-        private TextBox IDStudentText;
         private PictureBox pictureBox2;
         private Panel panel9;
         private TextBox stdSearchText;
@@ -647,12 +482,6 @@
         private Panel panel6;
         private Button teacherDeleteBtn;
         private Button teacherEditBtn;
-        private Label label10;
-        private Label label9;
-        private Label ID;
-        private TextBox PassTeacherText;
-        private TextBox usernameTeacherText;
-        private TextBox IDTeacherText;
         private PictureBox pictureBox1;
         private Panel panel7;
         private TextBox teacherSearchText;
@@ -673,12 +502,8 @@
         private Label label2;
         private TabControl tabControl1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Label label1;
-        private TextBox UsernameStudentText;
-        private Label label7;
-        private TextBox nameTecherText;
         private Panel panel1;
-        private TextBox NameText;
+        private TextBox EmailText;
         private Label label11;
     }
 }

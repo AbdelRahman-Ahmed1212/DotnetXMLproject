@@ -1,33 +1,175 @@
-﻿<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./userValidate.xsd">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./userValidate.xsd">
   <user>
-      <id>1</id>
-      <name>John Doe</name>
-      <username>john_doe</username>
-      <password>john123</password>
-      <role>Admin</role>
+    <id>1</id>
+    <email>asmaa</email>
+    <username>asmaa</username>
+    <password>123</password>
+    <role>Admin</role>
   </user>
   <student>
-      <id>2</id>
-      <name>Alice Smith</name>
-      <username>alice_smith</username>
-      <password>alice456</password>
-      <role>Student</role>
-      <class>Math101</class>
-      <attendanceIds>
-        <attendanceId>101</attendanceId>
-        <attendanceId>102</attendanceId>
-      </attendanceIds>
+    <id>2</id>
+    <email>Alice Smith</email>
+    <username>alice_smith</username>
+    <password>alice456</password>
+    <role>Student</role>
+    <classes></classes>
+    <attendanceIds>
+      <attendanceId>101</attendanceId>
+      <attendanceId>102</attendanceId>
+    </attendanceIds>
   </student>
   <teacher>
-      <id>3</id>
-      <name>Bob Johnson</name>
-      <username>bob_johnson</username>
-      <password>bob789</password>
-      <role>Teacher</role>
-      <classes>
-          <class>Math101</class>
-          <class>Chemistry101</class>
-      </classes>
+    <id>3</id>
+    <email>Bob Johnson</email>
+    <username>bob_johnson</username>
+    <password>bob789</password>
+    <role>Teacher</role>
+    <classes />
   </teacher>
   <!-- You can add more user, student, and teacher entries as needed -->
+  <student>
+    <id>5</id>
+    <email>nbnm</email>
+    <username>kjhj</username>
+    <password>123</password>
+    <role>Student</role>
+    <classes>
+      <class>
+        <classID>7</classID>
+        <className>iiiikjh</className>
+      </class>
+      <class>
+        <classID>9</classID>
+        <className>htii</className>
+      </class>
+    </classes>
+    <attendanceIds />
+  </student>
+  <student>
+    <id>9</id>
+    <email>pppp</email>
+    <username>mmm</username>
+    <password>123</password>
+    <role>Student</role>
+    <classes>
+      <class>
+        <classID>8</classID>
+        <className>bbjk</className>
+      </class>
+      <class>
+        <classID>9</classID>
+        <className>htii</className>
+      </class>
+    </classes>
+    <attendanceIds />
+  </student>
+  <student>
+    <id>10</id>
+    <email>iii</email>
+    <username>oo</username>
+    <password>123</password>
+    <role>Student</role>
+    <classes>
+      <class>
+        <classID>9</classID>
+        <className>htii</className>
+      </class>
+    </classes>
+    <attendanceIds />
+  </student>
+  <teacher>
+    <id>15</id>
+    <email>asmaaaaa</email>
+    <username>asmaaaaa</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes>
+      <class>
+        <classID>11</classID>
+        <className>js</className>
+      </class>
+    </classes>
+  </teacher>
+  <teacher>
+    <id>16</id>
+    <email>smsma</email>
+    <username>smsma</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <teacher>
+    <id>17</id>
+    <email>mahmoud</email>
+    <username>mahmoud</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <teacher>
+    <id>18</id>
+    <email>adel</email>
+    <username>adel</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <teacher>
+    <id>19</id>
+    <email>alaa</email>
+    <username>alaa</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <teacher>
+    <id>20</id>
+    <email>bbbb</email>
+    <username>yyyy</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <student>
+    <id>21</id>
+    <email>lll</email>
+    <username>jhgfd</username>
+    <password>123</password>
+    <role>Student</role>
+    <classes />
+    <attendanceIds />
+  </student>
+  <teacher>
+    <id>22</id>
+    <email>ppp</email>
+    <username>mmm</username>
+    <password>kk</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <teacher>
+    <id>23</id>
+    <email>uuuuu</email>
+    <username>qqqqqqqqq</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <teacher>
+    <id>24</id>
+    <email>yy</email>
+    <username>bbb</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <teacher>
+    <id>25</id>
+    <email>mmm</email>
+    <username>zzz</username>
+    <password>123</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
 </Users>

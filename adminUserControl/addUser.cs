@@ -16,7 +16,8 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class addUser : UserControl
     {
-        string pathUser = "..\\..\\..\\Data\\users.xml";
+        public string pathUser = "D:\\c#xmlv2\\Data\\users.xml";
+        public string classPath = "D:\\c#xmlv2\\Data\\classes.xml";
 
         public addUser()
         {
@@ -36,12 +37,13 @@ namespace DotnetXmlProject.adminUserControl
                 using (var stream = new FileStream(pathUser, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     var stds = XElement.Load(stream);
-                    var sourceStd = stds.Elements("user")
+                    var sourceStd = stds.Elements("student")
                                         .Where(u => string.Equals(u.Element("role")?.Value, "Student", StringComparison.OrdinalIgnoreCase))
                                         .Select(u => new User
                                         {
                                             id = (int)u.Element("id"),
-                                            UserName = (string)u.Element("userName"),
+                                            Email = (string)u.Element("email"),
+                                            UserName = (string)u.Element("username"),
                                             password = (string)u.Element("password"),
                                             role = (Role)Enum.Parse(typeof(Role), (string)u.Element("role"))
                                         }).ToList();
@@ -62,14 +64,15 @@ namespace DotnetXmlProject.adminUserControl
                 using (var stream = new FileStream(pathUser, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     var teacher = XElement.Load(stream);
-                    var sourceTeacher = teacher.Elements("user")
-                                              .Where(u => string.Equals(u.Element("role")?.Value, "Teacher", StringComparison.OrdinalIgnoreCase))
+                    var sourceTeacher = teacher.Elements("teacher")
                                               .Select(u => new User
                                               {
                                                   id = (int)u.Element("id"),
-                                                  UserName = (string)u.Element("userName"),
+                                                  Email = (string)u.Element("email"),
+                                                  UserName = (string)u.Element("username"),
                                                   password = (string)u.Element("password"),
                                                   role = (Role)Enum.Parse(typeof(Role), (string)u.Element("role"))
+
                                               }).ToList();
 
                     teacherData.DataSource = sourceTeacher;
@@ -83,40 +86,39 @@ namespace DotnetXmlProject.adminUserControl
 
         private void PopulateComboBoxWithRoles(ComboBox comboBox)
         {
-            comboBox.Items.AddRange(new string[] { "teacher", "student", "admin" });
+            comboBox.Items.AddRange(new string[] { "teacher", "student" });
         }
 
         //==========================================================================
         //Add
         //==========================================================================
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string name = NameText.Text;
+
+                string email = EmailText.Text;
                 string userName = usernameText.Text;
                 string passwordd = passwordText.Text;
                 Role rolee = (Role)Enum.Parse(typeof(Role), RoleCombobox.Text, true); // Convert string to enum
 
-                if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(passwordd) || rolee == null)
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(passwordd) || rolee == null)
                 {
                     MessageBox.Show("Please fill in all fields.");
                     return;
                 }
 
-                AddUserToXml(name, userName, passwordd, rolee);
+                AddUserToXml(email, userName, passwordd, rolee);
 
-                NameText.Text = "";
-                usernameText.Text = "";
-                passwordText.Text = "";
-                RoleCombobox.SelectedIndex = -1;
+                ManageClasses mc = new ManageClasses();
+                mc.RefrchData();
+
+                ClassManagement cm = new ClassManagement();
+                cm.comboxTeacherData();
+                clearInput();
 
                 PopulateDataGridViewStudent();
                 PopulateDataGridViewTeacher();
-
-                attendanceMangement attendance = new attendanceMangement();
-                attendance.comboxStdData();
 
                 MessageBox.Show("User added successfully.");
             }
@@ -124,37 +126,80 @@ namespace DotnetXmlProject.adminUserControl
             {
                 MessageBox.Show($"Error adding user: {ex.Message}");
             }
-        }
+            
 
-        private void AddUserToXml(string name, string userName, string password, Role role)
+        }
+        private void AddUserToXml(string email, string userName, string password, Role role)
         {
             try
             {
                 using (var stream = new FileStream(pathUser, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
                     var xmlDoc = XDocument.Load(stream);
-                    int lastId = xmlDoc.Descendants("user").Select(u => (int)u.Element("id")).DefaultIfEmpty(0).Max();
 
-                    XElement newUserElement = new XElement("user",
-                                            new XElement("id", lastId + 1),
-                                            new XElement("name", name),
-                                            new XElement("userName", userName),
-                                            new XElement("password", password),
-                                            new XElement("role", role.ToString()));
-                   // newUserElement.Validate()
+                    int lastId = xmlDoc.Descendants()
+                                        .Where(e => e.Name == "user" || e.Name == "student" || e.Name == "teacher")
+                                        .Select(u => (int)u.Element("id"))
+                                        .DefaultIfEmpty(0)
+                                        .Max();
+
+                    XElement newUserElement;
+
+                    if (role == Role.Admin)
+                    {
+                        newUserElement = new XElement("user",
+                            new XElement("id", lastId + 1),
+                            new XElement("email", email),
+                            new XElement("username", userName),
+                            new XElement("password", password),
+                            new XElement("role", role.ToString()));
+                    }
+                    else if (role == Role.Student)
+                    {
+                        newUserElement = new XElement("student",
+                            new XElement("id", lastId + 1),
+                            new XElement("email", email),
+                            new XElement("username", userName),
+                            new XElement("password", password),
+                            new XElement("role", role.ToString()),
+                           new XElement("classes"),
+                        new XElement("attendanceIds"));
+                    }
+                    else if (role == Role.Teacher)
+                    {
+                        newUserElement = new XElement("teacher",
+                            new XElement("id", lastId + 1),
+                            new XElement("email", email),
+                            new XElement("username", userName),
+                            new XElement("password", password),
+                            new XElement("role", role.ToString()),
+                            new XElement("classes"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid user role.");
+                        return;
+                    }
 
                     if (xmlDoc.Root == null)
                     {
                         xmlDoc.Add(new XElement("Users", newUserElement));
+                        
                     }
                     else
                     {
                         xmlDoc.Root.Add(newUserElement);
-                    }
+                        
 
+                    }
+                    
                     stream.Position = 0;
                     xmlDoc.Save(stream);
+
+                   
                 }
+                
+
             }
             catch (IOException ex)
             {
@@ -164,8 +209,12 @@ namespace DotnetXmlProject.adminUserControl
             {
                 MessageBox.Show($"Error adding user: {ex.Message}");
             }
-        }
 
+
+            RefrchAllData();
+
+
+        }
 
         //==========================================================================
         //Edit
@@ -179,13 +228,13 @@ namespace DotnetXmlProject.adminUserControl
             }
 
             int userId = Convert.ToInt32(teacherData.SelectedRows[0].Cells["id"].Value);
-            string userName = teacherData.SelectedRows[0].Cells["UserName"].Value.ToString();
+            string userName = teacherData.SelectedRows[0].Cells["username"].Value.ToString();
             string password = teacherData.SelectedRows[0].Cells["password"].Value.ToString();
-
-            UpdateUserInXml(userId, userName, password);
+            string email = teacherData.SelectedRows[0].Cells["email"].Value.ToString();
+            UpdateUserInXml(userId, userName, password,email);
 
             PopulateDataGridViewTeacher();
-            ClearTextBoxes();
+            //ClearTextBoxes();
 
             MessageBox.Show("User updated successfully.");
         }
@@ -199,28 +248,33 @@ namespace DotnetXmlProject.adminUserControl
             }
 
             int userId = Convert.ToInt32(studentData.SelectedRows[0].Cells["id"].Value);
-            string userName = studentData.SelectedRows[0].Cells["UserName"].Value.ToString();
+            string userName = studentData.SelectedRows[0].Cells["username"].Value.ToString();
             string password = studentData.SelectedRows[0].Cells["password"].Value.ToString();
+            string email = studentData.SelectedRows[0].Cells["email"].Value.ToString();
 
-            UpdateUserInXml(userId, userName, password);
+            UpdateUserInXml(userId, userName, password,email);
 
             PopulateDataGridViewStudent();
-            ClearTextBoxes();
+            //ClearTextBoxes();
 
             MessageBox.Show("User updated successfully.");
         }
 
-        private void UpdateUserInXml(int userId, string userName, string password)
+        private void UpdateUserInXml(int userId, string userName, string password, string email)
         {
             try
             {
                 XDocument xmlDoc = XDocument.Load(pathUser);
-                XElement userToUpdate = xmlDoc.Descendants("user").FirstOrDefault(u => (int)u.Element("id") == userId);
+                XElement userToUpdate = xmlDoc.Descendants()
+                                              .Where(e => e.Name == "user" || e.Name == "student" || e.Name == "teacher")
+                                              .FirstOrDefault(u => (int)u.Element("id") == userId);
+
 
                 if (userToUpdate != null)
                 {
-                    userToUpdate.Element("userName").Value = userName;
+                    userToUpdate.Element("username").Value = userName;
                     userToUpdate.Element("password").Value = password;
+                    userToUpdate.Element("email").Value = email;
 
                     xmlDoc.Save(pathUser);
                 }
@@ -254,7 +308,7 @@ namespace DotnetXmlProject.adminUserControl
             DeleteUserFromXml(userId);
 
             PopulateDataGridViewTeacher();
-            MessageBox.Show("User deleted successfully.");
+           
         }
 
         private void deleteStdBtn_Click(object sender, EventArgs e)
@@ -270,6 +324,8 @@ namespace DotnetXmlProject.adminUserControl
 
             PopulateDataGridViewStudent();
             MessageBox.Show("User deleted successfully.");
+
+            RefrchAllData();
         }
 
         private void DeleteUserFromXml(int userId)
@@ -277,12 +333,18 @@ namespace DotnetXmlProject.adminUserControl
             try
             {
                 XDocument xmlDoc = XDocument.Load(pathUser);
-                XElement userToDelete = xmlDoc.Descendants("user").FirstOrDefault(u => (int)u.Element("id") == userId);
+
+                // Find the user to delete among all user types
+                XElement userToDelete = xmlDoc.Descendants()
+                                              .Where(e => e.Name == "user" || e.Name == "student" || e.Name == "teacher")
+                                              .FirstOrDefault(u => (int)u.Element("id") == userId);
 
                 if (userToDelete != null)
                 {
                     userToDelete.Remove();
                     xmlDoc.Save(pathUser);
+                    MessageBox.Show("User deleted successfully.");
+                    
                 }
                 else
                 {
@@ -299,6 +361,7 @@ namespace DotnetXmlProject.adminUserControl
             }
         }
 
+
         //==========================================================================
         //Search
         //==========================================================================
@@ -307,21 +370,22 @@ namespace DotnetXmlProject.adminUserControl
             using (var stream = new FileStream(pathUser, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 XDocument xmlDoc = XDocument.Load(stream);
-                var searchResults = xmlDoc.Root.Elements("user")
+                var searchResults = xmlDoc.Root.Elements(role)
                     .Where(u => string.Equals(u.Element("role")?.Value, role, StringComparison.OrdinalIgnoreCase) &&
-                                u.Element("name")?.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase) == true)
+                                u.Element("username")?.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase) == true)
                     .Select(u => new User
                     {
                         id = (int)u.Element("id"),
-                        UserName = (string)u.Element("userName"),
+                        UserName = (string)u.Element("username"),
                         password = (string)u.Element("password"),
+                        Email = (string)u.Element("email"),
                         role = (Role)Enum.Parse(typeof(Role), (string)u.Element("role"))
                     }).ToList();
-                if (role == "Teacher")
+                if (role == "teacher")
                 {
                     teacherData.DataSource = searchResults;
                 }
-                else if (role == "Student")
+                else if (role == "student")
                 {
                     studentData.DataSource = searchResults;
                 }
@@ -334,7 +398,7 @@ namespace DotnetXmlProject.adminUserControl
             string searchText = teacherSearchText.Text;
             if (!string.IsNullOrEmpty(searchText))
             {
-                SearchAndPopulateGridView(searchText, "Teacher");
+                SearchAndPopulateGridView(searchText, "teacher");
             }
             else
             {
@@ -347,7 +411,7 @@ namespace DotnetXmlProject.adminUserControl
             string searchText = stdSearchText.Text;
             if (!string.IsNullOrEmpty(searchText))
             {
-                SearchAndPopulateGridView(searchText, "Student");
+                SearchAndPopulateGridView(searchText, "student");
             }
             else
             {
@@ -358,16 +422,48 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         //Additional Methods
         //==========================================================================
-        private void ClearTextBoxes()
+        
+        public void clearInput()
         {
-            nameTecherText.Text = "";
-            usernameTeacherText.Text = "";
-            PassTeacherText.Text = "";
+            EmailText.Text = "";
+            usernameText.Text = "";
+            passwordText.Text = "";
+            RoleCombobox.SelectedIndex = -1;
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
 
+        private void teacherData_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            List<string> columnsToPreventEditing = new List<string> { "id", "role" };
+            if (columnsToPreventEditing.Contains(teacherData.Columns[e.ColumnIndex].Name))
+            {
+                e.Cancel = true;
+            }
         }
+
+        private void studentData_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            List<string> columnsToPreventEditing = new List<string> { "id", "role" };
+
+            if (columnsToPreventEditing.Contains(studentData.Columns[e.ColumnIndex].Name))
+            {
+                e.Cancel = true;
+            }
+        }
+        public void RefrchAllData()
+        {
+            ManageClasses mc = new ManageClasses();
+            mc.RefrchData();
+
+            ClassManagement cm = new ClassManagement();
+            cm.comboxTeacherData();
+        }
+        
+
     }
 }
+
+
+
+
+

@@ -43,14 +43,8 @@
             label1 = new Label();
             tabPage2 = new TabPage();
             panel6 = new Panel();
-            teachercombox = new ComboBox();
             classDeleteBtn = new Button();
             classEditBtn = new Button();
-            label11 = new Label();
-            label10 = new Label();
-            ID = new Label();
-            NameClassText = new TextBox();
-            IDClassText = new TextBox();
             pictureBox1 = new PictureBox();
             panel7 = new Panel();
             classSearchText = new TextBox();
@@ -94,7 +88,6 @@
             tabPage1.Size = new Size(609, 285);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Add Class";
-            tabPage1.Click += tabPage1_Click;
             // 
             // label5
             // 
@@ -106,7 +99,6 @@
             label5.Size = new Size(103, 28);
             label5.TabIndex = 20;
             label5.Text = "Add Class";
-            label5.Click += label5_Click;
             // 
             // button1
             // 
@@ -118,6 +110,7 @@
             button1.TabIndex = 19;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // techercb
             // 
@@ -198,31 +191,16 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(teachercombox);
             panel6.Controls.Add(classDeleteBtn);
             panel6.Controls.Add(classEditBtn);
-            panel6.Controls.Add(label11);
-            panel6.Controls.Add(label10);
-            panel6.Controls.Add(ID);
-            panel6.Controls.Add(NameClassText);
-            panel6.Controls.Add(IDClassText);
             panel6.Controls.Add(pictureBox1);
             panel6.Controls.Add(panel7);
             panel6.Controls.Add(classSearchText);
             panel6.Controls.Add(label6);
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(598, 130);
+            panel6.Size = new Size(598, 68);
             panel6.TabIndex = 4;
-            panel6.Paint += panel6_Paint;
-            // 
-            // teachercombox
-            // 
-            teachercombox.FormattingEnabled = true;
-            teachercombox.Location = new Point(427, 59);
-            teachercombox.Name = "teachercombox";
-            teachercombox.Size = new Size(132, 23);
-            teachercombox.TabIndex = 19;
             // 
             // classDeleteBtn
             // 
@@ -234,6 +212,7 @@
             classDeleteBtn.TabIndex = 7;
             classDeleteBtn.Text = "Delete";
             classDeleteBtn.UseVisualStyleBackColor = false;
+            classDeleteBtn.Click += classDeleteBtn_Click_1;
             // 
             // classEditBtn
             // 
@@ -245,50 +224,7 @@
             classEditBtn.TabIndex = 8;
             classEditBtn.Text = "Edit";
             classEditBtn.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.ForeColor = Color.Indigo;
-            label11.Location = new Point(32, 107);
-            label11.Name = "label11";
-            label11.Size = new Size(45, 15);
-            label11.TabIndex = 12;
-            label11.Text = "Name :";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.ForeColor = Color.Indigo;
-            label10.Location = new Point(322, 67);
-            label10.Name = "label10";
-            label10.Size = new Size(67, 15);
-            label10.TabIndex = 11;
-            label10.Text = "Teacher ID :";
-            // 
-            // ID
-            // 
-            ID.AutoSize = true;
-            ID.ForeColor = Color.Indigo;
-            ID.Location = new Point(32, 67);
-            ID.Name = "ID";
-            ID.Size = new Size(24, 15);
-            ID.TabIndex = 3;
-            ID.Text = "ID :";
-            // 
-            // NameClassText
-            // 
-            NameClassText.Location = new Point(143, 104);
-            NameClassText.Name = "NameClassText";
-            NameClassText.Size = new Size(132, 23);
-            NameClassText.TabIndex = 9;
-            // 
-            // IDClassText
-            // 
-            IDClassText.Location = new Point(143, 64);
-            IDClassText.Name = "IDClassText";
-            IDClassText.Size = new Size(132, 23);
-            IDClassText.TabIndex = 6;
+            classEditBtn.Click += classEditBtn_Click_1;
             // 
             // pictureBox1
             // 
@@ -315,6 +251,7 @@
             classSearchText.Name = "classSearchText";
             classSearchText.Size = new Size(170, 16);
             classSearchText.TabIndex = 4;
+            classSearchText.TextChanged += classSearchText_TextChanged_1;
             // 
             // label6
             // 
@@ -331,11 +268,11 @@
             // 
             classData.BackgroundColor = Color.White;
             classData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            classData.Location = new Point(3, 154);
+            classData.Location = new Point(3, 74);
             classData.Name = "classData";
-            classData.Size = new Size(595, 128);
+            classData.Size = new Size(595, 208);
             classData.TabIndex = 3;
-            classData.CellContentClick += teacherData_CellContentClick;
+            classData.CellBeginEdit += classData_CellBeginEdit;
             // 
             // ClassManagement
             // 
@@ -375,18 +312,12 @@
         private Panel panel6;
         private Button classDeleteBtn;
         private Button classEditBtn;
-        private Label label11;
-        private Label label10;
         private Label label9;
-        private Label ID;
         private TextBox usernameTeacherText;
-        private TextBox NameClassText;
-        private TextBox IDClassText;
         private PictureBox pictureBox1;
         private Panel panel7;
         private TextBox classSearchText;
         private Label label6;
         private DataGridView classData;
-        private ComboBox teachercombox;
     }
 }

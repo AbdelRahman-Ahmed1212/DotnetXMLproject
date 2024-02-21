@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            pictureBox7 = new PictureBox();
+            manageBtn = new Button();
             pictureBox10 = new PictureBox();
             pictureBox9 = new PictureBox();
             reportBtn = new Button();
@@ -63,10 +65,12 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             panel10 = new Panel();
-            attendanceMangement1 = new adminUserControl.attendanceMangement();
-            classManagement1 = new adminUserControl.ClassManagement();
+            classManagement2 = new adminUserControl.ClassManagement();
             addUser2 = new adminUserControl.addUser();
+            manageClasses1 = new adminUserControl.ManageClasses();
+            attendanceMangement2 = new adminUserControl.attendanceMangement();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -90,6 +94,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Indigo;
+            panel1.Controls.Add(pictureBox7);
+            panel1.Controls.Add(manageBtn);
             panel1.Controls.Add(pictureBox10);
             panel1.Controls.Add(pictureBox9);
             panel1.Controls.Add(reportBtn);
@@ -108,6 +114,31 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(215, 674);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.ImageLocation = "D:\\C#XML\\Images\\attendance.png";
+            pictureBox7.Location = new Point(6, 529);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(51, 51);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 11;
+            pictureBox7.TabStop = false;
+            // 
+            // manageBtn
+            // 
+            manageBtn.FlatAppearance.BorderSize = 0;
+            manageBtn.FlatStyle = FlatStyle.Flat;
+            manageBtn.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            manageBtn.ForeColor = Color.White;
+            manageBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            manageBtn.Location = new Point(0, 529);
+            manageBtn.Name = "manageBtn";
+            manageBtn.Size = new Size(199, 51);
+            manageBtn.TabIndex = 12;
+            manageBtn.Text = "         Manage Classes";
+            manageBtn.UseVisualStyleBackColor = true;
+            manageBtn.Click += manageBtn_Click;
             // 
             // pictureBox10
             // 
@@ -155,7 +186,7 @@
             attendanveBtn.Name = "attendanveBtn";
             attendanveBtn.Size = new Size(199, 51);
             attendanveBtn.TabIndex = 9;
-            attendanveBtn.Text = "       Attendance";
+            attendanveBtn.Text = "       Sessions";
             attendanveBtn.UseVisualStyleBackColor = true;
             attendanveBtn.Click += attendanveBtn_Click;
             // 
@@ -444,8 +475,7 @@
             // 
             // panel10
             // 
-            panel10.Controls.Add(attendanceMangement1);
-            panel10.Controls.Add(classManagement1);
+            panel10.Controls.Add(classManagement2);
             panel10.Controls.Add(addUser2);
             panel10.Location = new Point(238, 138);
             panel10.Name = "panel10";
@@ -453,21 +483,13 @@
             panel10.TabIndex = 2;
             panel10.Paint += panel10_Paint;
             // 
-            // attendanceMangement1
+            // classManagement2
             // 
-            attendanceMangement1.Location = new Point(0, 17);
-            attendanceMangement1.Name = "attendanceMangement1";
-            attendanceMangement1.Size = new Size(637, 428);
-            attendanceMangement1.TabIndex = 3;
-            attendanceMangement1.Load += attendanceMangement1_Load;
-            // 
-            // classManagement1
-            // 
-            classManagement1.BackColor = Color.White;
-            classManagement1.Location = new Point(0, -22);
-            classManagement1.Name = "classManagement1";
-            classManagement1.Size = new Size(623, 412);
-            classManagement1.TabIndex = 2;
+            classManagement2.BackColor = Color.White;
+            classManagement2.Location = new Point(-11, 23);
+            classManagement2.Name = "classManagement2";
+            classManagement2.Size = new Size(678, 433);
+            classManagement2.TabIndex = 5;
             // 
             // addUser2
             // 
@@ -479,12 +501,29 @@
             addUser2.TabIndex = 1;
             addUser2.Load += addUser2_Load;
             // 
+            // manageClasses1
+            // 
+            manageClasses1.BackColor = Color.White;
+            manageClasses1.Location = new Point(236, 134);
+            manageClasses1.Name = "manageClasses1";
+            manageClasses1.Size = new Size(746, 449);
+            manageClasses1.TabIndex = 3;
+            // 
+            // attendanceMangement2
+            // 
+            attendanceMangement2.Location = new Point(225, 134);
+            attendanceMangement2.Name = "attendanceMangement2";
+            attendanceMangement2.Size = new Size(604, 401);
+            attendanceMangement2.TabIndex = 4;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1028, 674);
+            Controls.Add(attendanceMangement2);
+            Controls.Add(manageClasses1);
             Controls.Add(panel10);
             Controls.Add(panel4);
             Controls.Add(panel1);
@@ -495,6 +534,7 @@
             Text = "Attendance Management ";
             Load += Admin_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -518,7 +558,6 @@
             panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel10.ResumeLayout(false);
-
             ResumeLayout(false);
         }
 
@@ -563,6 +602,10 @@
         private adminUserControl.ClassManagement classManagement1;
         private Panel panel10;
         private adminUserControl.addUser addUser2;
-
+        private PictureBox pictureBox7;
+        private Button manageBtn;
+        private adminUserControl.ManageClasses manageClasses1;
+        private adminUserControl.attendanceMangement attendanceMangement2;
+        private adminUserControl.ClassManagement classManagement2;
     }
 }

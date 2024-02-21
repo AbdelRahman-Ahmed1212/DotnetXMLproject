@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sessions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocatio="./Session.xsd">
+  <Session id="1" date="12/12/2024" class="A">
+    <AttendenceRecord>
+      <stdid>5</stdid>
+      <stdName>Ahmed</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>6</stdid>
+      <stdName>Ali</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>7</stdid>
+      <stdName>Kamil</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+  </Session>
+  <Session id="2" date="24/12/2024" class="A">
+    <AttendenceRecord>
+      <stdid>5</stdid>
+      <stdName>Ahmed</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>6</stdid>
+      <stdName>Ali</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>7</stdid>
+      <stdName>Kamil</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+  </Session>
+  <Session id="3" date="14/02/2024" subjectId="7" class="iiiikjh">
+    <AttendenceRecord>
+      <stdid>5</stdid>
+      <stdName>kjhj</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+  </Session>
+  <Session id="4" date="05/02/2024" subjectId="5" class="ooo" />
+  <Session id="5" date="22/02/2024" subjectId="9" class="htii">
+    <AttendenceRecord>
+      <stdid>5</stdid>
+      <stdName>kjhj</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>9</stdid>
+      <stdName>mmm</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>10</stdid>
+      <stdName>oo</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+  </Session>
+  <Session id="6" date="20/02/2024" subjectId="6" class="kkk" />
+</Sessions>
