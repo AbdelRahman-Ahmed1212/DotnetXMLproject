@@ -38,11 +38,16 @@
             label6 = new Label();
             label5 = new Label();
             tabPage2 = new TabPage();
+            EditeAttendencebtn = new Button();
+            displaytoeditbtn = new Button();
+            editeAttendencdataGridView = new DataGridView();
             toolbtn = new ToolStrip();
             editStudents = new TabControl();
             tabcontroleaddstd = new TabPage();
             ((System.ComponentModel.ISupportInitialize)editAttendancedataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)searchpictureBox).BeginInit();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)editeAttendencdataGridView).BeginInit();
             editStudents.SuspendLayout();
             tabcontroleaddstd.SuspendLayout();
             SuspendLayout();
@@ -139,12 +144,47 @@
             // 
             tabPage2.BackColor = Color.White;
             tabPage2.BackgroundImageLayout = ImageLayout.None;
+            tabPage2.Controls.Add(EditeAttendencebtn);
+            tabPage2.Controls.Add(displaytoeditbtn);
+            tabPage2.Controls.Add(editeAttendencdataGridView);
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(934, 468);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Edit Attendence";
+            // 
+            // EditeAttendencebtn
+            // 
+            EditeAttendencebtn.BackColor = Color.DeepSkyBlue;
+            EditeAttendencebtn.Location = new Point(395, 386);
+            EditeAttendencebtn.Name = "EditeAttendencebtn";
+            EditeAttendencebtn.Size = new Size(94, 29);
+            EditeAttendencebtn.TabIndex = 2;
+            EditeAttendencebtn.Text = "Save";
+            EditeAttendencebtn.UseVisualStyleBackColor = false;
+            EditeAttendencebtn.Click += EditeAttendencebtn_Click;
+            // 
+            // displaytoeditbtn
+            // 
+            displaytoeditbtn.BackColor = Color.DeepSkyBlue;
+            displaytoeditbtn.Location = new Point(395, 26);
+            displaytoeditbtn.Name = "displaytoeditbtn";
+            displaytoeditbtn.Size = new Size(94, 29);
+            displaytoeditbtn.TabIndex = 1;
+            displaytoeditbtn.Text = "Display";
+            displaytoeditbtn.UseVisualStyleBackColor = false;
+            displaytoeditbtn.Click += displaytoeditbtn_Click;
+            // 
+            // editeAttendencdataGridView
+            // 
+            editeAttendencdataGridView.BackgroundColor = Color.White;
+            editeAttendencdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            editeAttendencdataGridView.Location = new Point(87, 61);
+            editeAttendencdataGridView.Name = "editeAttendencdataGridView";
+            editeAttendencdataGridView.RowHeadersWidth = 51;
+            editeAttendencdataGridView.Size = new Size(777, 304);
+            editeAttendencdataGridView.TabIndex = 0;
             // 
             // toolbtn
             // 
@@ -198,6 +238,8 @@
             Size = new Size(1001, 693);
             ((System.ComponentModel.ISupportInitialize)editAttendancedataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchpictureBox).EndInit();
+            tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)editeAttendencdataGridView).EndInit();
             editStudents.ResumeLayout(false);
             tabcontroleaddstd.ResumeLayout(false);
             tabcontroleaddstd.PerformLayout();
@@ -220,5 +262,8 @@
         private ToolStrip toolbtn;
         public TabControl editStudents;
         private TabPage tabcontroleaddstd;
+        private Button EditeAttendencebtn;
+        private Button displaytoeditbtn;
+        private DataGridView editeAttendencdataGridView;
     }
 }

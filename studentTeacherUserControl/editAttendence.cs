@@ -90,7 +90,91 @@ namespace DotnetXmlProject.studentTeacherUserControl
             DisplayStudentStatus(passedTeacherId);
 
         }
-    }
 
+        /////
+        ///
+
+        private void DisplayStudentStatustoEdit(string TeacherId)
+        {
+            using (var sessionReader = new FileStream(sessionPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            {
+                XDocument xmlDoc = XDocument.Load(sessionReader);
+
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("StudentId", typeof(int));
+                dataTable.Columns.Add("StudentName", typeof(string));
+                dataTable.Columns.Add("SessionId", typeof(int));
+                dataTable.Columns.Add("SessionDate", typeof(string));
+                dataTable.Columns.Add("Attended", typeof(bool)); // Boolean column for the checkbox
+
+                var attendanceRecords = xmlDoc.Root.Elements("Session")
+                    .SelectMany(session => session.Elements("AttendenceRecord")
+                        .Select(record => new
+                        {
+                            StudentId = (int)record.Element("stdid"),
+                            StudentName = (string)record.Element("stdName"),
+                            SessionId = (int)session.Attribute("id"),
+                            SessionDate = (string)session.Attribute("date"),
+                            Status = (string)record.Element("status"), // Include status in the selection
+                            TeacherId = (string)session.Attribute("teacherID")
+                        })).Where(record => record.TeacherId == TeacherId);
+
+                foreach (var record in attendanceRecords)
+                {
+                    bool attended = record.Status == "Present"; // Set checkbox value based on status
+                    dataTable.Rows.Add(record.StudentId, record.StudentName, record.SessionId, record.SessionDate, attended);
+                }
+
+                editeAttendencdataGridView.DataSource = dataTable;
+            }
+        }
+
+
+        private void editAttendancedataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == editAttendancedataGridView.Columns["Attended"].Index)
+            {
+                DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)editAttendancedataGridView.Rows[e.RowIndex].Cells["Attended"];
+                bool isChecked = (bool)cell.Value;
+
+                int studentId = (int)editAttendancedataGridView.Rows[e.RowIndex].Cells["StudentId"].Value;
+                int sessionId = (int)editAttendancedataGridView.Rows[e.RowIndex].Cells["SessionId"].Value;
+
+                UpdateAttendanceInXml(studentId, sessionId, isChecked);
+            }
+        }
+
+        private void UpdateAttendanceInXml(int studentId, int sessionId, bool attended)
+        {
+            XDocument xmlDoc = XDocument.Load(sessionPath);
+
+            XElement sessionElement = xmlDoc.Root.Elements("Session").FirstOrDefault(s => (int)s.Attribute("id") == sessionId);
+            if (sessionElement != null)
+            {
+                XElement attendanceRecordElement = sessionElement.Elements("AttendenceRecord")
+                    .FirstOrDefault(record => (int)record.Element("stdid") == studentId);
+                if (attendanceRecordElement != null)
+                {
+                    attendanceRecordElement.Element("status").Value = attended ? "Present" : "Absent";
+                }
+            }
+
+            // Save the changes to the XML file
+            xmlDoc.Save(sessionPath);
+        }
+
+        private void displaytoeditbtn_Click(object sender, EventArgs e)
+        {
+            string passedTeacherId = getTeacherId(userName);
+            DisplayStudentStatustoEdit(passedTeacherId);
+        }
+
+        private void EditeAttendencebtn_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+
+    }
 }
 
