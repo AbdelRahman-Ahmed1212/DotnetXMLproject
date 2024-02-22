@@ -55,6 +55,7 @@
             displayClassbtn.TabIndex = 6;
             displayClassbtn.Text = "Display";
             displayClassbtn.UseVisualStyleBackColor = true;
+            displayClassbtn.Click += displayClassbtn_Click_1;
             // 
             // panel5
             // 
@@ -195,7 +196,6 @@
             Controls.Add(editStudents);
             Name = "editAttendence";
             Size = new Size(1001, 693);
-            Load += editeAttendence_Load;
             ((System.ComponentModel.ISupportInitialize)editAttendancedataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchpictureBox).EndInit();
             editStudents.ResumeLayout(false);

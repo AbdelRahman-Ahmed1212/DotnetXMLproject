@@ -64,11 +64,11 @@ namespace DotnetXmlProject
                                 student.role = "Student";
                                 break;
                             case "Teacher":
-                                Teacher teacher = new Teacher();
+                                Teacher teacher = new Teacher(textBox1.Text,"Teacher");
                                 teacher.Show();
                                 teacher.userName = textBox1.Text; // Assign username to Teacher instance
                                 teacher.role = "Teacher";
-                                editAttendence editAttendence = new editAttendence(); // Create instance of editAttendence
+                                editAttendence editAttendence = new editAttendence(textBox1.Text); // Create instance of editAttendence
                                 editAttendence.userName = textBox1.Text; // Assign username to editAttendence instance
                                 break;
 

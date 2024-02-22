@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 using static DotnetXmlProject.Form1;
 namespace DotnetXmlProject.studentTeacherUserControl
@@ -19,37 +20,38 @@ namespace DotnetXmlProject.studentTeacherUserControl
         string usersPath = "C:\\Users\\20115\\OneDrive\\Desktop\\x\\DotnetXMLproject\\Data\\users.xml";
         public string userName;
 
-        public editAttendence()
+        public editAttendence(string userName)
         {
             InitializeComponent();
-            // DisplayStudentStatus()
+            //getTeacherId(userName);
+            this.userName = userName;
         }
 
-        private void editeAttendence_Load(object sender, EventArgs e)
-        {
-            ////
-            string passedTeacherId = getTeacherId(userName);
-            MessageBox.Show("Passed Teacher ID: " + passedTeacherId, "Debug Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DisplayStudentStatus(passedTeacherId);
-            ///
-        }
 
         public string getTeacherId(string passedTeacher)
         {
-            string passedTeacherId = "";
-            XDocument usersXml = XDocument.Load(usersPath);
-            XElement userElement = usersXml.Root.Elements("user")
-                .FirstOrDefault(u => (string)u.Element("username") == passedTeacher);
+            string xmlFilePath = usersPath;
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlFilePath);
 
-            if (userElement != null)
+            XmlNodeList nodes = xmlDoc.GetElementsByTagName("user");
+            foreach (XmlNode node in nodes)
             {
-                passedTeacherId = (string)userElement.Attribute("teacherId");
+                XmlNode usernameNode = node.SelectSingleNode("userName");
+                if (usernameNode != null && usernameNode.InnerText == passedTeacher)
+                {
+                    XmlNode idNode = node.SelectSingleNode("id");
+                    if (idNode != null)
+                    {
+                        string userId = idNode.InnerText;
+                        return userId;
+                        //Console.WriteLine("User ID: " + userId);
+                        break;
+                    }
+                }
             }
-            else
-            {
-                MessageBox.Show("User not found in XML file: " + passedTeacher, "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            return passedTeacherId;
+
+            return null;
         }
 
         private void DisplayStudentStatus(string TeacherId)
@@ -64,7 +66,7 @@ namespace DotnetXmlProject.studentTeacherUserControl
                             StudentId = (int)record.Element("stdid"),
                             StudentName = (string)record.Element("stdName"),
                             SessionId = (int)session.Attribute("id"),
-                            SessionDate = (string)session.Attribute("date"), 
+                            SessionDate = (string)session.Attribute("date"),
                             Status = (string)record.Element("status"),
                             TeacherId = (string)session.Attribute("teacherID")
                         })).Where(record => record.TeacherId == TeacherId)
@@ -76,11 +78,16 @@ namespace DotnetXmlProject.studentTeacherUserControl
 
         private void displayClassbtn_Click(object sender, EventArgs e)
         {
+
+
+
+
+        }
+
+        private void displayClassbtn_Click_1(object sender, EventArgs e)
+        {
             string passedTeacherId = getTeacherId(userName);
             DisplayStudentStatus(passedTeacherId);
-
-
-          
 
         }
     }

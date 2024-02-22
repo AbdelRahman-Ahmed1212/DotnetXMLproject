@@ -18,9 +18,11 @@ namespace DotnetXmlProject
     {
         public string userName;
         public string role;
-        public Teacher()
+        public Teacher(string userName,string role)
         {
             InitializeComponent();
+            this.userName = userName;
+            this.role = role;
 
         }
 
@@ -47,7 +49,7 @@ namespace DotnetXmlProject
 
         private void TchAttendencebutton_Click(object sender, EventArgs e)
         {
-            editAttendence editAttendence = new editAttendence();
+            editAttendence editAttendence = new editAttendence(userName);
             editAttendence.Dock = DockStyle.Fill;
             this.Controls.Add(editAttendence);
             editAttendence.BringToFront();
