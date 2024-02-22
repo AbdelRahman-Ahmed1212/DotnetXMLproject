@@ -36,6 +36,7 @@
             attendeceGrid = new DataGridView();
             classList = new ComboBox();
             label3 = new Label();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)attendeceGrid).BeginInit();
             SuspendLayout();
             // 
@@ -87,6 +88,10 @@
             // 
             // attendeceGrid
             // 
+            attendeceGrid.AllowUserToAddRows = false;
+            attendeceGrid.AllowUserToDeleteRows = false;
+            attendeceGrid.AllowUserToResizeColumns = false;
+            attendeceGrid.AllowUserToResizeRows = false;
             attendeceGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             attendeceGrid.Location = new Point(12, 72);
             attendeceGrid.Name = "attendeceGrid";
@@ -101,6 +106,7 @@
             classList.Name = "classList";
             classList.Size = new Size(151, 28);
             classList.TabIndex = 6;
+            classList.SelectedValueChanged += datePickerChanged;
             // 
             // label3
             // 
@@ -111,11 +117,22 @@
             label3.TabIndex = 7;
             label3.Text = "for";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 404);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(145, 24);
+            checkBox1.TabIndex = 8;
+            checkBox1.Text = "individual Report";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Reports
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkBox1);
             Controls.Add(label3);
             Controls.Add(classList);
             Controls.Add(attendeceGrid);
@@ -141,5 +158,6 @@
         private DataGridView attendeceGrid;
         private ComboBox classList;
         private Label label3;
+        private CheckBox checkBox1;
     }
 }

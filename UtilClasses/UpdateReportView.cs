@@ -14,7 +14,14 @@ namespace DotnetXmlProject.UtilClasses
 {
     internal class UpdateReportView
     {
-       
-        
+       public void updateGrid()
+        {
+
+
+
+
+
+        }
+
     }
 }
