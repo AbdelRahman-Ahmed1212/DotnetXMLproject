@@ -59,20 +59,25 @@
             ((System.ComponentModel.ISupportInitialize)classData).BeginInit();
             SuspendLayout();
             // 
+            // toolTip1
+            // 
+            toolTip1.BackColor = Color.Azure;
+            // 
             // tabControl1
             // 
             tabControl1.Alignment = TabAlignment.Bottom;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(0, 27);
+            tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(617, 313);
+            tabControl1.Size = new Size(942, 501);
             tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = Color.White;
+            tabPage1.BackColor = Color.Azure;
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(techercb);
@@ -82,10 +87,11 @@
             tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(label1);
+            tabPage1.ForeColor = Color.DarkCyan;
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(609, 285);
+            tabPage1.Size = new Size(934, 473);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Add Class";
             // 
@@ -93,8 +99,8 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label5.ForeColor = Color.Indigo;
-            label5.Location = new Point(244, 32);
+            label5.ForeColor = Color.DarkCyan;
+            label5.Location = new Point(421, 64);
             label5.Name = "label5";
             label5.Size = new Size(103, 28);
             label5.TabIndex = 20;
@@ -102,9 +108,9 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Indigo;
+            button1.BackColor = Color.DarkCyan;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(226, 197);
+            button1.Location = new Point(421, 292);
             button1.Name = "button1";
             button1.Size = new Size(133, 42);
             button1.TabIndex = 19;
@@ -116,15 +122,15 @@
             // 
             techercb.FlatStyle = FlatStyle.Flat;
             techercb.FormattingEnabled = true;
-            techercb.Location = new Point(356, 115);
+            techercb.Location = new Point(600, 189);
             techercb.Name = "techercb";
             techercb.Size = new Size(200, 23);
             techercb.TabIndex = 18;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.Indigo;
-            panel4.Location = new Point(356, 147);
+            panel4.BackColor = Color.DarkCyan;
+            panel4.Location = new Point(600, 221);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 2);
             panel4.TabIndex = 7;
@@ -132,15 +138,15 @@
             // NameText
             // 
             NameText.BorderStyle = BorderStyle.None;
-            NameText.Location = new Point(38, 122);
+            NameText.Location = new Point(139, 196);
             NameText.Name = "NameText";
             NameText.Size = new Size(200, 16);
             NameText.TabIndex = 15;
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Indigo;
-            panel1.Location = new Point(38, 144);
+            panel1.BackColor = Color.DarkCyan;
+            panel1.Location = new Point(139, 218);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 2);
             panel1.TabIndex = 10;
@@ -149,8 +155,8 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.ForeColor = Color.Indigo;
-            label4.Location = new Point(356, 83);
+            label4.ForeColor = Color.DarkCyan;
+            label4.Location = new Point(600, 157);
             label4.Name = "label4";
             label4.Size = new Size(84, 21);
             label4.TabIndex = 11;
@@ -161,7 +167,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
             label2.ForeColor = Color.Indigo;
-            label2.Location = new Point(137, 177);
+            label2.Location = new Point(323, 251);
             label2.Name = "label2";
             label2.Size = new Size(0, 21);
             label2.TabIndex = 13;
@@ -170,8 +176,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.ForeColor = Color.Indigo;
-            label1.Location = new Point(38, 85);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(139, 159);
             label1.Name = "label1";
             label1.Size = new Size(59, 21);
             label1.TabIndex = 14;
@@ -179,13 +185,14 @@
             // 
             // tabPage2
             // 
-            tabPage2.BackColor = Color.White;
+            tabPage2.BackColor = Color.Azure;
             tabPage2.Controls.Add(panel6);
             tabPage2.Controls.Add(classData);
+            tabPage2.ForeColor = Color.DarkCyan;
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(609, 285);
+            tabPage2.Size = new Size(931, 473);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Classes";
             // 
@@ -197,14 +204,14 @@
             panel6.Controls.Add(panel7);
             panel6.Controls.Add(classSearchText);
             panel6.Controls.Add(label6);
-            panel6.Location = new Point(0, 0);
+            panel6.Location = new Point(181, 49);
             panel6.Name = "panel6";
             panel6.Size = new Size(598, 68);
             panel6.TabIndex = 4;
             // 
             // classDeleteBtn
             // 
-            classDeleteBtn.BackColor = Color.Indigo;
+            classDeleteBtn.BackColor = Color.DarkCyan;
             classDeleteBtn.ForeColor = Color.White;
             classDeleteBtn.Location = new Point(473, 7);
             classDeleteBtn.Name = "classDeleteBtn";
@@ -216,7 +223,7 @@
             // 
             // classEditBtn
             // 
-            classEditBtn.BackColor = Color.Indigo;
+            classEditBtn.BackColor = Color.DarkCyan;
             classEditBtn.ForeColor = Color.White;
             classEditBtn.Location = new Point(381, 7);
             classEditBtn.Name = "classEditBtn";
@@ -238,7 +245,7 @@
             // 
             // panel7
             // 
-            panel7.BackColor = Color.Indigo;
+            panel7.BackColor = Color.DarkCyan;
             panel7.Location = new Point(124, 29);
             panel7.Name = "panel7";
             panel7.Size = new Size(200, 2);
@@ -257,7 +264,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F);
-            label6.ForeColor = Color.Indigo;
+            label6.ForeColor = Color.DarkCyan;
             label6.Location = new Point(3, 10);
             label6.Name = "label6";
             label6.Size = new Size(99, 21);
@@ -266,11 +273,14 @@
             // 
             // classData
             // 
-            classData.BackgroundColor = Color.White;
+            classData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            classData.BackgroundColor = Color.Azure;
+            classData.BorderStyle = BorderStyle.None;
+            classData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             classData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            classData.Location = new Point(3, 74);
+            classData.Location = new Point(70, 144);
             classData.Name = "classData";
-            classData.Size = new Size(595, 208);
+            classData.Size = new Size(786, 255);
             classData.TabIndex = 3;
             classData.CellBeginEdit += classData_CellBeginEdit;
             // 
@@ -278,10 +288,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.Azure;
             Controls.Add(tabControl1);
+            ForeColor = Color.DarkCyan;
             Name = "ClassManagement";
-            Size = new Size(623, 340);
+            Size = new Size(942, 501);
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();

@@ -81,7 +81,9 @@ namespace DotnetXmlProject.adminUserControl
                                      {
                                          id = (int)s.Attribute("id"),
                                          className = (string)s.Attribute("class"),
-                                         Date = DateTime.ParseExact((string)s.Attribute("date"), "dd/MM/yyyy", CultureInfo.InvariantCulture)
+                                         Date = DateTime.ParseExact((string)s.Attribute("date"), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                                         teacherID = (int)s.Attribute("teacherId"),
+                                        
                                      }).ToList();
 
                 sessionData.DataSource = sessions;
@@ -132,7 +134,16 @@ namespace DotnetXmlProject.adminUserControl
         private void button1_Click(object sender, EventArgs e)
         {
             int sessionID = Convert.ToInt32(sessionIDText.Text);
-            PopulateDataGridViewattendanceRecourd(sessionID);
+
+            if (Validation.CheckIfSessionExists(sessionPath, "Session", "id", sessionID)) 
+            {
+                PopulateDataGridViewattendanceRecourd(sessionID);
+            }
+            else
+            {
+                MessageBox.Show("Invalid session ID. Please enter a valid session ID.");
+            }
+            
         }
 
         //==========================================================================
@@ -142,51 +153,59 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                XDocument xmlDoc = XDocument.Load(sessionPath);
-
-                int newSessionId = xmlDoc.Descendants("Session").Max(s => (int)s.Attribute("id")) + 1;
-                string className = GetClassNameFromId(subjectId);
-
-
-                XElement newSession = new XElement("Session",
-                    new XAttribute("id", newSessionId),
-                    new XAttribute("date", date.ToString("dd/MM/yyyy")),
-                    new XAttribute("subjectId", subjectId),
-                    new XAttribute("class", className)
-                );
-
-
-                XDocument userDoc = XDocument.Load(userPath);
-                var students = userDoc.Descendants("student")
-                                      .Where(u => u.Element("classes")?.Elements("class")
-                                                   .Any(c => (string)c.Element("className") == className) ?? false)
-                                      .Select(u => new
-                                      {
-                                          ID = (int)u.Element("id"),
-                                          Name = (string)u.Element("username")
-                                      });
-
-
-
-                foreach (var student in students)
+                
+                if (Validation.CheckIfIdExists(classPath, "stdClass", "id", subjectId))
                 {
-                    XElement attendanceRecord = new XElement("AttendenceRecord",
-                        new XElement("stdid", student.ID),
-                        new XElement("stdName", student.Name),
-                        new XElement("status", "notAsssigned")
+                    
+                    XDocument xmlDoc = XDocument.Load(sessionPath);
+
+                    int newSessionId = xmlDoc.Descendants("Session").Max(s => (int)s.Attribute("id")) + 1;
+                    string className = GetClassNameFromId(subjectId);
+                    int teacherID = GetteacherIDFromId(subjectId);
+
+                   
+                    XElement newSession = new XElement("Session",
+                        new XAttribute("id", newSessionId),
+                        new XAttribute("date", date.ToString("dd/MM/yyyy")),
+                        new XAttribute("subjectId", subjectId),
+                        new XAttribute("class", className),
+                        new XAttribute("teacherId", teacherID)
                     );
 
-                    newSession.Add(attendanceRecord);
+                    // Add attendance records for associated students
+                    XDocument userDoc = XDocument.Load(userPath);
+                    var students = userDoc.Descendants("student")
+                                          .Where(u => u.Element("classes")?.Elements("class")
+                                                       .Any(c => (string)c.Element("className") == className) ?? false)
+                                          .Select(u => new
+                                          {
+                                              ID = (int)u.Element("id"),
+                                              Name = (string)u.Element("username")
+                                          });
+
+                    foreach (var student in students)
+                    {
+                        XElement attendanceRecord = new XElement("AttendenceRecord",
+                            new XElement("stdid", student.ID),
+                            new XElement("stdName", student.Name),
+                            new XElement("status", "notAsssigned")
+                        );
+
+                        newSession.Add(attendanceRecord);
+                    }
+
+                    xmlDoc.Root.Add(newSession);
+                    xmlDoc.Save(sessionPath);
+
+                    PopulateDataGridViewSession();
+                    MessageBox.Show("New session added successfully.");
+                    PopulateSessionIds();
+                    clearInput();
                 }
-
-                xmlDoc.Root.Add(newSession);
-                xmlDoc.Save(sessionPath);
-
-                PopulateDataGridViewSession();
-                MessageBox.Show("New session added successfully.");
-                PopulateSessionIds();
-                clearInput();
-
+                else
+                {
+                    MessageBox.Show("Session with the specified subject ID not exists.");
+                }
             }
             catch (Exception ex)
             {
@@ -211,6 +230,23 @@ namespace DotnetXmlProject.adminUserControl
                 return "DefaultClass";
             }
         }
+        private int GetteacherIDFromId(int subjectId)
+        {
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(classPath);
+
+                XElement stdClass = xmlDoc.Descendants("stdClass")
+                                          .FirstOrDefault(s => (int)s.Element("id") == subjectId);
+                return (int)stdClass.Element("teacherId");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving teacher : {ex.Message}");
+                return 0;
+            }
+        }
 
         private void addRecordBtn_Click(object sender, EventArgs e)
         {
@@ -219,7 +255,7 @@ namespace DotnetXmlProject.adminUserControl
 
             AddNewSession(date, subjectID);
 
-            ManageClasses cm=new ManageClasses();
+            ManageClasses cm = new ManageClasses();
             cm.comboxClassData();
         }
 
@@ -242,6 +278,7 @@ namespace DotnetXmlProject.adminUserControl
             {
                 UpdateSessionDateInXml(sessionId, formattedDate);
                 PopulateDataGridViewSession();
+                
                 MessageBox.Show("Session updated successfully.");
             }
             else
@@ -277,6 +314,8 @@ namespace DotnetXmlProject.adminUserControl
                 MessageBox.Show($"Error updating session date: {ex.Message}");
             }
         }
+
+       
 
 
         //==========================================================================
@@ -337,14 +376,14 @@ namespace DotnetXmlProject.adminUserControl
 
         private void sessionData_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            List<string> columnsToPreventEditing = new List<string> { "id", "className" };
+            List<string> columnsToPreventEditing = new List<string> { "id", "className", "teacherID" };
 
             if (columnsToPreventEditing.Contains(sessionData.Columns[e.ColumnIndex].Name))
             {
                 e.Cancel = true;
             }
         }
-       
+
         private void clearInput()
         {
             subjectCombobox.SelectedIndex = -1;
@@ -352,6 +391,9 @@ namespace DotnetXmlProject.adminUserControl
 
         }
 
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

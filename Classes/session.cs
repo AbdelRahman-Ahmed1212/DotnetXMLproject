@@ -11,5 +11,7 @@ namespace DotnetXmlProject.Classes
         public int id {  get; set; }
         public string className { get; set; }
         public DateTime Date {  get; set; } 
+        public int teacherID { get; set; }
+       
     }
 }

@@ -18,6 +18,7 @@ namespace DotnetXmlProject.adminUserControl
     {
         public string classPath = "D:\\c#xmlv2\\Data\\classes.xml";
         public string userPath = "D:\\c#xmlv2\\Data\\users.xml";
+        public string sessionPath = "D:\\c#xmlv2\\Data\\session.xml";
         public ClassManagement()
         {
             InitializeComponent();
@@ -65,7 +66,7 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         //Add
         //==========================================================================
-       
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             try
@@ -85,7 +86,7 @@ namespace DotnetXmlProject.adminUserControl
                 techercb.SelectedIndex = -1;
 
                 PopulateDataGridViewClass();
-                
+
                 comboxTeacherData();
 
 
@@ -108,33 +109,40 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                using (var stream = new FileStream(classPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                if (!Validation.CheckIfIdExists(userPath, "teacher","id", teacherID))
                 {
-                    var xmlDoc = XDocument.Load(stream);
-                    int lastId = xmlDoc.Descendants("stdClass").Select(u => (int)u.Element("id")).DefaultIfEmpty(0).Max();
-
-                    XElement newClassElement = new XElement("stdClass",
-                                            new XElement("id", lastId + 1),
-                                            new XElement("name", name),
-                                            new XElement("teacherId", teacherID));
-
-                   
-
-                    if (xmlDoc.Root == null)
+                    MessageBox.Show("Teacher with the specified ID not found.");
+                    return;
+                }
+                else
+                {
+                    using (var stream = new FileStream(classPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                     {
-                        xmlDoc.Add(new XElement("stdClass", newClassElement));
-                    }
-                    else
-                    {
-                        xmlDoc.Root.Add(newClassElement);
-                    }
-                    AddClassNameToTeacher(teacherID,name,lastId+1);
+                        var xmlDoc = XDocument.Load(stream);
+                        int lastId = xmlDoc.Descendants("stdClass").Select(u => (int)u.Element("id")).DefaultIfEmpty(0).Max();
 
+                        XElement newClassElement = new XElement("stdClass",
+                                                new XElement("id", lastId + 1),
+                                                new XElement("name", name),
+                                                new XElement("teacherId", teacherID));
 
-                    stream.Position = 0;
-                    xmlDoc.Save(stream);
+                        if (xmlDoc.Root == null)
+                        {
+                            xmlDoc.Add(new XElement("stdClass", newClassElement));
+                        }
+                        else
+                        {
+                            xmlDoc.Root.Add(newClassElement);
+                        }
+                        AddClassNameToTeacher(teacherID, name, lastId + 1);
+
+                        stream.Position = 0;
+                        xmlDoc.Save(stream);
+                    }
                 }
             }
+
+               
             catch (IOException ex)
             {
                 MessageBox.Show($"Error adding class: {ex.Message}. Please make sure the XML file is not open in another program.");
@@ -145,7 +153,7 @@ namespace DotnetXmlProject.adminUserControl
             }
         }
 
-        private void AddClassNameToTeacher(int teacherId, string className,int classID)
+        private void AddClassNameToTeacher(int teacherId, string className, int classID)
         {
             try
             {
@@ -165,7 +173,7 @@ namespace DotnetXmlProject.adminUserControl
                         teacherElement.Add(classNameElement);
                     }
 
-                    classNameElement.Add( new XElement("class",
+                    classNameElement.Add(new XElement("class",
                                     new XElement("classID", classID),
                                     new XElement("className", className)));
 
@@ -204,6 +212,7 @@ namespace DotnetXmlProject.adminUserControl
             int teacherId = Convert.ToInt32(classData.SelectedRows[0].Cells["TeacherId"].Value);
 
             UpdateClassInXml(id, name, teacherId);
+            UpdateSessionRecordsForClass(id, name);
 
             PopulateDataGridViewClass();
 
@@ -276,6 +285,8 @@ namespace DotnetXmlProject.adminUserControl
                 }
 
                 userXmlDoc.Save(userPath);
+               
+
             }
             catch (IOException ex)
             {
@@ -287,7 +298,27 @@ namespace DotnetXmlProject.adminUserControl
             }
         }
 
+        private void UpdateSessionRecordsForClass(int classId, string newName)
+        {
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(sessionPath);
 
+                var sessionsToUpdate = xmlDoc.Descendants("Session")
+                              .Where(s => (int?)s.Attribute("subjectId") == classId).ToList();
+
+                foreach (var session in sessionsToUpdate)
+                {
+                    session.Attribute("class").Value = newName;
+                }
+
+                xmlDoc.Save(sessionPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating session records for class: {ex.Message}");
+            }
+        }
         //==========================================================================
         //Delete
         //==========================================================================
@@ -304,6 +335,7 @@ namespace DotnetXmlProject.adminUserControl
             string classname = classData.SelectedRows[0].Cells["name"].Value.ToString();
 
             DeleteClassFromXml(classId, teacherId);
+            DeleteSessionsForClass(classId);
 
             PopulateDataGridViewClass();
             MessageBox.Show("Class deleted successfully.");
@@ -385,6 +417,29 @@ namespace DotnetXmlProject.adminUserControl
             }
         }
 
+        private void DeleteSessionsForClass(int classId)
+        {
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(sessionPath);
+
+                // Delete sessions associated with the class
+                var sessionsToDelete = xmlDoc.Descendants("Session")
+                              .Where(s => (int?)s.Attribute("subjectId") == classId).ToList();
+
+
+                foreach (var session in sessionsToDelete)
+                {
+                    session.Remove();
+                }
+
+                xmlDoc.Save(sessionPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error deleting sessions for class: {ex.Message}");
+            }
+        }
         //==========================================================================
         //Search
         //==========================================================================
@@ -435,6 +490,9 @@ namespace DotnetXmlProject.adminUserControl
             }
         }
 
-       
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

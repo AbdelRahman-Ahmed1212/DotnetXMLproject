@@ -13,7 +13,12 @@
     <username>alice_smith</username>
     <password>alice456</password>
     <role>Student</role>
-    <classes></classes>
+    <classes>
+      <class>
+        <classID>30</classID>
+        <className />
+      </class>
+    </classes>
     <attendanceIds>
       <attendanceId>101</attendanceId>
       <attendanceId>102</attendanceId>
@@ -28,56 +33,6 @@
     <classes />
   </teacher>
   <!-- You can add more user, student, and teacher entries as needed -->
-  <student>
-    <id>5</id>
-    <email>nbnm</email>
-    <username>kjhj</username>
-    <password>123</password>
-    <role>Student</role>
-    <classes>
-      <class>
-        <classID>7</classID>
-        <className>iiiikjh</className>
-      </class>
-      <class>
-        <classID>9</classID>
-        <className>htii</className>
-      </class>
-    </classes>
-    <attendanceIds />
-  </student>
-  <student>
-    <id>9</id>
-    <email>pppp</email>
-    <username>mmm</username>
-    <password>123</password>
-    <role>Student</role>
-    <classes>
-      <class>
-        <classID>8</classID>
-        <className>bbjk</className>
-      </class>
-      <class>
-        <classID>9</classID>
-        <className>htii</className>
-      </class>
-    </classes>
-    <attendanceIds />
-  </student>
-  <student>
-    <id>10</id>
-    <email>iii</email>
-    <username>oo</username>
-    <password>123</password>
-    <role>Student</role>
-    <classes>
-      <class>
-        <classID>9</classID>
-        <className>htii</className>
-      </class>
-    </classes>
-    <attendanceIds />
-  </student>
   <teacher>
     <id>15</id>
     <email>asmaaaaa</email>
@@ -107,68 +62,41 @@
     <role>Teacher</role>
     <classes />
   </teacher>
-  <teacher>
-    <id>18</id>
-    <email>adel</email>
-    <username>adel</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
-  <teacher>
-    <id>19</id>
-    <email>alaa</email>
-    <username>alaa</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
-  <teacher>
-    <id>20</id>
-    <email>bbbb</email>
-    <username>yyyy</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
   <student>
-    <id>21</id>
-    <email>lll</email>
-    <username>jhgfd</username>
-    <password>123</password>
+    <id>26</id>
+    <email>asasasas@gmail.com</email>
+    <username>asllll</username>
+    <password>123456789</password>
     <role>Student</role>
-    <classes />
+    <classes>
+      <class>
+        <classID>12</classID>
+        <className>sqlll</className>
+      </class>
+      <class>
+        <classID>13</classID>
+        <className>rrrrr</className>
+      </class>
+      <class>
+        <classID>14</classID>
+        <className>node js</className>
+      </class>
+      <class>
+        <classID>12</classID>
+        <className>sql</className>
+      </class>
+      <class>
+        <classID>8</classID>
+        <className>bbjk</className>
+      </class>
+    </classes>
     <attendanceIds />
   </student>
   <teacher>
-    <id>22</id>
-    <email>ppp</email>
-    <username>mmm</username>
-    <password>kk</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
-  <teacher>
-    <id>23</id>
-    <email>uuuuu</email>
-    <username>qqqqqqqqq</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
-  <teacher>
-    <id>24</id>
-    <email>yy</email>
-    <username>bbb</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
-  <teacher>
-    <id>25</id>
-    <email>mmm</email>
-    <username>zzz</username>
-    <password>123</password>
+    <id>27</id>
+    <email>opopopop@gmail.com</email>
+    <username>ppppp</username>
+    <password>123456789</password>
     <role>Teacher</role>
     <classes />
   </teacher>

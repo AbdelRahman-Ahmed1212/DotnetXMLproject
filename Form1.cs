@@ -31,6 +31,8 @@ namespace DotnetXmlProject
         {
             var username = textBox1.Text;
             var password = textBox2.Text;
+            
+            Admin.username = username;
 
             using (var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml"))
             {

@@ -18,6 +18,7 @@ namespace DotnetXmlProject.adminUserControl
     {
         public string pathUser = "D:\\c#xmlv2\\Data\\users.xml";
         public string classPath = "D:\\c#xmlv2\\Data\\classes.xml";
+        public string sessionPath = "D:\\c#xmlv2\\Data\\session.xml";
 
         public addUser()
         {
@@ -30,7 +31,7 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         //Display
         //==========================================================================
-        private void PopulateDataGridViewStudent()
+        public void PopulateDataGridViewStudent()
         {
             try
             {
@@ -57,7 +58,7 @@ namespace DotnetXmlProject.adminUserControl
             }
         }
 
-        private void PopulateDataGridViewTeacher()
+        public void PopulateDataGridViewTeacher()
         {
             try
             {
@@ -96,19 +97,24 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-
                 string email = EmailText.Text;
                 string userName = usernameText.Text;
-                string passwordd = passwordText.Text;
-                Role rolee = (Role)Enum.Parse(typeof(Role), RoleCombobox.Text, true); // Convert string to enum
+                string password = passwordText.Text;
+                Role role = (Role)Enum.Parse(typeof(Role), RoleCombobox.Text, true); // Convert string to enum
 
-                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(passwordd) || rolee == null)
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password) || role == null)
                 {
                     MessageBox.Show("Please fill in all fields.");
                     return;
                 }
 
-                AddUserToXml(email, userName, passwordd, rolee);
+                if (!Validation.ValidateUserData(userName, password, email))
+                {
+                    return;
+                }
+
+                AddUserToXml(email, userName, password, role);
+                PopulateData.refreshAllData();
 
                 ManageClasses mc = new ManageClasses();
                 mc.RefrchData();
@@ -126,7 +132,6 @@ namespace DotnetXmlProject.adminUserControl
             {
                 MessageBox.Show($"Error adding user: {ex.Message}");
             }
-            
 
         }
         private void AddUserToXml(string email, string userName, string password, Role role)
@@ -136,6 +141,16 @@ namespace DotnetXmlProject.adminUserControl
                 using (var stream = new FileStream(pathUser, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
                     var xmlDoc = XDocument.Load(stream);
+
+                    bool emailExists = xmlDoc.Descendants()
+                                .Any(u => (string)u.Element("email") == email);
+
+                    if (emailExists)
+                    {
+                        MessageBox.Show("Email already exists. Please use a different email address.");
+                        return;
+                    }
+
 
                     int lastId = xmlDoc.Descendants()
                                         .Where(e => e.Name == "user" || e.Name == "student" || e.Name == "teacher")
@@ -184,21 +199,21 @@ namespace DotnetXmlProject.adminUserControl
                     if (xmlDoc.Root == null)
                     {
                         xmlDoc.Add(new XElement("Users", newUserElement));
-                        
+
                     }
                     else
                     {
                         xmlDoc.Root.Add(newUserElement);
-                        
+
 
                     }
-                    
+
                     stream.Position = 0;
                     xmlDoc.Save(stream);
 
-                   
+
                 }
-                
+
 
             }
             catch (IOException ex)
@@ -231,10 +246,15 @@ namespace DotnetXmlProject.adminUserControl
             string userName = teacherData.SelectedRows[0].Cells["username"].Value.ToString();
             string password = teacherData.SelectedRows[0].Cells["password"].Value.ToString();
             string email = teacherData.SelectedRows[0].Cells["email"].Value.ToString();
-            UpdateUserInXml(userId, userName, password,email);
+
+            if (!Validation.ValidateUserData(userName, password, email))
+            {
+                return;
+            }
+
+            UpdateUserInXml(userId, userName, password, email);
 
             PopulateDataGridViewTeacher();
-            //ClearTextBoxes();
 
             MessageBox.Show("User updated successfully.");
         }
@@ -252,10 +272,14 @@ namespace DotnetXmlProject.adminUserControl
             string password = studentData.SelectedRows[0].Cells["password"].Value.ToString();
             string email = studentData.SelectedRows[0].Cells["email"].Value.ToString();
 
-            UpdateUserInXml(userId, userName, password,email);
+            if (!Validation.ValidateUserData(userName, password, email))
+            {
+                return;
+            }
+
+            UpdateUserInXml(userId, userName, password, email);
 
             PopulateDataGridViewStudent();
-            //ClearTextBoxes();
 
             MessageBox.Show("User updated successfully.");
         }
@@ -307,8 +331,14 @@ namespace DotnetXmlProject.adminUserControl
             int userId = Convert.ToInt32(teacherData.SelectedRows[0].Cells["id"].Value);
             DeleteUserFromXml(userId);
 
+            ManageClasses mc = new ManageClasses();
+            mc.RefrchData();
+
+            ClassManagement cm = new ClassManagement();
+            cm.comboxTeacherData();
+
             PopulateDataGridViewTeacher();
-           
+
         }
 
         private void deleteStdBtn_Click(object sender, EventArgs e)
@@ -332,19 +362,38 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                XDocument xmlDoc = XDocument.Load(pathUser);
+                XDocument userXmlDoc = XDocument.Load(pathUser);
+                XDocument classesXmlDoc = XDocument.Load(classPath);
+                XDocument sessionsXmlDoc = XDocument.Load(sessionPath);
 
-                // Find the user to delete among all user types
-                XElement userToDelete = xmlDoc.Descendants()
-                                              .Where(e => e.Name == "user" || e.Name == "student" || e.Name == "teacher")
-                                              .FirstOrDefault(u => (int)u.Element("id") == userId);
+                XElement userToDelete = GetUserById(userXmlDoc, userId);
 
                 if (userToDelete != null)
                 {
+                    string role = userToDelete.Element("role").Value;
+
+                    if (role == "Teacher")
+                    {
+                        int teacherId = (int)userToDelete.Element("id");
+
+                        GetTeacherClasses(classesXmlDoc, userXmlDoc, teacherId);
+                        RemoveTeacherFromClasses(classesXmlDoc, teacherId);
+                        RemoveSessionsByTeacherId(sessionsXmlDoc, teacherId);
+                        
+                    }
+                    else if (role == "Student")
+                    {
+                        int studentId = (int)userToDelete.Element("id");
+
+                        // Remove student attendance from sessions
+                        RemoveStudentAttendanceFromSessions(sessionsXmlDoc, studentId);
+                    }
+
+                    // Remove the user from the user XML
                     userToDelete.Remove();
-                    xmlDoc.Save(pathUser);
+                    userXmlDoc.Save(pathUser);
+
                     MessageBox.Show("User deleted successfully.");
-                    
                 }
                 else
                 {
@@ -359,6 +408,89 @@ namespace DotnetXmlProject.adminUserControl
             {
                 MessageBox.Show($"Error deleting user: {ex.Message}");
             }
+        }
+        private XElement GetUserById(XDocument userXmlDoc, int userId)
+        {
+            return userXmlDoc.Descendants()
+                             .Where(e => e.Name == "user" || e.Name == "student" || e.Name == "teacher")
+                             .FirstOrDefault(u => (int)u.Element("id") == userId);
+        }
+
+       
+
+        private void RemoveTeacherFromClasses(XDocument classesXmlDoc, int teacherId)
+        {
+            
+                classesXmlDoc.Root.Elements("stdClass")
+                                                  .Where(c => (int)c.Element("teacherId") == teacherId)
+                                                  .ToList()
+                                                   .ForEach(a => a.Remove());
+
+            classesXmlDoc.Save(classPath);
+
+
+           
+        }
+
+        private void RemoveSessionsByTeacherId(XDocument sessionsXmlDoc, int teacherId)
+        {
+           
+            sessionsXmlDoc.Root.Elements("Session")
+                                                .Where(s => (int)s.Attribute("teacherId") == teacherId).ToList()
+                                               .ForEach(a => a.Remove());
+
+            sessionsXmlDoc.Save(sessionPath);
+
+        }
+
+        private void RemoveClassFromStudents(XDocument userXmlDoc, int classID)
+        {
+            foreach (var student in userXmlDoc.Root.Elements("student"))
+            {
+                var studentClasses = student.Element("classes").Elements("class").ToList();
+
+                foreach (var classElement in studentClasses)
+                {
+                    int currentClassID = (int)classElement.Element("classID");
+                    if (currentClassID == classID)
+                    {
+                        classElement.Remove();
+                    }
+                }
+            }
+            userXmlDoc.Save(pathUser);
+        }
+
+        private void GetTeacherClasses(XDocument classesXmlDoc,XDocument userXmlDoc, int teacherId)
+        {
+            List<int> classIDs = classesXmlDoc.Root.Elements("stdClass")
+                           .Where(c => (int)c.Element("teacherId") == teacherId)
+                           .Select(c => (int)c.Element("id"))
+                           .ToList();
+
+            foreach (int classID in classIDs)
+            {
+                
+                RemoveClassFromStudents(userXmlDoc, classID);
+            }
+        }
+
+
+
+
+
+        private void RemoveStudentAttendanceFromSessions(XDocument sessionsXmlDoc, int studentId)
+        {
+
+            sessionsXmlDoc.Root.Elements("Session")
+                              .Elements("AttendenceRecord")
+                              .Where(a => (int)a.Element("stdid") == studentId)
+                              .ToList() 
+                              .ForEach(a => a.Remove()); 
+
+            sessionsXmlDoc.Save(sessionPath); 
+
+
         }
 
 
@@ -422,7 +554,7 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         //Additional Methods
         //==========================================================================
-        
+
         public void clearInput()
         {
             EmailText.Text = "";
@@ -443,7 +575,7 @@ namespace DotnetXmlProject.adminUserControl
 
         private void studentData_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            List<string> columnsToPreventEditing = new List<string> { "id", "role" };
+            List<string> columnsToPreventEditing = new List<string> { "id", "role","email" };
 
             if (columnsToPreventEditing.Contains(studentData.Columns[e.ColumnIndex].Name))
             {
@@ -458,8 +590,11 @@ namespace DotnetXmlProject.adminUserControl
             ClassManagement cm = new ClassManagement();
             cm.comboxTeacherData();
         }
-        
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

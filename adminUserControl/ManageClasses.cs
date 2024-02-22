@@ -69,7 +69,7 @@ namespace DotnetXmlProject.adminUserControl
                 teacherClassID.Items.AddRange(teacherIds.Select(id => id.ToString()).ToArray());
             }
         }
-       
+
         public void comboxUserData()
         {
             userID.Items.Clear();
@@ -159,34 +159,44 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                XDocument xmlDoc = XDocument.Load(userPath);
-
-
-                var userElement = xmlDoc.Descendants()
-                    .Where(e => e.Name == "student" || e.Name == "teacher")
-                    .FirstOrDefault(u => (int)u.Element("id") == userID);
-
-                if (userElement != null)
+                if (!Validation.CheckIfIdExists(classPath, "stdClass", "id", classID))
                 {
-                    var classNameElement = userElement.Element("classes");
-                    if (classNameElement == null)
-                    {
-                        classNameElement = new XElement("classes");
-                        userElement.Add(classNameElement);
-                    }
-
-                    classNameElement.Add(new XElement("class",
-                                    new XElement("classID", classID),
-                                    new XElement("className", GetClassNameById(classID))));
-
-                    xmlDoc.Save(userPath);
-
-                    MessageBox.Show("Class add successfully.");
+                    MessageBox.Show("Class with the specified ID not found.");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("User with the specified ID not found.");
+                    XDocument xmlDoc = XDocument.Load(userPath);
+
+
+                    var userElement = xmlDoc.Descendants()
+                        .Where(e => e.Name == "student" || e.Name == "teacher")
+                        .FirstOrDefault(u => (int)u.Element("id") == userID);
+
+                    if (userElement != null)
+                    {
+                        var classNameElement = userElement.Element("classes");
+                        if (classNameElement == null)
+                        {
+                            classNameElement = new XElement("classes");
+                            userElement.Add(classNameElement);
+                        }
+
+                        classNameElement.Add(new XElement("class",
+                                        new XElement("classID", classID),
+                                        new XElement("className", GetClassNameById(classID))));
+
+                        xmlDoc.Save(userPath);
+
+                        MessageBox.Show("Class add successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("User with the specified ID not found.");
+                    }
+
                 }
+               
             }
             catch (IOException ex)
             {
@@ -248,9 +258,9 @@ namespace DotnetXmlProject.adminUserControl
             {
                 XDocument xmlDoc = XDocument.Load(userPath);
                 var a = xmlDoc.Descendants();
-                
+
                 var userElement = xmlDoc.Descendants()
-                    .Where(e =>  e.Name == "student" || e.Name == "teacher")
+                    .Where(e => e.Name == "student" || e.Name == "teacher")
                     .FirstOrDefault(u => (int)u.Element("id") == userID);
 
 
@@ -312,7 +322,7 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         //Additional Methods
         //==========================================================================
-        
+
         private void clearInput()
         {
             classStdID.SelectedIndex = -1;
@@ -322,6 +332,15 @@ namespace DotnetXmlProject.adminUserControl
 
         }
 
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 

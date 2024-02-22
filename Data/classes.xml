@@ -11,11 +11,6 @@
     <teacherId>3</teacherId>
   </stdClass>
   <stdClass>
-    <id>6</id>
-    <name>kkk</name>
-    <teacherId>3</teacherId>
-  </stdClass>
-  <stdClass>
     <id>7</id>
     <name>iiiikjh</name>
     <teacherId>3</teacherId>
@@ -39,5 +34,20 @@
     <id>11</id>
     <name>js</name>
     <teacherId>15</teacherId>
+  </stdClass>
+  <stdClass>
+    <id>12</id>
+    <name>sqlll</name>
+    <teacherId>26</teacherId>
+  </stdClass>
+  <stdClass>
+    <id>13</id>
+    <name>rrrrr</name>
+    <teacherId>25</teacherId>
+  </stdClass>
+  <stdClass>
+    <id>14</id>
+    <name>node js</name>
+    <teacherId>25</teacherId>
   </stdClass>
 </classes>

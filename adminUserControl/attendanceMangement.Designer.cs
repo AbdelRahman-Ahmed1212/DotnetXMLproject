@@ -62,39 +62,42 @@
             // 
             // tabPage3
             // 
-            tabPage3.BackColor = Color.White;
+            tabPage3.BackColor = Color.Azure;
             tabPage3.Controls.Add(sessionData);
             tabPage3.Controls.Add(panel1);
+            tabPage3.ForeColor = Color.DarkCyan;
             tabPage3.Location = new Point(4, 4);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(618, 292);
+            tabPage3.Size = new Size(934, 481);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Sessions";
             // 
             // sessionData
             // 
-            sessionData.BackgroundColor = Color.White;
+            sessionData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            sessionData.BackgroundColor = Color.Azure;
+            sessionData.BorderStyle = BorderStyle.None;
+            sessionData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             sessionData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            sessionData.Location = new Point(12, 6);
+            sessionData.Location = new Point(92, 58);
             sessionData.Name = "sessionData";
-            sessionData.Size = new Size(586, 224);
+            sessionData.Size = new Size(775, 252);
             sessionData.TabIndex = 7;
-            
             sessionData.CellBeginEdit += sessionData_CellBeginEdit;
             // 
             // panel1
             // 
             panel1.Controls.Add(DeleteRecordBtn);
             panel1.Controls.Add(EditRecordBtn);
-            panel1.Location = new Point(6, 236);
+            panel1.Location = new Point(194, 349);
             panel1.Name = "panel1";
             panel1.Size = new Size(592, 50);
             panel1.TabIndex = 6;
             // 
             // DeleteRecordBtn
             // 
-            DeleteRecordBtn.BackColor = Color.Indigo;
+            DeleteRecordBtn.BackColor = Color.DarkCyan;
             DeleteRecordBtn.ForeColor = Color.White;
             DeleteRecordBtn.Location = new Point(487, 7);
             DeleteRecordBtn.Name = "DeleteRecordBtn";
@@ -106,7 +109,7 @@
             // 
             // EditRecordBtn
             // 
-            EditRecordBtn.BackColor = Color.Indigo;
+            EditRecordBtn.BackColor = Color.DarkCyan;
             EditRecordBtn.ForeColor = Color.White;
             EditRecordBtn.Location = new Point(395, 7);
             EditRecordBtn.Name = "EditRecordBtn";
@@ -118,7 +121,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.BackColor = Color.White;
+            tabPage2.BackColor = Color.Azure;
             tabPage2.Controls.Add(dateSession);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(Date);
@@ -130,21 +133,21 @@
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(618, 292);
+            tabPage2.Size = new Size(934, 481);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Add";
             // 
             // dateSession
             // 
-            dateSession.Location = new Point(314, 146);
+            dateSession.Location = new Point(527, 184);
             dateSession.Name = "dateSession";
             dateSession.Size = new Size(200, 23);
             dateSession.TabIndex = 36;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.Indigo;
-            panel3.Location = new Point(314, 175);
+            panel3.BackColor = Color.DarkCyan;
+            panel3.Location = new Point(527, 213);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 2);
             panel3.TabIndex = 33;
@@ -153,8 +156,8 @@
             // 
             Date.AutoSize = true;
             Date.Font = new Font("Segoe UI", 12F);
-            Date.ForeColor = Color.Indigo;
-            Date.Location = new Point(314, 104);
+            Date.ForeColor = Color.DarkCyan;
+            Date.Location = new Point(527, 142);
             Date.Name = "Date";
             Date.Size = new Size(59, 21);
             Date.TabIndex = 34;
@@ -163,9 +166,10 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Azure;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label5.ForeColor = Color.Indigo;
-            label5.Location = new Point(226, 16);
+            label5.ForeColor = Color.DarkCyan;
+            label5.Location = new Point(359, 54);
             label5.Name = "label5";
             label5.Size = new Size(126, 28);
             label5.TabIndex = 29;
@@ -173,9 +177,9 @@
             // 
             // addRecordBtn
             // 
-            addRecordBtn.BackColor = Color.Indigo;
+            addRecordBtn.BackColor = Color.DarkCyan;
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(215, 233);
+            addRecordBtn.Location = new Point(359, 282);
             addRecordBtn.Name = "addRecordBtn";
             addRecordBtn.Size = new Size(133, 42);
             addRecordBtn.TabIndex = 28;
@@ -187,15 +191,15 @@
             // 
             subjectCombobox.FlatStyle = FlatStyle.Flat;
             subjectCombobox.FormattingEnabled = true;
-            subjectCombobox.Location = new Point(37, 143);
+            subjectCombobox.Location = new Point(89, 187);
             subjectCombobox.Name = "subjectCombobox";
             subjectCombobox.Size = new Size(200, 23);
             subjectCombobox.TabIndex = 27;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.Indigo;
-            panel4.Location = new Point(37, 175);
+            panel4.BackColor = Color.DarkCyan;
+            panel4.Location = new Point(89, 219);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 2);
             panel4.TabIndex = 21;
@@ -204,8 +208,8 @@
             // 
             ClassIDcb.AutoSize = true;
             ClassIDcb.Font = new Font("Segoe UI", 12F);
-            ClassIDcb.ForeColor = Color.Indigo;
-            ClassIDcb.Location = new Point(37, 111);
+            ClassIDcb.ForeColor = Color.DarkCyan;
+            ClassIDcb.Location = new Point(89, 142);
             ClassIDcb.Name = "ClassIDcb";
             ClassIDcb.Size = new Size(83, 21);
             ClassIDcb.TabIndex = 23;
@@ -220,39 +224,44 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(626, 320);
+            tabControl1.Size = new Size(942, 509);
             tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = Color.White;
+            tabPage1.BackColor = Color.Azure;
             tabPage1.Controls.Add(stdSessionData);
             tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(sessionIDText);
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(label1);
+            tabPage1.ForeColor = Color.DarkCyan;
             tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(618, 292);
+            tabPage1.Size = new Size(934, 481);
             tabPage1.TabIndex = 3;
             tabPage1.Text = "Students In Session";
             // 
             // stdSessionData
             // 
-            stdSessionData.BackgroundColor = Color.White;
+            stdSessionData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            stdSessionData.BackgroundColor = Color.Azure;
+            stdSessionData.BorderStyle = BorderStyle.None;
+            stdSessionData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             stdSessionData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             stdSessionData.EditMode = DataGridViewEditMode.EditProgrammatically;
-            stdSessionData.Location = new Point(20, 62);
+            stdSessionData.Location = new Point(70, 144);
             stdSessionData.Name = "stdSessionData";
-            stdSessionData.Size = new Size(586, 224);
+            stdSessionData.Size = new Size(786, 255);
             stdSessionData.TabIndex = 32;
             // 
             // button1
             // 
-            button1.BackColor = Color.Indigo;
+            button1.BackColor = Color.DarkCyan;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(391, 11);
+            button1.Location = new Point(522, 69);
             button1.Name = "button1";
             button1.Size = new Size(133, 42);
             button1.TabIndex = 31;
@@ -264,15 +273,15 @@
             // 
             sessionIDText.FlatStyle = FlatStyle.Flat;
             sessionIDText.FormattingEnabled = true;
-            sessionIDText.Location = new Point(118, 18);
+            sessionIDText.Location = new Point(249, 76);
             sessionIDText.Name = "sessionIDText";
             sessionIDText.Size = new Size(200, 23);
             sessionIDText.TabIndex = 30;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Indigo;
-            panel2.Location = new Point(118, 47);
+            panel2.BackColor = Color.DarkCyan;
+            panel2.Location = new Point(249, 105);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 2);
             panel2.TabIndex = 28;
@@ -281,8 +290,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.ForeColor = Color.Indigo;
-            label1.Location = new Point(20, 20);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(151, 78);
             label1.Name = "label1";
             label1.Size = new Size(85, 21);
             label1.TabIndex = 29;
@@ -292,9 +301,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Azure;
             Controls.Add(tabControl1);
+            ForeColor = Color.DarkCyan;
             Name = "attendanceMangement";
-            Size = new Size(637, 323);
+            Size = new Size(942, 501);
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)sessionData).EndInit();
             panel1.ResumeLayout(false);
