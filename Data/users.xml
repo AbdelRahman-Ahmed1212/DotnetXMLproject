@@ -2,7 +2,7 @@
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="userValidate.xsd">
   <user>
     <id>1</id>
-    <name>John Doe</name>
+    <name>ali</name>
     <userName>ali</userName>
     <password>123</password>
     <role>Admin</role>
@@ -14,6 +14,13 @@
     <password>alice456</password>
     <role>Teacher</role>
   </user>
+	<user>
+		<id>9</id>
+		<name>amr</name>
+		<userName>amr</userName>
+		<password>abc</password>
+		<role>Student</role>
+	</user>
   <user>
     <id>3</id>
     <name>Bob Johnson</name>
@@ -101,20 +108,20 @@
   <user>
     <id>21</id>
     <name>smsm</name>
-    <userName>smsmmm</userName>
+    <userName>smsm</userName>
     <password>123</password>
-    <role>Teacher</role>
+    <role>Student</role>
   </user>
   <user>
     <id>23</id>
-    <name>asmao</name>
-    <userName>asmao</userName>
+    <name>asmaa</name>
+    <userName>asmaa</userName>
     <password>12345</password>
-    <role>Teacher</role>
+    <role>Student</role>
   </user>
   <user>
     <id>24</id>
-    <name>uuu</name>
+    <name>ppp</name>
     <userName>ppp</userName>
     <password>123</password>
     <role>Student</role>

@@ -244,7 +244,6 @@
             teacher_classesv1.Name = "teacher_classesv1";
             teacher_classesv1.Size = new Size(942, 595);
             teacher_classesv1.TabIndex = 0;
-            teacher_classesv1.Load += teacher_classesv1_Load;
             // 
             // Teacher
             // 

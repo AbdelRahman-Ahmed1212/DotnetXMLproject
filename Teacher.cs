@@ -39,6 +39,7 @@ namespace DotnetXmlProject
 
         private void TchClassesbutton_Click(object sender, EventArgs e)
         {
+            teacher_classesv1.BringToFront();
             teacher_classesv1.Visible=true;
             MoveSidePanel(TchClassesbutton);
 
@@ -46,7 +47,10 @@ namespace DotnetXmlProject
 
         private void TchAttendencebutton_Click(object sender, EventArgs e)
         {
-
+            editAttendence editAttendence = new editAttendence();
+            editAttendence.Dock = DockStyle.Fill;
+            this.Controls.Add(editAttendence);
+            editAttendence.BringToFront();
             MoveSidePanel(TchAttendencebutton);
         }
 

@@ -163,6 +163,16 @@ namespace DotnetXmlProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reseticon1 {
+            get {
+                object obj = ResourceManager.GetObject("reseticon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("search-removebg-preview", resourceCulture);

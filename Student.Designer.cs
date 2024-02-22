@@ -263,7 +263,6 @@
             // 
             reserbtn.BackColor = Color.White;
             reserbtn.Cursor = Cursors.Hand;
-            reserbtn.Image = Properties.Resources.reseticon;
             resources.ApplyResources(reserbtn, "reserbtn");
             reserbtn.Name = "reserbtn";
             reserbtn.UseVisualStyleBackColor = false;

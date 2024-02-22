@@ -120,6 +120,7 @@ namespace DotnetXmlProject
 
         private void reserbtn_Click(object sender, EventArgs e)
         {
+            searchBox.Text = "";
             DisplayStudentStatus(userName);
         }
     }

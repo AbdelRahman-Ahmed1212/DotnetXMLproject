@@ -33,31 +33,27 @@
             tabPage2 = new TabPage();
             addstdbtn = new Button();
             panel4 = new Panel();
-            textBox3 = new TextBox();
+            textBoxstatus = new TextBox();
             Statuslabel = new Label();
             panel3 = new Panel();
-            textBox2 = new TextBox();
+            textBoxdate = new TextBox();
             stdPasslabel = new Label();
             panel2 = new Panel();
-            textBox1 = new TextBox();
+            textBoxclass = new TextBox();
             classlabel = new Label();
             panel1 = new Panel();
             textBoxstdName = new TextBox();
             stdNameLabel = new Label();
             tabcontroleaddstd = new TabPage();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             searchpictureBox = new PictureBox();
             panel6 = new Panel();
             label6 = new Label();
             displayClassbtn = new Button();
             panel5 = new Panel();
-            textBox4 = new TextBox();
+            classIdtextBox = new TextBox();
             label5 = new Label();
-            textBox5 = new TextBox();
+            serchtextBox = new TextBox();
             editeStudents.SuspendLayout();
             tabPage2.SuspendLayout();
             tabcontroleaddstd.SuspendLayout();
@@ -94,13 +90,13 @@
             tabPage2.BackgroundImageLayout = ImageLayout.None;
             tabPage2.Controls.Add(addstdbtn);
             tabPage2.Controls.Add(panel4);
-            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(textBoxstatus);
             tabPage2.Controls.Add(Statuslabel);
             tabPage2.Controls.Add(panel3);
-            tabPage2.Controls.Add(textBox2);
+            tabPage2.Controls.Add(textBoxdate);
             tabPage2.Controls.Add(stdPasslabel);
             tabPage2.Controls.Add(panel2);
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(textBoxclass);
             tabPage2.Controls.Add(classlabel);
             tabPage2.Controls.Add(panel1);
             tabPage2.Controls.Add(textBoxstdName);
@@ -124,6 +120,7 @@
             addstdbtn.TabIndex = 15;
             addstdbtn.Text = "Add";
             addstdbtn.UseVisualStyleBackColor = false;
+            addstdbtn.Click += addstdbtn_Click;
             // 
             // panel4
             // 
@@ -133,13 +130,13 @@
             panel4.Size = new Size(270, 2);
             panel4.TabIndex = 14;
             // 
-            // textBox3
+            // textBoxstatus
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(547, 231);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(270, 20);
-            textBox3.TabIndex = 13;
+            textBoxstatus.BorderStyle = BorderStyle.None;
+            textBoxstatus.Location = new Point(547, 231);
+            textBoxstatus.Name = "textBoxstatus";
+            textBoxstatus.Size = new Size(270, 20);
+            textBoxstatus.TabIndex = 13;
             // 
             // Statuslabel
             // 
@@ -158,22 +155,22 @@
             panel3.Size = new Size(270, 2);
             panel3.TabIndex = 11;
             // 
-            // textBox2
+            // textBoxdate
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(114, 231);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(270, 20);
-            textBox2.TabIndex = 10;
+            textBoxdate.BorderStyle = BorderStyle.None;
+            textBoxdate.Location = new Point(114, 231);
+            textBoxdate.Name = "textBoxdate";
+            textBoxdate.Size = new Size(270, 20);
+            textBoxdate.TabIndex = 10;
             // 
             // stdPasslabel
             // 
             stdPasslabel.AutoSize = true;
             stdPasslabel.Location = new Point(115, 208);
             stdPasslabel.Name = "stdPasslabel";
-            stdPasslabel.Size = new Size(72, 20);
+            stdPasslabel.Size = new Size(39, 20);
             stdPasslabel.TabIndex = 9;
-            stdPasslabel.Text = "password";
+            stdPasslabel.Text = "date";
             // 
             // panel2
             // 
@@ -183,14 +180,14 @@
             panel2.Size = new Size(270, 2);
             panel2.TabIndex = 8;
             // 
-            // textBox1
+            // textBoxclass
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(547, 141);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(270, 20);
-            textBox1.TabIndex = 7;
+            textBoxclass.BackColor = Color.White;
+            textBoxclass.BorderStyle = BorderStyle.None;
+            textBoxclass.Location = new Point(547, 141);
+            textBoxclass.Name = "textBoxclass";
+            textBoxclass.Size = new Size(270, 20);
+            textBoxclass.TabIndex = 7;
             // 
             // classlabel
             // 
@@ -236,9 +233,9 @@
             tabcontroleaddstd.Controls.Add(label6);
             tabcontroleaddstd.Controls.Add(displayClassbtn);
             tabcontroleaddstd.Controls.Add(panel5);
-            tabcontroleaddstd.Controls.Add(textBox4);
+            tabcontroleaddstd.Controls.Add(classIdtextBox);
             tabcontroleaddstd.Controls.Add(label5);
-            tabcontroleaddstd.Controls.Add(textBox5);
+            tabcontroleaddstd.Controls.Add(serchtextBox);
             tabcontroleaddstd.Location = new Point(4, 4);
             tabcontroleaddstd.Name = "tabcontroleaddstd";
             tabcontroleaddstd.Padding = new Padding(3);
@@ -255,7 +252,6 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             dataGridView1.Location = new Point(31, 131);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -266,34 +262,6 @@
             dataGridView1.Size = new Size(872, 318);
             dataGridView1.TabIndex = 11;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "Id";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Name";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Class";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Status";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
             // searchpictureBox
             // 
             searchpictureBox.Image = Properties.Resources.search_removebg_preview;
@@ -303,6 +271,7 @@
             searchpictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             searchpictureBox.TabIndex = 10;
             searchpictureBox.TabStop = false;
+            searchpictureBox.Click += searchpictureBox_Click;
             // 
             // panel6
             // 
@@ -339,13 +308,13 @@
             panel5.Size = new Size(270, 2);
             panel5.TabIndex = 5;
             // 
-            // textBox4
+            // classIdtextBox
             // 
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Location = new Point(94, 66);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(270, 20);
-            textBox4.TabIndex = 4;
+            classIdtextBox.BorderStyle = BorderStyle.None;
+            classIdtextBox.Location = new Point(94, 66);
+            classIdtextBox.Name = "classIdtextBox";
+            classIdtextBox.Size = new Size(270, 20);
+            classIdtextBox.TabIndex = 4;
             // 
             // label5
             // 
@@ -356,13 +325,13 @@
             label5.TabIndex = 3;
             label5.Text = "class Id";
             // 
-            // textBox5
+            // serchtextBox
             // 
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.Location = new Point(587, 66);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(270, 20);
-            textBox5.TabIndex = 8;
+            serchtextBox.BorderStyle = BorderStyle.None;
+            serchtextBox.Location = new Point(587, 66);
+            serchtextBox.Name = "serchtextBox";
+            serchtextBox.Size = new Size(270, 20);
+            serchtextBox.TabIndex = 8;
             // 
             // teacher_classesv
             // 
@@ -391,24 +360,24 @@
         private TabPage tabcontroleaddstd;
         private TabPage tabPage2;
         private Panel panel3;
-        private TextBox textBox2;
+        private TextBox textBoxdate;
         private Label stdPasslabel;
         private Panel panel2;
-        private TextBox textBox1;
+        private TextBox textBoxclass;
         private Label classlabel;
         private Panel panel1;
         private TextBox textBoxstdName;
         private Label stdNameLabel;
         private Button addstdbtn;
         private Panel panel4;
-        private TextBox textBox3;
+        private TextBox textBoxstatus;
         private Label Statuslabel;
         private Panel panel5;
-        private TextBox textBox4;
+        private TextBox classIdtextBox;
         private Label label5;
         private Button displayClassbtn;
         private Panel panel6;
-        private TextBox textBox5;
+        private TextBox serchtextBox;
         private Label label6;
         private DataGridView dataGridView1;
         private PictureBox searchpictureBox;
