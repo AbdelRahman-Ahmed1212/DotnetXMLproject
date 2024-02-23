@@ -29,14 +29,7 @@
         private void InitializeComponent()
         {
             displayClassbtn = new Button();
-            panel5 = new Panel();
-            classIdtextBox = new TextBox();
-            serchtextBox = new TextBox();
             editAttendancedataGridView = new DataGridView();
-            searchpictureBox = new PictureBox();
-            panel6 = new Panel();
-            label6 = new Label();
-            label5 = new Label();
             tabPage2 = new TabPage();
             EditeAttendencebtn = new Button();
             displaytoeditbtn = new Button();
@@ -45,7 +38,6 @@
             editStudents = new TabControl();
             tabcontroleaddstd = new TabPage();
             ((System.ComponentModel.ISupportInitialize)editAttendancedataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)searchpictureBox).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)editeAttendencdataGridView).BeginInit();
             editStudents.SuspendLayout();
@@ -54,37 +46,14 @@
             // 
             // displayClassbtn
             // 
-            displayClassbtn.Location = new Point(382, 66);
+            displayClassbtn.BackColor = Color.Aqua;
+            displayClassbtn.Location = new Point(31, 62);
             displayClassbtn.Name = "displayClassbtn";
             displayClassbtn.Size = new Size(74, 29);
             displayClassbtn.TabIndex = 6;
             displayClassbtn.Text = "Display";
-            displayClassbtn.UseVisualStyleBackColor = true;
+            displayClassbtn.UseVisualStyleBackColor = false;
             displayClassbtn.Click += displayClassbtn_Click_1;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Gray;
-            panel5.Location = new Point(94, 91);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(270, 2);
-            panel5.TabIndex = 5;
-            // 
-            // classIdtextBox
-            // 
-            classIdtextBox.BorderStyle = BorderStyle.None;
-            classIdtextBox.Location = new Point(94, 66);
-            classIdtextBox.Name = "classIdtextBox";
-            classIdtextBox.Size = new Size(270, 20);
-            classIdtextBox.TabIndex = 4;
-            // 
-            // serchtextBox
-            // 
-            serchtextBox.BorderStyle = BorderStyle.None;
-            serchtextBox.Location = new Point(587, 66);
-            serchtextBox.Name = "serchtextBox";
-            serchtextBox.Size = new Size(270, 20);
-            serchtextBox.TabIndex = 8;
             // 
             // editAttendancedataGridView
             // 
@@ -103,42 +72,6 @@
             editAttendancedataGridView.ShowRowErrors = false;
             editAttendancedataGridView.Size = new Size(872, 318);
             editAttendancedataGridView.TabIndex = 11;
-            // 
-            // searchpictureBox
-            // 
-            searchpictureBox.Image = Properties.Resources.search_removebg_preview;
-            searchpictureBox.Location = new Point(835, 66);
-            searchpictureBox.Name = "searchpictureBox";
-            searchpictureBox.Size = new Size(19, 26);
-            searchpictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            searchpictureBox.TabIndex = 10;
-            searchpictureBox.TabStop = false;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Gray;
-            panel6.Location = new Point(587, 91);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(270, 2);
-            panel6.TabIndex = 9;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(590, 46);
-            label6.Name = "label6";
-            label6.Size = new Size(77, 20);
-            label6.TabIndex = 7;
-            label6.Text = "Student Id";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(97, 46);
-            label5.Name = "label5";
-            label5.Size = new Size(57, 20);
-            label5.TabIndex = 3;
-            label5.Text = "class Id";
             // 
             // tabPage2
             // 
@@ -213,14 +146,7 @@
             // 
             tabcontroleaddstd.BackColor = Color.White;
             tabcontroleaddstd.Controls.Add(editAttendancedataGridView);
-            tabcontroleaddstd.Controls.Add(searchpictureBox);
-            tabcontroleaddstd.Controls.Add(panel6);
-            tabcontroleaddstd.Controls.Add(label6);
             tabcontroleaddstd.Controls.Add(displayClassbtn);
-            tabcontroleaddstd.Controls.Add(panel5);
-            tabcontroleaddstd.Controls.Add(classIdtextBox);
-            tabcontroleaddstd.Controls.Add(label5);
-            tabcontroleaddstd.Controls.Add(serchtextBox);
             tabcontroleaddstd.Location = new Point(4, 4);
             tabcontroleaddstd.Name = "tabcontroleaddstd";
             tabcontroleaddstd.Padding = new Padding(3);
@@ -237,12 +163,10 @@
             Name = "editAttendence";
             Size = new Size(1001, 693);
             ((System.ComponentModel.ISupportInitialize)editAttendancedataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)searchpictureBox).EndInit();
             tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)editeAttendencdataGridView).EndInit();
             editStudents.ResumeLayout(false);
             tabcontroleaddstd.ResumeLayout(false);
-            tabcontroleaddstd.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -250,14 +174,7 @@
         #endregion
 
         private Button displayClassbtn;
-        private Panel panel5;
-        private TextBox classIdtextBox;
-        private TextBox serchtextBox;
         private DataGridView editAttendancedataGridView;
-        private PictureBox searchpictureBox;
-        private Panel panel6;
-        private Label label6;
-        private Label label5;
         private TabPage tabPage2;
         private ToolStrip toolbtn;
         public TabControl editStudents;

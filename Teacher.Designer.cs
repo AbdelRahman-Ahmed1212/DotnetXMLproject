@@ -57,7 +57,7 @@
             // 
             // TchpanelSide
             // 
-            TchpanelSide.BackColor = Color.PeachPuff;
+            TchpanelSide.BackColor = Color.DarkCyan;
             TchpanelSide.Controls.Add(panel6);
             TchpanelSide.Controls.Add(panel4);
             TchpanelSide.Controls.Add(panel1);
@@ -178,7 +178,7 @@
             // 
             // TchPanelTop
             // 
-            TchPanelTop.BackColor = Color.DarkSalmon;
+            TchPanelTop.BackColor = Color.DarkCyan;
             TchPanelTop.Controls.Add(Logoutbutton);
             TchPanelTop.Controls.Add(rolelabel);
             TchPanelTop.Controls.Add(usernamelabel);
