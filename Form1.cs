@@ -33,13 +33,16 @@ namespace DotnetXmlProject
         {
             var username = textBox1.Text;
             var password = textBox2.Text;
+            
+            Admin.username = username;
 
             using (var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml"))
             {
                 var Doc = XElement.Load(reader);
 
                 var user = Doc.Elements()
-                              .Where(item => (string)item.Element("userName") == username)
+                              .Where(item => (string)item.Element("username") == username)
+
                               .FirstOrDefault();
 
                 if (user != null)
@@ -66,10 +69,11 @@ namespace DotnetXmlProject
                             case "Teacher":
                                 Teacher teacher = new Teacher(textBox1.Text,"Teacher");
                                 teacher.Show();
-                                teacher.userName = textBox1.Text; // Assign username to Teacher instance
+                                teacher.userName = textBox1.Text; 
                                 teacher.role = "Teacher";
-                                editAttendence editAttendence = new editAttendence(textBox1.Text); // Create instance of editAttendence
-                                editAttendence.userName = textBox1.Text; // Assign username to editAttendence instance
+                                editAttendence editAttendence = new editAttendence(textBox1.Text);
+                                editAttendence.userName = textBox1.Text; 
+
                                 break;
 
                         }

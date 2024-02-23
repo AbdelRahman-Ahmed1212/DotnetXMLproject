@@ -1,6 +1,7 @@
 ﻿using DotnetXmlProject.adminUserControl;
 using DotnetXmlProject.Classes;
 using DotnetXmlProject.studentTeacherUserControl;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace DotnetXmlProject
             this.userName = userName;
             this.role = role;
 
+
         }
 
 
@@ -32,6 +34,7 @@ namespace DotnetXmlProject
             teacher_classesv1.Visible = false;
             usernamelabel.Text = userName;
             rolelabel.Text = role;
+
         }
        
         private void MoveSidePanel(Control button)

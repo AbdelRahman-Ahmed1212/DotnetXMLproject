@@ -70,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)searchbtn).BeginInit();
             SuspendLayout();
             // 
+
             // panel4
             // 
             panel4.Controls.Add(stdSmallSidePanel);
@@ -89,6 +90,7 @@
             stdAttendencebtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(stdAttendencebtn, "stdAttendencebtn");
             stdAttendencebtn.Image = Properties.Resources.attendenceIcon_1;
+
             stdAttendencebtn.Name = "stdAttendencebtn";
             stdAttendencebtn.UseVisualStyleBackColor = true;
             stdAttendencebtn.Click += stdAttendencebtn_Click;
@@ -133,6 +135,7 @@
             resources.ApplyResources(applabel, "applabel");
             applabel.ForeColor = Color.White;
             applabel.Name = "applabel";
+
             // 
             // pictureBox1
             // 
@@ -209,13 +212,14 @@
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
+
             // panel3
             // 
             panel3.BackColor = Color.DarkCyan;
             panel3.Controls.Add(button1);
             panel3.Controls.Add(stdroleNamelabel);
             panel3.Controls.Add(rolelabel);
+
             panel3.Controls.Add(stdusernamelabel);
             panel3.Controls.Add(stdwelcomlabel);
             resources.ApplyResources(panel3, "panel3");
@@ -267,6 +271,7 @@
             reserbtn.Name = "reserbtn";
             reserbtn.UseVisualStyleBackColor = false;
             reserbtn.Click += reserbtn_Click;
+
             // 
             // Student
             // 
@@ -299,8 +304,7 @@
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)stddataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)searchbtn).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+
         }
 
         #endregion
@@ -332,5 +336,7 @@
         private Label label6;
         private TextBox searchBox;
         private Button reserbtn;
+
+
     }
 }
