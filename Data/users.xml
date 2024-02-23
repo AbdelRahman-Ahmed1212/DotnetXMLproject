@@ -5,7 +5,7 @@
     <name>ali</name>
     <userName>ali</userName>
     <password>123</password>
-    <role>Admin</role>
+    <role>Teacher</role>
   </user>
   <user>
     <id>2</id>

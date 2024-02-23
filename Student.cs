@@ -53,14 +53,9 @@ namespace DotnetXmlProject
         }
         private void MoveSidePanel(Control button)
         {
-            // Calculate the new location relative to the parent control
             int newX = button.Location.X - button.Parent.Location.X;
             int newY = button.Location.Y - button.Parent.Location.Y;
-
-            // Adjust the Y coordinate based on your requirements (-180 in this case)
             newY -= 180;
-
-            // Set the new location for the panel
             stdSmallSidePanel.Location = new Point(newX, newY);
         }
 

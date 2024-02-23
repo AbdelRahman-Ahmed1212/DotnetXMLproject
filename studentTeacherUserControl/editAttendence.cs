@@ -16,8 +16,8 @@ namespace DotnetXmlProject.studentTeacherUserControl
 
     public partial class editAttendence : UserControl
     {
-        string sessionPath = "C:\\Users\\20115\\OneDrive\\Desktop\\x\\DotnetXMLproject\\Data\\Session.xml";
-        string usersPath = "C:\\Users\\20115\\OneDrive\\Desktop\\x\\DotnetXMLproject\\Data\\users.xml";
+        string sessionPath = "..\\..\\..\\Data\\Session.xml";
+        string usersPath = "..\\..\\..\\Data\\users.xml";
         public string userName;
 
         public editAttendence(string userName)
@@ -25,8 +25,13 @@ namespace DotnetXmlProject.studentTeacherUserControl
             InitializeComponent();
             //getTeacherId(userName);
             this.userName = userName;
+            var sreader = XmlReader.Create(sessionPath);
+            var sdoc = XElement.Load(sreader);
+            comboBox1.DataSource = sdoc.Elements().Where(x => x.Attribute("teacherID").Value == getTeacherId(userName))
+                                    .Select(x=>x.Attribute("date").Value).ToList();
+            sreader.Close();
         }
-
+        
 
         public string getTeacherId(string passedTeacher)
         {
@@ -45,7 +50,6 @@ namespace DotnetXmlProject.studentTeacherUserControl
                     {
                         string userId = idNode.InnerText;
                         return userId;
-                        //Console.WriteLine("User ID: " + userId);
                         break;
                     }
                 }
@@ -59,7 +63,8 @@ namespace DotnetXmlProject.studentTeacherUserControl
             using (var sessionReader = new FileStream(sessionPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 XDocument xmlDoc = XDocument.Load(sessionReader);
-                var attendanceRecords = xmlDoc.Root.Elements("Session")
+                var attendanceRecords = xmlDoc.Root.Elements("Session").Where(
+                        x=>x.Attribute("date").Value == comboBox1.SelectedValue)
                     .SelectMany(session => session.Elements("AttendenceRecord")
                         .Select(record => new
                         {
@@ -105,9 +110,10 @@ namespace DotnetXmlProject.studentTeacherUserControl
                 dataTable.Columns.Add("StudentName", typeof(string));
                 dataTable.Columns.Add("SessionId", typeof(int));
                 dataTable.Columns.Add("SessionDate", typeof(string));
-                dataTable.Columns.Add("Attended", typeof(bool)); // Boolean column for the checkbox
+                dataTable.Columns.Add("Attended", typeof(bool)); 
 
-                var attendanceRecords = xmlDoc.Root.Elements("Session")
+                var attendanceRecords = xmlDoc.Root.Elements("Session").Where(
+                        x => x.Attribute("date").Value == comboBox1.SelectedValue.ToString())
                     .SelectMany(session => session.Elements("AttendenceRecord")
                         .Select(record => new
                         {
@@ -115,33 +121,41 @@ namespace DotnetXmlProject.studentTeacherUserControl
                             StudentName = (string)record.Element("stdName"),
                             SessionId = (int)session.Attribute("id"),
                             SessionDate = (string)session.Attribute("date"),
-                            Status = (string)record.Element("status"), // Include status in the selection
+                            Status = (string)record.Element("status"), 
                             TeacherId = (string)session.Attribute("teacherID")
                         })).Where(record => record.TeacherId == TeacherId);
 
                 foreach (var record in attendanceRecords)
                 {
-                    bool attended = record.Status == "Present"; // Set checkbox value based on status
+                    bool attended = record.Status == "Present"; 
                     dataTable.Rows.Add(record.StudentId, record.StudentName, record.SessionId, record.SessionDate, attended);
                 }
 
                 editeAttendencdataGridView.DataSource = dataTable;
+
+                editeAttendencdataGridView.Columns["Attended"].HeaderText = "Attended";
+                editeAttendencdataGridView.Columns["Attended"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                editeAttendencdataGridView.Columns["Attended"].DefaultCellStyle.NullValue = false;
+                editeAttendencdataGridView.Columns["Attended"].ValueType = typeof(bool);
+                editeAttendencdataGridView.Columns["Attended"].Width = 80;
             }
         }
 
-
-        private void editAttendancedataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void EditeAttendencebtn_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == editAttendancedataGridView.Columns["Attended"].Index)
+            foreach (DataGridViewRow row in editeAttendencdataGridView.Rows)
             {
-                DataGridViewCheckBoxCell cell = (DataGridViewCheckBoxCell)editAttendancedataGridView.Rows[e.RowIndex].Cells["Attended"];
-                bool isChecked = (bool)cell.Value;
+                if (row.Cells["studentId"].Value == null) { 
+                break;
+                }
+                int studentId = (int)row.Cells["StudentId"].Value;
+                int sessionId = (int)row.Cells["SessionId"].Value;
+                bool attended = (bool)row.Cells["Attended"].Value;
 
-                int studentId = (int)editAttendancedataGridView.Rows[e.RowIndex].Cells["StudentId"].Value;
-                int sessionId = (int)editAttendancedataGridView.Rows[e.RowIndex].Cells["SessionId"].Value;
-
-                UpdateAttendanceInXml(studentId, sessionId, isChecked);
+                UpdateAttendanceInXml(studentId, sessionId, attended);
             }
+
+            MessageBox.Show("Attendance records updated successfully.");
         }
 
         private void UpdateAttendanceInXml(int studentId, int sessionId, bool attended)
@@ -165,16 +179,11 @@ namespace DotnetXmlProject.studentTeacherUserControl
 
         private void displaytoeditbtn_Click(object sender, EventArgs e)
         {
-            string passedTeacherId = getTeacherId(userName);
-            DisplayStudentStatustoEdit(passedTeacherId);
+            string passedId = getTeacherId(userName);
+            DisplayStudentStatustoEdit(passedId);
         }
 
-        private void EditeAttendencebtn_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-
+       
     }
 }
 

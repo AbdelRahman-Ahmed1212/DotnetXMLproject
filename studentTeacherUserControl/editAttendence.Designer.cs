@@ -37,6 +37,8 @@
             toolbtn = new ToolStrip();
             editStudents = new TabControl();
             tabcontroleaddstd = new TabPage();
+            comboBox1 = new ComboBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)editAttendancedataGridView).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)editeAttendencdataGridView).BeginInit();
@@ -77,6 +79,8 @@
             // 
             tabPage2.BackColor = Color.White;
             tabPage2.BackgroundImageLayout = ImageLayout.None;
+            tabPage2.Controls.Add(label1);
+            tabPage2.Controls.Add(comboBox1);
             tabPage2.Controls.Add(EditeAttendencebtn);
             tabPage2.Controls.Add(displaytoeditbtn);
             tabPage2.Controls.Add(editeAttendencdataGridView);
@@ -101,7 +105,7 @@
             // displaytoeditbtn
             // 
             displaytoeditbtn.BackColor = Color.DeepSkyBlue;
-            displaytoeditbtn.Location = new Point(395, 26);
+            displaytoeditbtn.Location = new Point(433, 26);
             displaytoeditbtn.Name = "displaytoeditbtn";
             displaytoeditbtn.Size = new Size(94, 29);
             displaytoeditbtn.TabIndex = 1;
@@ -154,6 +158,23 @@
             tabcontroleaddstd.TabIndex = 0;
             tabcontroleaddstd.Text = "show students";
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(238, 27);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(104, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(128, 20);
+            label1.TabIndex = 4;
+            label1.Text = "available Sessions";
+            // 
             // editAttendence
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -164,6 +185,7 @@
             Size = new Size(1001, 693);
             ((System.ComponentModel.ISupportInitialize)editAttendancedataGridView).EndInit();
             tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)editeAttendencdataGridView).EndInit();
             editStudents.ResumeLayout(false);
             tabcontroleaddstd.ResumeLayout(false);
@@ -182,5 +204,7 @@
         private Button EditeAttendencebtn;
         private Button displaytoeditbtn;
         private DataGridView editeAttendencdataGridView;
+        private Label label1;
+        private ComboBox comboBox1;
     }
 }

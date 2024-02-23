@@ -4,43 +4,75 @@
     <AttendenceRecord>
       <stdid>27</stdid>
       <stdName>Ahmed</stdName>
-      <status>not Asssigned</status>
-    </AttendenceRecord>
-		/////
-        <AttendenceRecord><stdid>1</stdid><stdName>Ali</stdName><status>not Asssigned</status></AttendenceRecord>
-		/////
-        <AttendenceRecord><stdid>7</stdid><stdName>Kamil</stdName><status>absent</status></AttendenceRecord>
-		/////
-		<AttendenceRecord><stdid>6</stdid><stdName>mai</stdName><status>present</status></AttendenceRecord>
-		/////
-		<AttendenceRecord><stdid>5</stdid><stdName>mahmoud</stdName><status>present</status></AttendenceRecord>
-		/////
-		<AttendenceRecord><stdid>3</stdid><stdName>bob</stdName><status>present</status></AttendenceRecord><AttendenceRecord><stdid>9</stdid><stdName>amr</stdName><status>present</status><date>12/12/2024</date></AttendenceRecord><AttendenceRecord><stdid>9</stdid><stdName>amr</stdName><status>present</status><date>1/1/2024</date></AttendenceRecord><AttendenceRecord date=""><stdid>9</stdid><stdName>amr</stdName><status></status></AttendenceRecord></Session>
-  <Session id="2" date="24/12/2024" class="A" teacherID="1">
-    <AttendenceRecord>
-      <stdid>27</stdid>
-      <stdName>Ahmed</stdName>
-      <status>not Asssigned</status>
+      <status>Present</status>
     </AttendenceRecord>
     <AttendenceRecord>
-      <stdid>6</stdid>
+      <stdid>1</stdid>
       <stdName>Ali</stdName>
-      <status>not Asssigned</status>
+      <status>Present</status>
     </AttendenceRecord>
     <AttendenceRecord>
       <stdid>7</stdid>
       <stdName>Kamil</stdName>
-      <status>not Asssigned</status>
+      <status>Present</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>6</stdid>
+      <stdName>mai</stdName>
+      <status>Present</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>5</stdid>
+      <stdName>mahmoud</stdName>
+      <status>Present</status>
     </AttendenceRecord>
     <AttendenceRecord>
       <stdid>3</stdid>
       <stdName>bob</stdName>
-      <status>abbscent</status>
+      <status>Absent</status>
     </AttendenceRecord>
-		///
-		<AttendenceRecord><stdid>23</stdid><stdName>asmaa</stdName><status>present</status></AttendenceRecord>
-		///
-		<AttendenceRecord><stdid>24</stdid><stdName>ppp</stdName><status>present</status></AttendenceRecord>
-		///
-		<AttendenceRecord><stdid>21</stdid><stdName>smsm</stdName><status>absent</status></AttendenceRecord></Session>
+    <AttendenceRecord>
+      <stdid>9</stdid>
+      <stdName>amr</stdName>
+      <status>Present</status>
+      <date>1/1/2024</date>
+    </AttendenceRecord>
+  </Session>
+  <Session id="2" date="24/12/2024" class="A" teacherID="26">
+    <AttendenceRecord>
+      <stdid>27</stdid>
+      <stdName>Ahmed</stdName>
+      <status>Absent</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>6</stdid>
+      <stdName>Ali</stdName>
+      <status>Absent</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>7</stdid>
+      <stdName>Kamil</stdName>
+      <status>Absent</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>3</stdid>
+      <stdName>bob</stdName>
+      <status>Absent</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>23</stdid>
+      <stdName>asmaa</stdName>
+      <status>Absent</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>24</stdid>
+      <stdName>ppp</stdName>
+      <status>Absent</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>21</stdid>
+      <stdName>smsm</stdName>
+      <status>Absent</status>
+    </AttendenceRecord>
+  </Session>
 </Sessions>
