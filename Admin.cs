@@ -5,7 +5,6 @@ using Microsoft.VisualBasic.ApplicationServices;
 
 ﻿using DotnetXmlProject.Classes;
 
-using User = DotnetXmlProject.Classes.User;
 
 
 namespace DotnetXmlProject
@@ -78,6 +77,9 @@ namespace DotnetXmlProject
             test1.Visible = false;
 
             MovePanel(reportBtn);
+            classManagement1.Visible = false;
+            Reports r1 = new Reports();
+            r1.Show();
         }
 
        

@@ -34,11 +34,14 @@
             comboBox1 = new ComboBox();
             label2 = new Label();
             Generate = new Button();
+            label3 = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // radioButton1
             // 
             radioButton1.AutoSize = true;
+            radioButton1.Checked = true;
             radioButton1.Location = new Point(118, 33);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(56, 24);
@@ -46,7 +49,7 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "PDF";
             radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            radioButton1.CheckedChanged += changeMode;
             // 
             // radioButton2
             // 
@@ -55,7 +58,6 @@
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(71, 24);
             radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
             radioButton2.Text = "EXCEL";
             radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -87,18 +89,37 @@
             // 
             // Generate
             // 
-            Generate.Location = new Point(123, 108);
+            Generate.Location = new Point(123, 148);
             Generate.Name = "Generate";
             Generate.Size = new Size(137, 39);
             Generate.TabIndex = 5;
             Generate.Text = "Generate";
             Generate.UseVisualStyleBackColor = true;
+            Generate.Click += Generate_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 104);
+            label3.Name = "label3";
+            label3.Size = new Size(67, 20);
+            label3.TabIndex = 6;
+            label3.Text = "filename";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(109, 101);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(196, 27);
+            textBox1.TabIndex = 7;
             // 
             // GenerateReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(375, 199);
+            Controls.Add(textBox1);
+            Controls.Add(label3);
             Controls.Add(Generate);
             Controls.Add(label2);
             Controls.Add(comboBox1);
@@ -120,5 +141,7 @@
         private ComboBox comboBox1;
         private Label label2;
         private Button Generate;
+        private Label label3;
+        private TextBox textBox1;
     }
 }

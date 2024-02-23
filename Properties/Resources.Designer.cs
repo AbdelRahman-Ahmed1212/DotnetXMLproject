@@ -66,6 +66,7 @@ namespace DotnetXmlProject.Properties {
         internal static System.Drawing.Bitmap _new {
             get {
                 object obj = ResourceManager.GetObject("new", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,6 +87,7 @@ namespace DotnetXmlProject.Properties {
         internal static System.Drawing.Bitmap elearning {
             get {
                 object obj = ResourceManager.GetObject("elearning", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +98,7 @@ namespace DotnetXmlProject.Properties {
         internal static System.Drawing.Bitmap glass {
             get {
                 object obj = ResourceManager.GetObject("glass", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +109,7 @@ namespace DotnetXmlProject.Properties {
         internal static System.Drawing.Bitmap magnifie {
             get {
                 object obj = ResourceManager.GetObject("magnifie", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +180,7 @@ namespace DotnetXmlProject.Properties {
         internal static System.Drawing.Bitmap WhatsApp_Image_2024_02_22_at_14_05_35_3235499a {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2024-02-22 at 14.05.35_3235499a", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

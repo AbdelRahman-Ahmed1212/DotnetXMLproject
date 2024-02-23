@@ -31,73 +31,35 @@
     <password>bob789</password>
     <role>Teacher</role>
     <classes />
-  </teacher>
-  <!-- You can add more user, student, and teacher entries as needed -->
-  <teacher>
-    <id>15</id>
-    <email>asmaaaaa</email>
-    <username>asmaaaaa</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes>
-      <class>
-        <classID>11</classID>
-        <className>js</className>
-      </class>
-    </classes>
-  </teacher>
-  <teacher>
-    <id>16</id>
-    <email>smsma</email>
-    <username>smsma</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
-  <teacher>
-    <id>17</id>
-    <email>mahmoud</email>
-    <username>mahmoud</username>
-    <password>123</password>
-    <role>Teacher</role>
-    <classes />
-  </teacher>
+      <id>1</id>
+      <name>John Doe</name>
+      <email>john_doe</email>
+      <password>john123</password>
+      <role>Admin</role>
+  </user>
   <student>
-    <id>26</id>
-    <email>asasasas@gmail.com</email>
-    <username>asllll</username>
-    <password>123456789</password>
-    <role>Student</role>
-    <classes>
-      <class>
-        <classID>12</classID>
-        <className>sqlll</className>
-      </class>
-      <class>
-        <classID>13</classID>
-        <className>rrrrr</className>
-      </class>
-      <class>
-        <classID>14</classID>
-        <className>node js</className>
-      </class>
-      <class>
-        <classID>12</classID>
-        <className>sql</className>
-      </class>
-      <class>
-        <classID>8</classID>
-        <className>bbjk</className>
-      </class>
-    </classes>
-    <attendanceIds />
+      <id>2</id>
+      <name>Alice Smith</name>
+      <email>alice_smith</email>
+      <password>alice456</password>
+      <role>Student</role>
+      <classes>
+          <class>
+            <className>A</className>
+            <classID>1</classID>
+          </class>
+      </classes>
   </student>
   <teacher>
-    <id>27</id>
-    <email>opopopop@gmail.com</email>
-    <username>ppppp</username>
-    <password>123456789</password>
-    <role>Teacher</role>
-    <classes />
+      <id>3</id>
+      <name>Bob Johnson</name>
+      <email>bob_johnson</email>
+      <password>bob789</password>
+      <role>Teacher</role>
+      <classes>
+          <class>Math101</class>
+          <class>Chemistry101</class>
+      </classes>
   </teacher>
+  
 </Users>
