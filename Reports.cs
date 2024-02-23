@@ -43,18 +43,14 @@ namespace DotnetXmlProject
             // Clear existing columns and rows
             attendeceGrid.Columns.Clear();
             attendeceGrid.Rows.Clear();
-            classList.DataSource = classes.Elements().Select(c => c.Element("name")?.Value).ToList();
-            // Add columns to the DataGridView based on session dates
-            var selectedClass = classList.SelectedItem?.ToString();
-            var filteredSessions = sessions.Elements("Session")
-                .Where(session => session.Attribute("class")?.Value == selectedClass);
-
+            classList.DataSource = classes.Elements().Select(c => c.Element("name")?.Value.ToString()).ToList();
+            
             // Add columns to the DataGridView based on session dates
             attendeceGrid.Columns.Add("StudentName", "StudentName");
-           
+
             Dictionary<DateTime, int> columnIndexes = new Dictionary<DateTime, int>();
 
-            foreach (var session in filteredSessions)
+            foreach (var session in sessions.Elements("Session"))
             {
                 var sessionDate = DateTime.ParseExact(session.Attribute("date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
@@ -70,7 +66,7 @@ namespace DotnetXmlProject
             attendeceGrid.Columns.Add("AttendanceCount", "Attendance Count"); // New column for attendance count
 
             // Add rows to the DataGridView based on student attendance records
-            foreach (var session in filteredSessions)
+            foreach (var session in sessions.Elements("Session"))
             {
                 var sessionDate = DateTime.ParseExact(session.Attribute("date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
@@ -119,8 +115,7 @@ namespace DotnetXmlProject
                     }
                 }
             }
-
-            int lastRow = attendeceGrid.Rows.Add(); // Add a new row at the end
+           int lastRow = attendeceGrid.Rows.Add(); // Add a new row at the end
             for (int j = 2; j <= attendeceGrid.Columns.Count; j++)
             {
                 int totalCount = 0;
@@ -135,8 +130,7 @@ namespace DotnetXmlProject
                 }
 
                 attendeceGrid.Rows[lastRow].Cells[j - 1].Value = totalCount;
-            
-        }
+            }
 
         }
 

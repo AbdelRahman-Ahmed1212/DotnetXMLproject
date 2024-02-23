@@ -106,7 +106,6 @@
             classList.Name = "classList";
             classList.Size = new Size(151, 28);
             classList.TabIndex = 6;
-            classList.SelectedValueChanged += datePickerChanged;
             // 
             // label3
             // 
