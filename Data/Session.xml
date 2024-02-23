@@ -1,42 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Sessions  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocatio="./Session.xsd">
-    <Session id="1" date="12/12/2024" class="A1">
-        <AttendenceRecord>
-            <stdid>5</stdid>
-            <stdName>Ahmed</stdName>
-            <status>not Asssigned</status>
-        </AttendenceRecord>
-        <AttendenceRecord>
-            <stdid>6</stdid>
-            <stdName>Ali</stdName>
-            <status>not Asssigned</status>
-        </AttendenceRecord>
-        <AttendenceRecord>
-            <stdid>7</stdid>
-            <stdName>Kamil</stdName>
-            <status>not Asssigned</status>
-        </AttendenceRecord>
-    </Session>
-    <Session id="2" date="24/12/2024" class="A1">
-        <AttendenceRecord>
-            <stdid>5</stdid>
-            <stdName>Ahmed</stdName>
-            <status>not Asssigned</status>
-        </AttendenceRecord>
-        <AttendenceRecord>
-            <stdid>6</stdid>
-            <stdName>Ali</stdName>
-            <status>not Asssigned</status>
-        </AttendenceRecord>
-        <AttendenceRecord>
-            <stdid>7</stdid>
-            <stdName>said</stdName>
-            <status>not Asssigned</status>
-        </AttendenceRecord>
-		<AttendenceRecord>
-			<stdid>8</stdid>
-			<stdName>Kamil</stdName>
-			<status>not Asssigned</status>
-		</AttendenceRecord>
-    </Session>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sessions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocatio="./Session.xsd">
+  <Session id="1" date="12/12/2024" class="A" teacherID="26">
+    <AttendenceRecord>
+      <stdid>27</stdid>
+      <stdName>Ahmed</stdName>
+      <status>not Asssigned</status>
+    </AttendenceRecord>
+		/////
+        <AttendenceRecord><stdid>1</stdid><stdName>Ali</stdName><status>not Asssigned</status></AttendenceRecord>
+		/////
+        <AttendenceRecord><stdid>7</stdid><stdName>Kamil</stdName><status>absent</status></AttendenceRecord>
+		/////
+		<AttendenceRecord><stdid>6</stdid><stdName>mai</stdName><status>present</status></AttendenceRecord>
+		/////
+		<AttendenceRecord><stdid>5</stdid><stdName>mahmoud</stdName><status>present</status></AttendenceRecord>
+		/////
+		<AttendenceRecord><stdid>3</stdid><stdName>bob</stdName><status>present</status></AttendenceRecord><AttendenceRecord><stdid>9</stdid><stdName>amr</stdName><status>present</status><date>12/12/2024</date></AttendenceRecord><AttendenceRecord><stdid>9</stdid><stdName>amr</stdName><status>present</status><date>1/1/2024</date></AttendenceRecord><AttendenceRecord date=""><stdid>9</stdid><stdName>amr</stdName><status></status></AttendenceRecord></Session>
+  <Session id="2" date="24/12/2024" class="A" teacherID="1">
+    <AttendenceRecord>
+      <stdid>27</stdid>
+      <stdName>Ahmed</stdName>
+      <status>not Asssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>6</stdid>
+      <stdName>Ali</stdName>
+      <status>not Asssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>7</stdid>
+      <stdName>Kamil</stdName>
+      <status>not Asssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>3</stdid>
+      <stdName>bob</stdName>
+      <status>abbscent</status>
+    </AttendenceRecord>
+		///
+		<AttendenceRecord><stdid>23</stdid><stdName>asmaa</stdName><status>present</status></AttendenceRecord>
+		///
+		<AttendenceRecord><stdid>24</stdid><stdName>ppp</stdName><status>present</status></AttendenceRecord>
+		///
+		<AttendenceRecord><stdid>21</stdid><stdName>smsm</stdName><status>absent</status></AttendenceRecord></Session>
 </Sessions>
