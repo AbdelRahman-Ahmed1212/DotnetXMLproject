@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace DotnetXmlProject.Classes
 {
-    internal class stdClass
+    internal class classData
     {
-
-       public int id { set; get; }
+        public int id { set; get; }
         public int TeacherId { set; get; }
-        public int stdID { set; get; }
-        public string name {  set; get; }
+        public string name { set; get; }
     }
 }
