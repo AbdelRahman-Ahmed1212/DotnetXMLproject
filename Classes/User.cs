@@ -15,6 +15,7 @@ namespace DotnetXmlProject.Classes
     {
        public int id {  get; set; }
        public string UserName { get; set; }
+      public string Email { get; set; }
         
       public string password { set; get; }
       
