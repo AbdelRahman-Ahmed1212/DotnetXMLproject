@@ -29,7 +29,7 @@
     <AttendenceRecord>
       <stdid>3</stdid>
       <stdName>bob</stdName>
-      <status>Absent</status>
+      <status>Present</status>
     </AttendenceRecord>
     <AttendenceRecord>
       <stdid>9</stdid>

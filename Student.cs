@@ -19,7 +19,7 @@ namespace DotnetXmlProject
         public int flag;
         public string userName;
         public string role;
-        public string sessionPath = "C:\\Users\\20115\\OneDrive\\Desktop\\x\\DotnetXMLproject\\Data\\Session.xml";
+        public string sessionPath = "..\\..\\..\\Data\\Session.xml";
         public Student(string _userName, string _role,int _flag=0)
         {
             InitializeComponent();
@@ -142,5 +142,33 @@ namespace DotnetXmlProject
                 return;
             }   
         }
+
+      /*  private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }*/
+
+ /*       private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
+            else
+                return;
+
+        }*/
+    /*    private void MoveSidePanel(Control button)
+        {
+            stdSmallSidePanel.Location = new Point(button.Location.X - button.Location.X, button.Location.Y - 180);
+        }*/
+
+     /*   private void StdReportbtn_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(StdReportbtn);
+        }*/
+
+    
     }
 }
