@@ -36,7 +36,7 @@
             StdReportbtn = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
-            stduserlabel = new Label();
+            applabel = new Label();
             pictureBox1 = new PictureBox();
             panel8 = new Panel();
             pictureBox2 = new PictureBox();
@@ -46,7 +46,7 @@
             textBox1 = new TextBox();
             stdwelcomlabel = new Label();
             stdusernamelabel = new Label();
-            stdrolelabel = new Label();
+            rolelabel = new Label();
             stdroleNamelabel = new Label();
             button1 = new Button();
             panel3 = new Panel();
@@ -122,17 +122,17 @@
             // panel2
             // 
             panel2.BackColor = Color.DarkCyan;
-            panel2.Controls.Add(stduserlabel);
+            panel2.Controls.Add(applabel);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(panel8);
             resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
             // 
-            // stduserlabel
+            // applabel
             // 
-            resources.ApplyResources(stduserlabel, "stduserlabel");
-            stduserlabel.ForeColor = Color.White;
-            stduserlabel.Name = "stduserlabel";
+            resources.ApplyResources(applabel, "applabel");
+            applabel.ForeColor = Color.White;
+            applabel.Name = "applabel";
             // 
             // pictureBox1
             // 
@@ -192,10 +192,10 @@
             resources.ApplyResources(stdusernamelabel, "stdusernamelabel");
             stdusernamelabel.Name = "stdusernamelabel";
             // 
-            // stdrolelabel
+            // rolelabel
             // 
-            resources.ApplyResources(stdrolelabel, "stdrolelabel");
-            stdrolelabel.Name = "stdrolelabel";
+            resources.ApplyResources(rolelabel, "rolelabel");
+            rolelabel.Name = "rolelabel";
             // 
             // stdroleNamelabel
             // 
@@ -215,7 +215,7 @@
             panel3.BackColor = Color.DarkCyan;
             panel3.Controls.Add(button1);
             panel3.Controls.Add(stdroleNamelabel);
-            panel3.Controls.Add(stdrolelabel);
+            panel3.Controls.Add(rolelabel);
             panel3.Controls.Add(stdusernamelabel);
             panel3.Controls.Add(stdwelcomlabel);
             resources.ApplyResources(panel3, "panel3");
@@ -311,7 +311,7 @@
         private Button StdReportbtn;
         private Panel panel1;
         private Panel panel2;
-        private Label stduserlabel;
+        private Label applabel;
         private PictureBox pictureBox1;
         private Panel panel8;
         private PictureBox pictureBox2;
@@ -321,7 +321,7 @@
         private TextBox textBox1;
         private Label stdwelcomlabel;
         private Label stdusernamelabel;
-        private Label stdrolelabel;
+        private Label rolelabel;
         private Label stdroleNamelabel;
         private Button button1;
         private Panel panel3;

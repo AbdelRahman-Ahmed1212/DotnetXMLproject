@@ -10,25 +10,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DotnetXmlProject
 {
     public partial class Student : Form
     {
+        public int flag;
         public string userName;
         public string role;
         public string sessionPath = "C:\\Users\\20115\\OneDrive\\Desktop\\x\\DotnetXMLproject\\Data\\Session.xml";
-        public Student()
+        public Student(string _userName, string _role,int _flag=0)
         {
             InitializeComponent();
-
-
+            this.userName = _userName;
+            this.role = _role;
+            this.flag = _flag;
         }
 
         private void Student_Load(object sender, EventArgs e)
         {
-            stduserlabel.Text = userName;
-            stdrolelabel.Text = role;
+            stdusernamelabel.Text = userName;
+            stdroleNamelabel.Text = role;
 
         }
 
@@ -50,8 +53,17 @@ namespace DotnetXmlProject
         }
         private void MoveSidePanel(Control button)
         {
-            stdSmallSidePanel.Location = new Point(button.Location.X - button.Location.X, button.Location.Y - 180);
+            // Calculate the new location relative to the parent control
+            int newX = button.Location.X - button.Parent.Location.X;
+            int newY = button.Location.Y - button.Parent.Location.Y;
+
+            // Adjust the Y coordinate based on your requirements (-180 in this case)
+            newY -= 180;
+
+            // Set the new location for the panel
+            stdSmallSidePanel.Location = new Point(newX, newY);
         }
+
 
         private void StdReportbtn_Click(object sender, EventArgs e)
         {
@@ -108,20 +120,32 @@ namespace DotnetXmlProject
             // Call DisplayStudentStatus without a search date
             DisplayStudentStatus(userName);
             MoveSidePanel(stdAttendencebtn);
+            flag++; 
         }
 
 
 
         private void searchBox_Click(object sender, EventArgs e)
         {
-            DisplayStudentStatusByDate(userName, searchBox.Text.Trim());
+            if (searchBox.Text.Trim() != "")
+                DisplayStudentStatusByDate(userName, searchBox.Text.Trim());
+            else
+                MessageBox.Show("please enter date");
 
         }
 
         private void reserbtn_Click(object sender, EventArgs e)
         {
-            searchBox.Text = "";
-            DisplayStudentStatus(userName);
+            if (flag != 0)
+            {
+                searchBox.Text = "";
+                DisplayStudentStatus(userName);
+            }
+            else
+            {
+                searchBox.Text = "";
+                return;
+            }   
         }
     }
 }

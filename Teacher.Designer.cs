@@ -179,10 +179,10 @@
             // TchPanelTop
             // 
             TchPanelTop.BackColor = Color.DarkCyan;
+            TchPanelTop.Controls.Add(Rlabel1);
             TchPanelTop.Controls.Add(Logoutbutton);
             TchPanelTop.Controls.Add(rolelabel);
             TchPanelTop.Controls.Add(usernamelabel);
-            TchPanelTop.Controls.Add(Rlabel1);
             TchPanelTop.Controls.Add(Wlabel);
             TchPanelTop.Dock = DockStyle.Top;
             TchPanelTop.Location = new Point(258, 0);

@@ -57,7 +57,7 @@ namespace DotnetXmlProject
                                 admin.Show();
                                 break;
                             case "Student":
-                                Student student = new Student();
+                                Student student = new Student(textBox1.Text,"Student");
                                 student.Show();
                                 //amr edited here
                                 student.userName = textBox1.Text;
