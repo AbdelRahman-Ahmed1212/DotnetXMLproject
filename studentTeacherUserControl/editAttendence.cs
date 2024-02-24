@@ -27,7 +27,7 @@ namespace DotnetXmlProject.studentTeacherUserControl
             this.userName = userName;
             var sreader = XmlReader.Create(sessionPath);
             var sdoc = XElement.Load(sreader);
-            comboBox1.DataSource = sdoc.Elements().Where(x => x.Attribute("teacherID").Value == getTeacherId(userName))
+            comboBox1.DataSource = sdoc.Elements().Where(x => x.Attribute("teacherId").Value == getTeacherId(userName))
                                     .Select(x=>x.Attribute("date").Value).ToList();
             sreader.Close();
         }
@@ -39,10 +39,10 @@ namespace DotnetXmlProject.studentTeacherUserControl
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(xmlFilePath);
 
-            XmlNodeList nodes = xmlDoc.GetElementsByTagName("user");
+            XmlNodeList nodes = xmlDoc.GetElementsByTagName("teacher");
             foreach (XmlNode node in nodes)
             {
-                XmlNode usernameNode = node.SelectSingleNode("userName");
+                XmlNode usernameNode = node.SelectSingleNode("email");
                 if (usernameNode != null && usernameNode.InnerText == passedTeacher)
                 {
                     XmlNode idNode = node.SelectSingleNode("id");
@@ -73,7 +73,7 @@ namespace DotnetXmlProject.studentTeacherUserControl
                             SessionId = (int)session.Attribute("id"),
                             SessionDate = (string)session.Attribute("date"),
                             Status = (string)record.Element("status"),
-                            TeacherId = (string)session.Attribute("teacherID")
+                            TeacherId = (string)session.Attribute("teacherId")
                         })).Where(record => record.TeacherId == TeacherId)
                     .ToList();
 
@@ -122,7 +122,7 @@ namespace DotnetXmlProject.studentTeacherUserControl
                             SessionId = (int)session.Attribute("id"),
                             SessionDate = (string)session.Attribute("date"),
                             Status = (string)record.Element("status"), 
-                            TeacherId = (string)session.Attribute("teacherID")
+                            TeacherId = (string)session.Attribute("teacherId")
                         })).Where(record => record.TeacherId == TeacherId);
 
                 foreach (var record in attendanceRecords)

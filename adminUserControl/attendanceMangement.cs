@@ -180,7 +180,7 @@ namespace DotnetXmlProject.adminUserControl
                                           .Select(u => new
                                           {
                                               ID = (int)u.Element("id"),
-                                              Name = (string)u.Element("username")
+                                              Name = (string)u.Element("userName")
                                           });
 
                     foreach (var student in students)

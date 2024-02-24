@@ -17,37 +17,37 @@
       <status>notAsssigned</status>
     </AttendenceRecord>
   </Session>
-  <Session id="2" date="24/12/2024" class="A" teacherId="3" classID="1">
+  <Session id="2" date="29/02/2024" subjectId="4" class="html" teacherId="3">
     <AttendenceRecord>
-      <stdid>5</stdid>
+      <stdid>24</stdid>
       <stdName>Ahmed</stdName>
       <status>notAsssigned</status>
     </AttendenceRecord>
     <AttendenceRecord>
-      <stdid>6</stdid>
-      <stdName>Ali</stdName>
-      <status>notAsssigned</status>
-    </AttendenceRecord>
-    <AttendenceRecord>
-      <stdid>7</stdid>
-      <stdName>Kamil</stdName>
+      <stdid>26</stdid>
+      <stdName />
       <status>notAsssigned</status>
     </AttendenceRecord>
   </Session>
-  <Session id="3" date="12/05/2020" subjectId="12" class="sql" teacherId="26" classID="1">
+  <Session id="3" date="01/03/2024" subjectId="5" class="ooo" teacherId="3">
     <AttendenceRecord>
-      <stdid>9</stdid>
-      <stdName>mmm</stdName>
+      <stdid>26</stdid>
+      <stdName>jihad</stdName>
       <status>notAsssigned</status>
     </AttendenceRecord>
   </Session>
-  <Session id="4" date="22/02/2024" subjectId="6" class="kkk" teacherId="3" />
-  <Session id="5" date="24/02/2024" subjectId="4" class="html" teacherId="3" />
-  <Session id="6" date="31/12/2024" subjectId="4" class="html" teacherId="3">
+  <Session id="4" date="24/07/2024" subjectId="7" class="iiiikjh" teacherId="3">
     <AttendenceRecord>
-      <stdid>2</stdid>
-      <stdName>alice_smith</stdName>
+      <stdid>26</stdid>
+      <stdName>jihad</stdName>
       <status>notAsssigned</status>
+    </AttendenceRecord>
+  </Session>
+  <Session id="5" date="24/08/2024" subjectId="14" class="node js" teacherId="25">
+    <AttendenceRecord>
+      <stdid>26</stdid>
+      <stdName>jihad</stdName>
+      <status>Present</status>
     </AttendenceRecord>
   </Session>
 </Sessions>

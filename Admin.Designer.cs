@@ -120,7 +120,7 @@
             // 
             // pictureBox10
             // 
-            pictureBox10.Image = Properties.Resources.manageClass_removebg_preview;
+           // pictureBox10.Image = Properties.Resources.manageClass_removebg_preview;
             pictureBox10.Location = new Point(12, 426);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(63, 82);

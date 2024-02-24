@@ -89,7 +89,7 @@
             stdAttendencebtn.Cursor = Cursors.Hand;
             stdAttendencebtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(stdAttendencebtn, "stdAttendencebtn");
-            stdAttendencebtn.Image = Properties.Resources.attendenceIcon_1;
+          //  stdAttendencebtn.Image = Properties.Resources.attendenceIcon_1;
 
             stdAttendencebtn.Name = "stdAttendencebtn";
             stdAttendencebtn.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             StdReportbtn.Cursor = Cursors.Hand;
             StdReportbtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(StdReportbtn, "StdReportbtn");
-            StdReportbtn.Image = Properties.Resources.Report1;
+           // StdReportbtn.Image = Properties.Resources.Report1;
             StdReportbtn.Name = "StdReportbtn";
             StdReportbtn.UseVisualStyleBackColor = true;
             StdReportbtn.Click += StdReportbtn_Click;
