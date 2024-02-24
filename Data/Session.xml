@@ -4,12 +4,12 @@
     <AttendenceRecord>
       <stdid>27</stdid>
       <stdName>Ahmed</stdName>
-      <status>Present</status>
+      <status>Absent</status>
     </AttendenceRecord>
     <AttendenceRecord>
       <stdid>1</stdid>
       <stdName>Ali</stdName>
-      <status>Present</status>
+      <status>Absent</status>
     </AttendenceRecord>
     <AttendenceRecord>
       <stdid>7</stdid>
