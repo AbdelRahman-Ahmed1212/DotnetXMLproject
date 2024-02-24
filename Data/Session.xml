@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Sessions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocatio="./Session.xsd">
+
   <Session id="1" date="12/12/2024" class="A" teacherId="3" classID="1">
     <AttendenceRecord>
       <stdid>5</stdid>
@@ -31,6 +32,7 @@
     <AttendenceRecord>
       <stdid>7</stdid>
       <stdName>Kamil</stdName>
+
       <status>notAsssigned</status>
     </AttendenceRecord>
   </Session>

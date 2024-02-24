@@ -1,4 +1,5 @@
 ﻿using DotnetXmlProject.Classes;
+using DotnetXmlProject.studentTeacherUserControl;
 using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
@@ -59,19 +60,21 @@ namespace DotnetXmlProject
                                 admin.Show();
                                 break;
                             case "Student":
-                                Student student = new Student();
+                                Student student = new Student(textBox1.Text,"Student");
                                 student.Show();
                                 //amr edited here
                                 student.userName = textBox1.Text;
                                 student.role = "Student";
                                 break;
                             case "Teacher":
-                                Teacher teacher = new Teacher();
+                                Teacher teacher = new Teacher(textBox1.Text,"Teacher");
                                 teacher.Show();
-                                //amr edited here
-                                teacher.userName = textBox1.Text;
+                                teacher.userName = textBox1.Text; // Assign username to Teacher instance
                                 teacher.role = "Teacher";
+                                editAttendence editAttendence = new editAttendence(textBox1.Text); // Create instance of editAttendence
+                                editAttendence.userName = textBox1.Text; // Assign username to editAttendence instance
                                 break;
+
                         }
                         this.Hide();
                     }
