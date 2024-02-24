@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DotnetXmlProject.Classes
 {
-    internal class Session
+    internal class session
     {
-        int id { set; get; }
-        public string classID { set; get; }
-        public DateTime date { set; get; }
-        public List<attendanceRecord> Records { set; get;}
+        public int id {  get; set; }
+        public string className { get; set; }
+        public DateTime Date {  get; set; } 
+        public int teacherID { get; set; }
+       
     }
 }
