@@ -73,7 +73,7 @@
             StdReportbtn.Cursor = Cursors.Hand;
             StdReportbtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(StdReportbtn, "StdReportbtn");
-            StdReportbtn.Image = Properties.Resources.Report;
+       //     StdReportbtn.Image = Properties.Resources.Report;
             StdReportbtn.Name = "StdReportbtn";
             StdReportbtn.UseVisualStyleBackColor = true;
             StdReportbtn.Click += StdReportbtn_Click;
@@ -96,7 +96,7 @@
             stdAttendencebtn.Cursor = Cursors.Hand;
             stdAttendencebtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(stdAttendencebtn, "stdAttendencebtn");
-            stdAttendencebtn.Image = Properties.Resources.attendenceIcon_;
+          //  stdAttendencebtn.Image = Properties.Resources.attendenceIcon_;
             stdAttendencebtn.Name = "stdAttendencebtn";
             stdAttendencebtn.UseVisualStyleBackColor = true;
             stdAttendencebtn.Click += stdAttendencebtn_Click;
@@ -117,7 +117,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.vector_male_student_icon_removebg_preview;
+          //  pictureBox1.Image = Properties.Resources.vector_male_student_icon_removebg_preview;
             resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;

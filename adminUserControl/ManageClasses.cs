@@ -25,8 +25,8 @@ namespace DotnetXmlProject.adminUserControl
             comboxTeacherData();
             comboxUserData();
         }
-        public string classPath = "D:\\c#xmlv2\\Data\\classes.xml";
-        public string userPath = "D:\\c#xmlv2\\Data\\users.xml";
+        public string classPath = "..\\..\\..\\Data\\classes.xml";
+        public string userPath = "..\\..\\..\\Data\\users.xml";
 
         public void RefrchData()
         {

@@ -16,9 +16,9 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class addUser : UserControl
     {
-        public string pathUser = "D:\\c#xmlv2\\Data\\users.xml";
-        public string classPath = "D:\\c#xmlv2\\Data\\classes.xml";
-        public string sessionPath = "D:\\c#xmlv2\\Data\\session.xml";
+        public string pathUser = "..\\..\\..\\Data\\users.xml";
+        public string classPath = "..\\..\\..\\Data\\classes.xml";
+        public string sessionPath = "..\\..\\..\\Data\\session.xml";
 
         public addUser()
         {

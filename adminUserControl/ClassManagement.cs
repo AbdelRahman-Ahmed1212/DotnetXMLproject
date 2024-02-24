@@ -16,9 +16,9 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class ClassManagement : UserControl
     {
-        public string classPath = "D:\\c#xmlv2\\Data\\classes.xml";
-        public string userPath = "D:\\c#xmlv2\\Data\\users.xml";
-        public string sessionPath = "D:\\c#xmlv2\\Data\\session.xml";
+        public string classPath = "..\\..\\..\\Data\\classes.xml";
+        public string userPath = "..\\..\\..\\Data\\users.xml";
+        public string sessionPath = "..\\..\\..\\Data\\session.xml";
         public ClassManagement()
         {
             InitializeComponent();

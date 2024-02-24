@@ -77,7 +77,7 @@ namespace DotnetXmlProject
             test1.Visible = false;
 
             MovePanel(reportBtn);
-            classManagement1.Visible = false;
+        //    classManagement1.Visible = false;
             Reports r1 = new Reports();
             r1.Show();
         }

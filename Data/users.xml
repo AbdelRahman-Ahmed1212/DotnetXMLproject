@@ -18,6 +18,14 @@
         <classID>30</classID>
         <className />
       </class>
+      <class>
+        <classID>4</classID>
+        <className>html</className>
+      </class>
+      <class>
+        <classID>4</classID>
+        <className>html</className>
+      </class>
     </classes>
     <attendanceIds>
       <attendanceId>101</attendanceId>
@@ -31,35 +39,34 @@
     <password>bob789</password>
     <role>Teacher</role>
     <classes />
-      <id>1</id>
-      <name>John Doe</name>
-      <email>john_doe</email>
-      <password>john123</password>
-      <role>Admin</role>
-  </user>
+    <id>1</id>
+    <name>John Doe</name>
+    <email>john_doe</email>
+    <password>john123</password>
+    <role>Admin</role>
+  </teacher>
   <student>
-      <id>2</id>
-      <name>Alice Smith</name>
-      <email>alice_smith</email>
-      <password>alice456</password>
-      <role>Student</role>
-      <classes>
-          <class>
-            <className>A</className>
-            <classID>1</classID>
-          </class>
-      </classes>
+    <id>2</id>
+    <name>Alice Smith</name>
+    <email>alice_smith</email>
+    <password>alice456</password>
+    <role>Student</role>
+    <classes>
+      <class>
+        <className>A</className>
+        <classID>1</classID>
+      </class>
+    </classes>
   </student>
   <teacher>
-      <id>3</id>
-      <name>Bob Johnson</name>
-      <email>bob_johnson</email>
-      <password>bob789</password>
-      <role>Teacher</role>
-      <classes>
-          <class>Math101</class>
-          <class>Chemistry101</class>
-      </classes>
+    <id>3</id>
+    <name>Bob Johnson</name>
+    <email>bob_johnson</email>
+    <password>bob789</password>
+    <role>Teacher</role>
+    <classes>
+      <class>Math101</class>
+      <class>Chemistry101</class>
+    </classes>
   </teacher>
-  
 </Users>

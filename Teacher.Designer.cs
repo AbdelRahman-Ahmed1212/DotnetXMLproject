@@ -79,7 +79,7 @@
             // 
             TchReportbutton.FlatAppearance.BorderSize = 0;
             TchReportbutton.FlatStyle = FlatStyle.Flat;
-            TchReportbutton.Image = Properties.Resources.Report1;
+        //    TchReportbutton.Image = Properties.Resources.Report1;
             TchReportbutton.ImageAlign = ContentAlignment.MiddleLeft;
             TchReportbutton.Location = new Point(36, 14);
             TchReportbutton.Name = "TchReportbutton";
@@ -101,7 +101,7 @@
             // 
             TchAttendencebutton.FlatAppearance.BorderSize = 0;
             TchAttendencebutton.FlatStyle = FlatStyle.Flat;
-            TchAttendencebutton.Image = Properties.Resources.attendenceIcon_1;
+        //    TchAttendencebutton.Image = Properties.Resources.attendenceIcon_1;
             TchAttendencebutton.ImageAlign = ContentAlignment.MiddleLeft;
             TchAttendencebutton.Location = new Point(36, 14);
             TchAttendencebutton.Name = "TchAttendencebutton";
@@ -133,7 +133,7 @@
             // 
             TchClassesbutton.FlatAppearance.BorderSize = 0;
             TchClassesbutton.FlatStyle = FlatStyle.Flat;
-            TchClassesbutton.Image = Properties.Resources._class;
+        //    TchClassesbutton.Image = Properties.Resources._class;
             TchClassesbutton.ImageAlign = ContentAlignment.MiddleLeft;
             TchClassesbutton.Location = new Point(36, 14);
             TchClassesbutton.Name = "TchClassesbutton";
@@ -167,7 +167,7 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = Properties.Resources.teacherIcon_removebg_preview;
+         //   pictureBox1.Image = Properties.Resources.teacherIcon_removebg_preview;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(258, 100);
