@@ -31,87 +31,75 @@
             components = new System.ComponentModel.Container();
             toolTip1 = new ToolTip(components);
             tabPage3 = new TabPage();
-            recordData = new DataGridView();
+            sessionData = new DataGridView();
             panel1 = new Panel();
-            statuscombox = new ComboBox();
             DeleteRecordBtn = new Button();
             EditRecordBtn = new Button();
-            label1 = new Label();
-            label4 = new Label();
-            IDRecordText = new TextBox();
-            pictureBox2 = new PictureBox();
-            panel5 = new Panel();
-            stdNameTxtSearch = new TextBox();
-            label8 = new Label();
             tabPage2 = new TabPage();
-            Statuscb = new ComboBox();
+            dateSession = new DateTimePicker();
             panel3 = new Panel();
-            label7 = new Label();
+            Date = new Label();
             label5 = new Label();
             addRecordBtn = new Button();
-            stdCombobox = new ComboBox();
+            subjectCombobox = new ComboBox();
             panel4 = new Panel();
-            StudentIDcb = new Label();
+            ClassIDcb = new Label();
             tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            stdSessionData = new DataGridView();
+            button1 = new Button();
+            sessionIDText = new ComboBox();
+            panel2 = new Panel();
+            label1 = new Label();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sessionData).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tabPage2.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)stdSessionData).BeginInit();
             SuspendLayout();
             // 
             // tabPage3
             // 
-            tabPage3.BackColor = Color.White;
-            tabPage3.Controls.Add(recordData);
+            tabPage3.BackColor = Color.Azure;
+            tabPage3.Controls.Add(sessionData);
             tabPage3.Controls.Add(panel1);
+            tabPage3.ForeColor = Color.DarkCyan;
             tabPage3.Location = new Point(4, 4);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(618, 292);
+            tabPage3.Size = new Size(934, 481);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "Records";
+            tabPage3.Text = "Sessions";
             // 
-            // recordData
+            // sessionData
             // 
-            recordData.BackgroundColor = Color.White;
-            recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            recordData.Location = new Point(6, 130);
-            recordData.Name = "recordData";
-            recordData.Size = new Size(586, 156);
-            recordData.TabIndex = 7;
+            sessionData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            sessionData.BackgroundColor = Color.Azure;
+            sessionData.BorderStyle = BorderStyle.None;
+            sessionData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            sessionData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            sessionData.Location = new Point(92, 58);
+            sessionData.Name = "sessionData";
+            sessionData.Size = new Size(775, 252);
+            sessionData.TabIndex = 7;
+            sessionData.CellBeginEdit += sessionData_CellBeginEdit;
             // 
             // panel1
             // 
-            panel1.Controls.Add(statuscombox);
             panel1.Controls.Add(DeleteRecordBtn);
             panel1.Controls.Add(EditRecordBtn);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(IDRecordText);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(panel5);
-            panel1.Controls.Add(stdNameTxtSearch);
-            panel1.Controls.Add(label8);
-            panel1.Location = new Point(0, 3);
+            panel1.Location = new Point(194, 349);
             panel1.Name = "panel1";
-            panel1.Size = new Size(592, 106);
+            panel1.Size = new Size(592, 50);
             panel1.TabIndex = 6;
-            // 
-            // statuscombox
-            // 
-            statuscombox.FormattingEnabled = true;
-            statuscombox.Location = new Point(427, 64);
-            statuscombox.Name = "statuscombox";
-            statuscombox.Size = new Size(132, 23);
-            statuscombox.TabIndex = 20;
             // 
             // DeleteRecordBtn
             // 
-            DeleteRecordBtn.BackColor = Color.Indigo;
+            DeleteRecordBtn.BackColor = Color.DarkCyan;
             DeleteRecordBtn.ForeColor = Color.White;
-            DeleteRecordBtn.Location = new Point(473, 7);
+            DeleteRecordBtn.Location = new Point(487, 7);
             DeleteRecordBtn.Name = "DeleteRecordBtn";
             DeleteRecordBtn.Size = new Size(86, 31);
             DeleteRecordBtn.TabIndex = 7;
@@ -121,9 +109,9 @@
             // 
             // EditRecordBtn
             // 
-            EditRecordBtn.BackColor = Color.Indigo;
+            EditRecordBtn.BackColor = Color.DarkCyan;
             EditRecordBtn.ForeColor = Color.White;
-            EditRecordBtn.Location = new Point(381, 7);
+            EditRecordBtn.Location = new Point(395, 7);
             EditRecordBtn.Name = "EditRecordBtn";
             EditRecordBtn.Size = new Size(86, 31);
             EditRecordBtn.TabIndex = 8;
@@ -131,133 +119,67 @@
             EditRecordBtn.UseVisualStyleBackColor = false;
             EditRecordBtn.Click += EditRecordBtn_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.Indigo;
-            label1.Location = new Point(322, 67);
-            label1.Name = "label1";
-            label1.Size = new Size(48, 15);
-            label1.TabIndex = 11;
-            label1.Text = "Status  :";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.Indigo;
-            label4.Location = new Point(32, 67);
-            label4.Name = "label4";
-            label4.Size = new Size(24, 15);
-            label4.TabIndex = 3;
-            label4.Text = "ID :";
-            // 
-            // IDRecordText
-            // 
-            IDRecordText.Location = new Point(143, 64);
-            IDRecordText.Name = "IDRecordText";
-            IDRecordText.Size = new Size(132, 23);
-            IDRecordText.TabIndex = 6;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.ImageLocation = "D:\\C#XML\\Images\\Screenshot 2024-02-16 221054.png";
-            pictureBox2.Location = new Point(300, 7);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(24, 21);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.Indigo;
-            panel5.Location = new Point(124, 29);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 2);
-            panel5.TabIndex = 2;
-            // 
-            // stdNameTxtSearch
-            // 
-            stdNameTxtSearch.BorderStyle = BorderStyle.None;
-            stdNameTxtSearch.Location = new Point(124, 10);
-            stdNameTxtSearch.Name = "stdNameTxtSearch";
-            stdNameTxtSearch.Size = new Size(170, 16);
-            stdNameTxtSearch.TabIndex = 4;
-            stdNameTxtSearch.TextChanged += stdNameTxtSearch_TextChanged;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F);
-            label8.ForeColor = Color.Indigo;
-            label8.Location = new Point(3, 10);
-            label8.Name = "label8";
-            label8.Size = new Size(116, 21);
-            label8.TabIndex = 3;
-            label8.Text = "Student Name :";
-            // 
             // tabPage2
             // 
-            tabPage2.BackColor = Color.White;
-            tabPage2.Controls.Add(Statuscb);
+            tabPage2.BackColor = Color.Azure;
+            tabPage2.Controls.Add(dateSession);
             tabPage2.Controls.Add(panel3);
-            tabPage2.Controls.Add(label7);
+            tabPage2.Controls.Add(Date);
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(addRecordBtn);
-            tabPage2.Controls.Add(stdCombobox);
+            tabPage2.Controls.Add(subjectCombobox);
             tabPage2.Controls.Add(panel4);
-            tabPage2.Controls.Add(StudentIDcb);
+            tabPage2.Controls.Add(ClassIDcb);
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(618, 292);
+            tabPage2.Size = new Size(934, 481);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Add";
             // 
-            // Statuscb
+            // dateSession
             // 
-            Statuscb.FlatStyle = FlatStyle.Flat;
-            Statuscb.FormattingEnabled = true;
-            Statuscb.Location = new Point(314, 143);
-            Statuscb.Name = "Statuscb";
-            Statuscb.Size = new Size(200, 23);
-            Statuscb.TabIndex = 35;
+            dateSession.Location = new Point(527, 184);
+            dateSession.Name = "dateSession";
+            dateSession.Size = new Size(200, 23);
+            dateSession.TabIndex = 36;
             // 
             // panel3
             // 
-            panel3.BackColor = Color.Indigo;
-            panel3.Location = new Point(314, 175);
+            panel3.BackColor = Color.DarkCyan;
+            panel3.Location = new Point(527, 213);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 2);
             panel3.TabIndex = 33;
             // 
-            // label7
+            // Date
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F);
-            label7.ForeColor = Color.Indigo;
-            label7.Location = new Point(314, 104);
-            label7.Name = "label7";
-            label7.Size = new Size(59, 21);
-            label7.TabIndex = 34;
-            label7.Text = "Status :";
+            Date.AutoSize = true;
+            Date.Font = new Font("Segoe UI", 12F);
+            Date.ForeColor = Color.DarkCyan;
+            Date.Location = new Point(527, 142);
+            Date.Name = "Date";
+            Date.Size = new Size(59, 21);
+            Date.TabIndex = 34;
+            Date.Text = "Status :";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Azure;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label5.ForeColor = Color.Indigo;
-            label5.Location = new Point(226, 16);
+            label5.ForeColor = Color.DarkCyan;
+            label5.Location = new Point(359, 54);
             label5.Name = "label5";
-            label5.Size = new Size(122, 28);
+            label5.Size = new Size(126, 28);
             label5.TabIndex = 29;
-            label5.Text = "Add Record";
+            label5.Text = "Add Session";
             // 
             // addRecordBtn
             // 
-            addRecordBtn.BackColor = Color.Indigo;
+            addRecordBtn.BackColor = Color.DarkCyan;
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(215, 233);
+            addRecordBtn.Location = new Point(359, 282);
             addRecordBtn.Name = "addRecordBtn";
             addRecordBtn.Size = new Size(133, 42);
             addRecordBtn.TabIndex = 28;
@@ -265,60 +187,134 @@
             addRecordBtn.UseVisualStyleBackColor = false;
             addRecordBtn.Click += addRecordBtn_Click;
             // 
-            // stdCombobox
+            // subjectCombobox
             // 
-            stdCombobox.FlatStyle = FlatStyle.Flat;
-            stdCombobox.FormattingEnabled = true;
-            stdCombobox.Location = new Point(37, 143);
-            stdCombobox.Name = "stdCombobox";
-            stdCombobox.Size = new Size(200, 23);
-            stdCombobox.TabIndex = 27;
+            subjectCombobox.FlatStyle = FlatStyle.Flat;
+            subjectCombobox.FormattingEnabled = true;
+            subjectCombobox.Location = new Point(89, 187);
+            subjectCombobox.Name = "subjectCombobox";
+            subjectCombobox.Size = new Size(200, 23);
+            subjectCombobox.TabIndex = 27;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.Indigo;
-            panel4.Location = new Point(37, 175);
+            panel4.BackColor = Color.DarkCyan;
+            panel4.Location = new Point(89, 219);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 2);
             panel4.TabIndex = 21;
             // 
-            // StudentIDcb
+            // ClassIDcb
             // 
-            StudentIDcb.AutoSize = true;
-            StudentIDcb.Font = new Font("Segoe UI", 12F);
-            StudentIDcb.ForeColor = Color.Indigo;
-            StudentIDcb.Location = new Point(37, 111);
-            StudentIDcb.Name = "StudentIDcb";
-            StudentIDcb.Size = new Size(85, 21);
-            StudentIDcb.TabIndex = 23;
-            StudentIDcb.Text = "Student ID:";
+            ClassIDcb.AutoSize = true;
+            ClassIDcb.Font = new Font("Segoe UI", 12F);
+            ClassIDcb.ForeColor = Color.DarkCyan;
+            ClassIDcb.Location = new Point(89, 142);
+            ClassIDcb.Name = "ClassIDcb";
+            ClassIDcb.Size = new Size(83, 21);
+            ClassIDcb.TabIndex = 23;
+            ClassIDcb.Text = "Subject ID:";
             // 
             // tabControl1
             // 
             tabControl1.Alignment = TabAlignment.Bottom;
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage1);
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(626, 320);
+            tabControl1.Size = new Size(942, 509);
             tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.Azure;
+            tabPage1.Controls.Add(stdSessionData);
+            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(sessionIDText);
+            tabPage1.Controls.Add(panel2);
+            tabPage1.Controls.Add(label1);
+            tabPage1.ForeColor = Color.DarkCyan;
+            tabPage1.Location = new Point(4, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(934, 481);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "Students In Session";
+            // 
+            // stdSessionData
+            // 
+            stdSessionData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            stdSessionData.BackgroundColor = Color.Azure;
+            stdSessionData.BorderStyle = BorderStyle.None;
+            stdSessionData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            stdSessionData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            stdSessionData.EditMode = DataGridViewEditMode.EditProgrammatically;
+            stdSessionData.Location = new Point(70, 144);
+            stdSessionData.Name = "stdSessionData";
+            stdSessionData.Size = new Size(786, 255);
+            stdSessionData.TabIndex = 32;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DarkCyan;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(522, 69);
+            button1.Name = "button1";
+            button1.Size = new Size(133, 42);
+            button1.TabIndex = 31;
+            button1.Text = "Show";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // sessionIDText
+            // 
+            sessionIDText.FlatStyle = FlatStyle.Flat;
+            sessionIDText.FormattingEnabled = true;
+            sessionIDText.Location = new Point(249, 76);
+            sessionIDText.Name = "sessionIDText";
+            sessionIDText.Size = new Size(200, 23);
+            sessionIDText.TabIndex = 30;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DarkCyan;
+            panel2.Location = new Point(249, 105);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 2);
+            panel2.TabIndex = 28;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F);
+            label1.ForeColor = Color.DarkCyan;
+            label1.Location = new Point(151, 78);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 21);
+            label1.TabIndex = 29;
+            label1.Text = "Session ID:";
             // 
             // attendanceMangement
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Azure;
             Controls.Add(tabControl1);
+            ForeColor = Color.DarkCyan;
             Name = "attendanceMangement";
-            Size = new Size(637, 323);
+            Size = new Size(942, 501);
             tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)recordData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sessionData).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)stdSessionData).EndInit();
             ResumeLayout(false);
         }
 
@@ -326,27 +322,26 @@
 
         private ToolTip toolTip1;
         private TabPage tabPage3;
-        private DataGridView recordData;
+        private DataGridView sessionData;
         private Panel panel1;
         private Button DeleteRecordBtn;
         private Button EditRecordBtn;
-        private Label label1;
-        private Label label4;
-        private TextBox IDRecordText;
-        private PictureBox pictureBox2;
-        private Panel panel5;
-        private TextBox stdNameTxtSearch;
-        private Label label8;
         private TabPage tabPage2;
         private ComboBox Statuscb;
         private Panel panel3;
-        private Label label7;
+        private Label Date;
         private Label label5;
         private Button addRecordBtn;
-        private ComboBox stdCombobox;
+        private ComboBox subjectCombobox;
         private Panel panel4;
-        private Label StudentIDcb;
+        private Label ClassIDcb;
         private TabControl tabControl1;
-        private ComboBox statuscombox;
+        private DateTimePicker dateSession;
+        private TabPage tabPage1;
+        private Button button1;
+        private ComboBox sessionIDText;
+        private Panel panel2;
+        private Label label1;
+        private DataGridView stdSessionData;
     }
 }

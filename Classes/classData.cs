@@ -17,3 +17,4 @@ namespace DotnetXmlProject.Classes
         public string Session { get; internal set; }
     }
 }
+

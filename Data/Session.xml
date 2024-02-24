@@ -76,3 +76,46 @@
     </AttendenceRecord>
   </Session>
 </Sessions>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<Sessions  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocatio="./Session.xsd">
+    <Session id="1" date="12/12/2024" class="A1">
+        <AttendenceRecord>
+            <stdid>5</stdid>
+            <stdName>Ahmed</stdName>
+            <status>not Asssigned</status>
+        </AttendenceRecord>
+        <AttendenceRecord>
+            <stdid>6</stdid>
+            <stdName>Ali</stdName>
+            <status>not Asssigned</status>
+        </AttendenceRecord>
+        <AttendenceRecord>
+            <stdid>7</stdid>
+            <stdName>Kamil</stdName>
+            <status>not Asssigned</status>
+        </AttendenceRecord>
+    </Session>
+    <Session id="2" date="24/12/2024" class="A1">
+        <AttendenceRecord>
+            <stdid>5</stdid>
+            <stdName>Ahmed</stdName>
+            <status>not Asssigned</status>
+        </AttendenceRecord>
+        <AttendenceRecord>
+            <stdid>6</stdid>
+            <stdName>Ali</stdName>
+            <status>not Asssigned</status>
+        </AttendenceRecord>
+        <AttendenceRecord>
+            <stdid>7</stdid>
+            <stdName>said</stdName>
+            <status>not Asssigned</status>
+        </AttendenceRecord>
+		<AttendenceRecord>
+			<stdid>8</stdid>
+			<stdName>Kamil</stdName>
+			<status>not Asssigned</status>
+		</AttendenceRecord>
+    </Session>
+</Sessions>

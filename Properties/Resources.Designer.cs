@@ -63,9 +63,10 @@ namespace DotnetXmlProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _class {
+        internal static System.Drawing.Bitmap _new {
             get {
-                object obj = ResourceManager.GetObject("class", resourceCulture);
+                object obj = ResourceManager.GetObject("new", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +74,9 @@ namespace DotnetXmlProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap attendenceIcon_ {
+        internal static System.Drawing.Bitmap dashboard {
             get {
-                object obj = ResourceManager.GetObject("attendenceIcon-", resourceCulture);
+                object obj = ResourceManager.GetObject("dashboard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +84,10 @@ namespace DotnetXmlProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap attendenceIcon_1 {
+        internal static System.Drawing.Bitmap elearning {
             get {
-                object obj = ResourceManager.GetObject("attendenceIcon-1", resourceCulture);
+                object obj = ResourceManager.GetObject("elearning", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -104,8 +106,10 @@ namespace DotnetXmlProject.Properties {
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dashboard {
+
             get {
-                object obj = ResourceManager.GetObject("dashboard", resourceCulture);
+                object obj = ResourceManager.GetObject("glass", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +117,10 @@ namespace DotnetXmlProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Report {
+        internal static System.Drawing.Bitmap magnifie {
             get {
-                object obj = ResourceManager.GetObject("Report", resourceCulture);
+                object obj = ResourceManager.GetObject("magnifie", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +128,9 @@ namespace DotnetXmlProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Report1 {
+        internal static System.Drawing.Bitmap magnifier {
             get {
-                object obj = ResourceManager.GetObject("Report1", resourceCulture);
+                object obj = ResourceManager.GetObject("magnifier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -184,8 +189,9 @@ namespace DotnetXmlProject.Properties {
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap teacherIcon_removebg_preview {
+
             get {
-                object obj = ResourceManager.GetObject("teacherIcon-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("manageClass-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +199,50 @@ namespace DotnetXmlProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vector_male_student_icon_removebg_preview {
+        internal static System.Drawing.Bitmap report {
             get {
-                object obj = ResourceManager.GetObject("vector-male-student-icon-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap session_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("session-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap teacher {
+            get {
+                object obj = ResourceManager.GetObject("teacher", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_02_22_at_01_04_12_5b28facd {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-02-22 at 01.04.12_5b28facd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_02_22_at_14_05_35_3235499a {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-02-22 at 14.05.35_3235499a", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
