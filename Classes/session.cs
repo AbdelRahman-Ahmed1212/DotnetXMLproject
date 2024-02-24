@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DotnetXmlProject.Classes
 {
-    public class session
+    internal class session
     {
         public int id {  get; set; }
         public string className { get; set; }
