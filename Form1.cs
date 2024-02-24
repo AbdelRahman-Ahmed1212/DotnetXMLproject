@@ -33,13 +33,16 @@ namespace DotnetXmlProject
         {
             var username = textBox1.Text;
             var password = textBox2.Text;
+            
+            Admin.username = username;
 
             using (var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml"))
             {
                 var Doc = XElement.Load(reader);
 
                 var user = Doc.Elements()
-                              .Where(item => (string)item.Element("userName") == username)
+                              .Where(item => (string)item.Element("username") == username)
+
                               .FirstOrDefault();
 
                 if (user != null)

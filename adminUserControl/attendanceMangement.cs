@@ -10,21 +10,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Xml;
+using static System.Collections.Specialized.BitVector32;
+using System.Globalization;
+using System.Reflection;
 
 namespace DotnetXmlProject.adminUserControl
 {
     public partial class attendanceMangement : UserControl
     {
-        string recordPath = "..\\..\\..\\Data\\attendanceRecord.xml";
-        string userPath = "..\\..\\..\\Data\\users.xml";
+        public string recordPath = "..\\..\\..\\Data\\attendence.xml";
+        public string userPath = "..\\..\\..\\Data\\users.xml";
+        public string classPath = "..\\..\\..\\Data\\classes.xml";
+        public string sessionPath = "..\\..\\..\\Data\\session.xml";
         public attendanceMangement()
         {
             InitializeComponent();
-            PopulateDataGridViewRecord();
-            comboxStdData();
-            PopulateComboBoxWithStatus(Statuscb);
-            PopulateComboBoxWithStatus(statuscombox);
 
+            comboxSubjectData();
+            PopulateDataGridViewSession();
+            PopulateSessionIds();
 
         }
 
@@ -32,254 +36,364 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         //Display
         //==========================================================================
-        public void comboxStdData()
+        public void comboxSubjectData()
         {
-            using (var reader = XmlReader.Create(userPath))
+            subjectCombobox.Items.Clear();
+
+            using (var reader = XmlReader.Create(classPath))
             {
                 var Users = XElement.Load(reader);
-                var teacherIds = Users.Elements("user")
-                                      .Where(u => string.Equals(u.Element("role")?.Value, "Student", StringComparison.OrdinalIgnoreCase))
+                var subjectIds = Users.Elements("stdClass")
                                       .Select(u => (int)u.Element("id"))
                                       .ToList();
 
-                stdCombobox.Items.AddRange(teacherIds.Select(id => id.ToString()).ToArray());
+                subjectCombobox.Items.AddRange(subjectIds.Select(id => id.ToString()).ToArray());
             }
         }
-
-        public void PopulateDataGridViewRecord()
+        public void PopulateSessionIds()
         {
-            using (var readerRecord = XmlReader.Create(recordPath))
+            try
             {
-                var records = XElement.Load(readerRecord);
-                var sourceRecord = records.Elements("attendanceRecord")
-                                          .Select(u => new attendanceRecord
-                                          {
-                                              ID = (int)u.Element("id"),
-                                              studentID = (int)u.Element("stdId"),
-                                              date = (DateTime)u.Element("date"),
-                                              studentStatus = (Status)Enum.Parse(typeof(Status), (string)u.Element("status"))
-                                          }).ToList();
+                using (var reader = XmlReader.Create(sessionPath))
+                {
+                    var sessions = XElement.Load(reader);
+                    var sessionIds = sessions.Elements("Session")
+                                            .Select(s => (int)s.Attribute("id"))
+                                            .ToList();
 
-                recordData.DataSource = sourceRecord;
+                    sessionIDText.Items.AddRange(sessionIds.Select(id => id.ToString()).ToArray());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading session IDs: {ex.Message}");
+            }
+        }
+
+        public void PopulateDataGridViewSession()
+        {
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(sessionPath);
+
+                var sessions = xmlDoc.Descendants("Session")
+                                     .Select(s => new session
+                                     {
+                                         id = (int)s.Attribute("id"),
+                                         className = (string)s.Attribute("class"),
+                                         Date = DateTime.ParseExact((string)s.Attribute("date"), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                                         teacherID = (int)s.Attribute("teacherId"),
+                                        
+                                     }).ToList();
+
+                sessionData.DataSource = sessions;
+                sessionData.Columns["className"].HeaderText = "Class Name";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading session data: {ex.Message}");
             }
         }
 
 
-        public void PopulateComboBoxWithStatus(ComboBox comboBox)
+        public void PopulateDataGridViewattendanceRecourd(int sessionID)
         {
-            // Add role values to the ComboBox
-            comboBox.Items.AddRange(new string[] { "present", "absent" });
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(sessionPath);
+
+                var attendanceRecords = xmlDoc.Descendants("Session")
+                                              .Where(s => (int)s.Attribute("id") == sessionID)
+                                              .Elements("AttendenceRecord")
+                                              .Select(r => new attendanceRecord
+                                              {
+                                                  ID = (int)r.Element("stdid"),
+                                                  studentName = (string)r.Element("stdName"),
+                                                  studentStatus = (Status)Enum.Parse(typeof(Status), (string)r.Element("status"))
+                                              }).ToList();
+                if (attendanceRecords.Any())
+                {
+                    stdSessionData.DataSource = attendanceRecords;
+
+
+                }
+                else
+                {
+                    stdSessionData.DataSource = null;
+                    MessageBox.Show($"session with ID {sessionID} not found or has no associated students.");
+                }
+                stdSessionData.DataSource = attendanceRecords;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading session data: {ex.Message}");
+            }
         }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int sessionID = Convert.ToInt32(sessionIDText.Text);
 
+            if (Validation.CheckIfSessionExists(sessionPath, "Session", "id", sessionID)) 
+            {
+                PopulateDataGridViewattendanceRecourd(sessionID);
+            }
+            else
+            {
+                MessageBox.Show("Invalid session ID. Please enter a valid session ID.");
+            }
+            
+        }
 
         //==========================================================================
         //Add
         //==========================================================================
-        private void AddRecordToXml(int stdID, Status status)
+        public void AddNewSession(DateTime date, int subjectId)
         {
-
             try
             {
-                using (var stream = new FileStream(recordPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                
+                if (Validation.CheckIfIdExists(classPath, "stdClass", "id", subjectId))
                 {
-                    var xmlDoc = XDocument.Load(stream);
-                    int lastId = xmlDoc.Descendants("attendanceRecord").Select(u => (int)u.Element("id")).DefaultIfEmpty(0).Max();
+                    
+                    XDocument xmlDoc = XDocument.Load(sessionPath);
 
-                    XElement newRecordElement = new XElement("attendanceRecord",
-                                            new XElement("id", lastId + 1),
-                                            new XElement("stdId", stdID),
-                                            new XElement("date", DateTime.Now),
-                                            new XElement("status", status.ToString()));
+                    int newSessionId = xmlDoc.Descendants("Session").Max(s => (int)s.Attribute("id")) + 1;
+                    string className = GetClassNameFromId(subjectId);
+                    int teacherID = GetteacherIDFromId(subjectId);
 
-                    if (xmlDoc.Root == null)
+                   
+                    XElement newSession = new XElement("Session",
+                        new XAttribute("id", newSessionId),
+                        new XAttribute("date", date.ToString("dd/MM/yyyy")),
+                        new XAttribute("subjectId", subjectId),
+                        new XAttribute("class", className),
+                        new XAttribute("teacherId", teacherID)
+                    );
+
+                    // Add attendance records for associated students
+                    XDocument userDoc = XDocument.Load(userPath);
+                    var students = userDoc.Descendants("student")
+                                          .Where(u => u.Element("classes")?.Elements("class")
+                                                       .Any(c => (string)c.Element("className") == className) ?? false)
+                                          .Select(u => new
+                                          {
+                                              ID = (int)u.Element("id"),
+                                              Name = (string)u.Element("username")
+                                          });
+
+                    foreach (var student in students)
                     {
-                        xmlDoc.Add(new XElement("attendanceRecords", newRecordElement));
-                    }
-                    else
-                    {
-                        xmlDoc.Root.Add(newRecordElement);
+                        XElement attendanceRecord = new XElement("AttendenceRecord",
+                            new XElement("stdid", student.ID),
+                            new XElement("stdName", student.Name),
+                            new XElement("status", "notAsssigned")
+                        );
+
+                        newSession.Add(attendanceRecord);
                     }
 
-                    stream.Position = 0;
-                    xmlDoc.Save(stream);
+                    xmlDoc.Root.Add(newSession);
+                    xmlDoc.Save(sessionPath);
+
+                    PopulateDataGridViewSession();
+                    MessageBox.Show("New session added successfully.");
+                    PopulateSessionIds();
+                    clearInput();
                 }
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show($"Error adding record: {ex.Message}. Please make sure the XML file is not open in another program.");
+                else
+                {
+                    MessageBox.Show("Session with the specified subject ID not exists.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error adding record: {ex.Message}");
+                MessageBox.Show($"Error adding new session: {ex.Message}");
+            }
+        }
+
+        private string GetClassNameFromId(int subjectId)
+        {
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(classPath);
+
+                XElement stdClass = xmlDoc.Descendants("stdClass")
+                                          .FirstOrDefault(s => (int)s.Element("id") == subjectId);
+                return (string)stdClass.Element("name");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving class name: {ex.Message}");
+                return "DefaultClass";
+            }
+        }
+        private int GetteacherIDFromId(int subjectId)
+        {
+            try
+            {
+                XDocument xmlDoc = XDocument.Load(classPath);
+
+                XElement stdClass = xmlDoc.Descendants("stdClass")
+                                          .FirstOrDefault(s => (int)s.Element("id") == subjectId);
+                return (int)stdClass.Element("teacherId");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving teacher : {ex.Message}");
+                return 0;
             }
         }
 
         private void addRecordBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int stdID = Convert.ToInt32(stdCombobox.Text);
-                Status statuss = (Status)Enum.Parse(typeof(Status), Statuscb.Text, true); // Convert string to enum
+            int subjectID = Convert.ToInt32(subjectCombobox.Text);
+            DateTime date = Convert.ToDateTime(dateSession.Text);
 
+            AddNewSession(date, subjectID);
 
-                if (statuss == null || stdID == null)
-                {
-                    MessageBox.Show("Please fill in all fields.");
-                    return;
-                }
-
-                AddRecordToXml(stdID, statuss);
-
-
-                stdCombobox.SelectedIndex = -1;
-                Statuscb.SelectedIndex = -1;
-
-                PopulateDataGridViewRecord();
-
-
-
-                MessageBox.Show("Recourd added successfully.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error adding record: {ex.Message}");
-            }
+            ManageClasses cm = new ManageClasses();
+            cm.comboxClassData();
         }
 
         //==========================================================================
         //Edit
         //==========================================================================
+        private void EditRecordBtn_Click(object sender, EventArgs e)
+        {
+            if (sessionData.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a session to edit.");
+                return;
+            }
 
-        private void UpdateRecourdInXml(int recordId, int stdID, string status)
+            int sessionId = Convert.ToInt32(sessionData.SelectedRows[0].Cells["id"].Value);
+            DateTime sessionDate = (DateTime)sessionData.SelectedRows[0].Cells["Date"].Value;
+            string formattedDate = sessionDate.ToString("dd/MM/yyyy");
+
+            if (Validation.IsDateInCorrectFormat(formattedDate))
+            {
+                UpdateSessionDateInXml(sessionId, formattedDate);
+                PopulateDataGridViewSession();
+                
+                MessageBox.Show("Session updated successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Invalid date format. Please enter the date in the format: dd/MM/yyyy");
+            }
+        }
+
+        private void UpdateSessionDateInXml(int sessionId, string newDate)
         {
             try
             {
-                XDocument xmlDoc = XDocument.Load(recordPath);
-                XElement recordToUpdate = xmlDoc.Descendants("attendanceRecord").FirstOrDefault(u => (int)u.Element("id") == recordId);
+                XDocument xmlDoc = XDocument.Load(sessionPath);
+                XElement sessionToUpdate = xmlDoc.Descendants("Session")
+                                                  .FirstOrDefault(s => (int)s.Attribute("id") == sessionId);
 
-                if (recordToUpdate != null)
+                if (sessionToUpdate != null)
                 {
-                    recordToUpdate.Element("stdId").Value = stdID.ToString();
-                    recordToUpdate.Element("status").Value = status;
-
-                    xmlDoc.Save(recordPath);
+                    sessionToUpdate.Attribute("date").Value = newDate;
+                    xmlDoc.Save(sessionPath);
                 }
                 else
                 {
-                    MessageBox.Show("record with the specified ID not found.");
+                    MessageBox.Show("Session with the specified ID not found.");
                 }
             }
             catch (IOException ex)
             {
-                MessageBox.Show($"Error updating record: {ex.Message}. Please make sure the XML file is not open in another program.");
+                MessageBox.Show($"Error updating session date: {ex.Message}. Please make sure the XML file is not open in another program.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error updating record: {ex.Message}");
+                MessageBox.Show($"Error updating session date: {ex.Message}");
             }
         }
 
-        private void EditRecordBtn_Click(object sender, EventArgs e)
-        {
-            if (recordData.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a record to edit.");
-                return;
-            }
-
-            int recordID = Convert.ToInt32(recordData.SelectedRows[0].Cells["id"].Value);
-            int stdId = Convert.ToInt32(recordData.SelectedRows[0].Cells["studentID"].Value);
-            string status = recordData.SelectedRows[0].Cells["studentStatus"].Value.ToString();
-
-            UpdateRecourdInXml(recordID, stdId, status);
-
-            PopulateDataGridViewRecord();
+       
 
 
-            MessageBox.Show("recourd updated successfully.");
-        }
         //==========================================================================
         //Delete
         //==========================================================================
 
-        private void DeleteRecordFromXml(int userId)
+        private void DeleteRecordBtn_Click(object sender, EventArgs e)
+        {
+            if (sessionData.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a session to delete.");
+                return;
+            }
+
+            int sessionId = Convert.ToInt32(sessionData.SelectedRows[0].Cells["id"].Value);
+            DeleteSessionFromXml(sessionId);
+
+            PopulateDataGridViewSession();
+            ManageClasses cm = new ManageClasses();
+            cm.comboxClassData();
+        }
+
+        private void DeleteSessionFromXml(int sessionId)
         {
             try
             {
-                XDocument xmlDoc = XDocument.Load(recordPath);
-                XElement recordToDelete = xmlDoc.Descendants("attendanceRecord").FirstOrDefault(u => (int)u.Element("id") == userId);
+                XDocument xmlDoc = XDocument.Load(sessionPath);
 
-                if (recordToDelete != null)
+                // Find the session to delete
+                XElement sessionToDelete = xmlDoc.Root.Elements("Session")
+                                                     .FirstOrDefault(s => (int)s.Attribute("id") == sessionId);
+
+                if (sessionToDelete != null)
                 {
-                    recordToDelete.Remove();
-                    xmlDoc.Save(recordPath);
+                    sessionToDelete.Remove();
+                    xmlDoc.Save(sessionPath);
+                    MessageBox.Show("Session deleted successfully.");
                 }
                 else
                 {
-                    MessageBox.Show("record with the specified ID not found.");
+                    MessageBox.Show("Session with the specified ID not found.");
                 }
             }
             catch (IOException ex)
             {
-                MessageBox.Show($"Error deleting record: {ex.Message}. Please make sure the XML file is not open in another program.");
+                MessageBox.Show($"Error deleting session: {ex.Message}. Please make sure the XML file is not open in another program.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error deleting record: {ex.Message}");
+                MessageBox.Show($"Error deleting session: {ex.Message}");
             }
         }
 
-
-        private void DeleteRecordBtn_Click(object sender, EventArgs e)
-        {
-            if (recordData.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a record to delete.");
-                return;
-            }
-
-            int recordId = Convert.ToInt32(recordData.SelectedRows[0].Cells["id"].Value);
-            DeleteRecordFromXml(recordId);
-
-            PopulateDataGridViewRecord();
-            MessageBox.Show("Record deleted successfully.");
-        }
 
         //==========================================================================
-        //Search
+        //Additional Methods
         //==========================================================================
-        private void SearchAndPopulateGridView(string searchText)
-        {
-            using (var stream = new FileStream(recordPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            {
-                XDocument xmlDoc = XDocument.Load(stream);
-                var searchResults = xmlDoc.Root.Elements("attendanceRecord")
-                    .Where(u =>  u.Element("stdId")?.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase) == true)
-                    .Select(u => new attendanceRecord
-                    {
-                        ID = (int)u.Element("id"),
-                        studentID = (int)u.Element("stdId"),
-                        date = (DateTime)u.Element("date"),
-                        studentStatus = (Status)Enum.Parse(typeof(Status), (string)u.Element("status"))
-                    }).ToList();
-                recordData.DataSource = searchResults;
 
+        private void sessionData_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            List<string> columnsToPreventEditing = new List<string> { "id", "className", "teacherID" };
+
+            if (columnsToPreventEditing.Contains(sessionData.Columns[e.ColumnIndex].Name))
+            {
+                e.Cancel = true;
             }
         }
 
-        private void stdNameTxtSearch_TextChanged(object sender, EventArgs e)
+        private void clearInput()
         {
-            string searchText = stdNameTxtSearch.Text;
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                SearchAndPopulateGridView(searchText);
-            }
-            else
-            {
-                PopulateDataGridViewRecord();
-            }
+            subjectCombobox.SelectedIndex = -1;
+
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

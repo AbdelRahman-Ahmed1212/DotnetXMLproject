@@ -8,6 +8,8 @@ namespace DotnetXmlProject.Classes
 {
     internal class Student:User
     {
-        List<string> classes { set; get; }
+        public int ID { get; set; }
+        public List<int> AttendenceIDS { get; set; }
+        public List<stdClass> classes { get; set; }
     }
 }

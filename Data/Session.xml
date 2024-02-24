@@ -1,78 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Sessions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocatio="./Session.xsd">
-  <Session id="1" date="12/12/2024" class="A" teacherID="26">
-    <AttendenceRecord>
-      <stdid>27</stdid>
-      <stdName>Ahmed</stdName>
-      <status>Absent</status>
-    </AttendenceRecord>
-    <AttendenceRecord>
-      <stdid>1</stdid>
-      <stdName>Ali</stdName>
-      <status>Absent</status>
-    </AttendenceRecord>
-    <AttendenceRecord>
-      <stdid>7</stdid>
-      <stdName>Kamil</stdName>
-      <status>Present</status>
-    </AttendenceRecord>
-    <AttendenceRecord>
-      <stdid>6</stdid>
-      <stdName>mai</stdName>
-      <status>Present</status>
-    </AttendenceRecord>
+
+  <Session id="1" date="12/12/2024" class="A" teacherId="3" classID="1">
     <AttendenceRecord>
       <stdid>5</stdid>
-      <stdName>mahmoud</stdName>
-      <status>Present</status>
-    </AttendenceRecord>
-    <AttendenceRecord>
-      <stdid>3</stdid>
-      <stdName>bob</stdName>
-      <status>Present</status>
-    </AttendenceRecord>
-    <AttendenceRecord>
-      <stdid>9</stdid>
-      <stdName>amr</stdName>
-      <status>Present</status>
-      <date>1/1/2024</date>
-    </AttendenceRecord>
-  </Session>
-  <Session id="2" date="24/12/2024" class="A" teacherID="26">
-    <AttendenceRecord>
-      <stdid>27</stdid>
       <stdName>Ahmed</stdName>
-      <status>Absent</status>
+      <status>notAsssigned</status>
     </AttendenceRecord>
     <AttendenceRecord>
       <stdid>6</stdid>
       <stdName>Ali</stdName>
-      <status>Absent</status>
+      <status>notAsssigned</status>
     </AttendenceRecord>
     <AttendenceRecord>
       <stdid>7</stdid>
       <stdName>Kamil</stdName>
-      <status>Absent</status>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+  </Session>
+  <Session id="2" date="24/12/2024" class="A" teacherId="3" classID="1">
+    <AttendenceRecord>
+      <stdid>5</stdid>
+      <stdName>Ahmed</stdName>
+      <status>notAsssigned</status>
     </AttendenceRecord>
     <AttendenceRecord>
-      <stdid>3</stdid>
-      <stdName>bob</stdName>
-      <status>Absent</status>
+      <stdid>6</stdid>
+      <stdName>Ali</stdName>
+      <status>notAsssigned</status>
     </AttendenceRecord>
     <AttendenceRecord>
-      <stdid>23</stdid>
-      <stdName>asmaa</stdName>
-      <status>Absent</status>
+      <stdid>7</stdid>
+      <stdName>Kamil</stdName>
+
+      <status>notAsssigned</status>
     </AttendenceRecord>
+  </Session>
+  <Session id="3" date="12/05/2020" subjectId="12" class="sql" teacherId="26" classID="1">
     <AttendenceRecord>
-      <stdid>24</stdid>
-      <stdName>ppp</stdName>
-      <status>Absent</status>
+      <stdid>9</stdid>
+      <stdName>mmm</stdName>
+      <status>notAsssigned</status>
     </AttendenceRecord>
+  </Session>
+  <Session id="4" date="22/02/2024" subjectId="6" class="kkk" teacherId="3" />
+  <Session id="5" date="24/02/2024" subjectId="4" class="html" teacherId="3" />
+  <Session id="6" date="31/12/2024" subjectId="4" class="html" teacherId="3">
     <AttendenceRecord>
-      <stdid>21</stdid>
-      <stdName>smsm</stdName>
-      <status>Absent</status>
+      <stdid>2</stdid>
+      <stdName>alice_smith</stdName>
+      <status>notAsssigned</status>
     </AttendenceRecord>
   </Session>
 </Sessions>
