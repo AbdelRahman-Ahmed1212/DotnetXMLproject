@@ -45,7 +45,6 @@
             usernamelabel = new Label();
             Rlabel1 = new Label();
             Wlabel = new Label();
-            teacher_classesv1 = new studentTeacherUserControl.teacher_classesv();
             TchpanelSide.SuspendLayout();
             panel6.SuspendLayout();
             panel4.SuspendLayout();
@@ -57,7 +56,7 @@
             // 
             // TchpanelSide
             // 
-            TchpanelSide.BackColor = Color.DarkCyan;
+            TchpanelSide.BackColor = Color.PeachPuff;
             TchpanelSide.Controls.Add(panel6);
             TchpanelSide.Controls.Add(panel4);
             TchpanelSide.Controls.Add(panel1);
@@ -178,11 +177,11 @@
             // 
             // TchPanelTop
             // 
-            TchPanelTop.BackColor = Color.DarkCyan;
-            TchPanelTop.Controls.Add(Rlabel1);
+            TchPanelTop.BackColor = Color.DarkSalmon;
             TchPanelTop.Controls.Add(Logoutbutton);
             TchPanelTop.Controls.Add(rolelabel);
             TchPanelTop.Controls.Add(usernamelabel);
+            TchPanelTop.Controls.Add(Rlabel1);
             TchPanelTop.Controls.Add(Wlabel);
             TchPanelTop.Dock = DockStyle.Top;
             TchPanelTop.Location = new Point(258, 0);
@@ -236,22 +235,12 @@
             Wlabel.TabIndex = 0;
             Wlabel.Text = "Welcome: ";
             // 
-            // teacher_classesv1
-            // 
-            teacher_classesv1.BackColor = Color.White;
-            teacher_classesv1.Dock = DockStyle.Fill;
-            teacher_classesv1.Location = new Point(258, 125);
-            teacher_classesv1.Name = "teacher_classesv1";
-            teacher_classesv1.Size = new Size(942, 595);
-            teacher_classesv1.TabIndex = 0;
-            // 
             // Teacher
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 720);
-            Controls.Add(teacher_classesv1);
             Controls.Add(TchPanelTop);
             Controls.Add(TchpanelSide);
             Name = "Teacher";
@@ -290,6 +279,5 @@
         private Panel panel6;
         private Button TchReportbutton;
         private Button Logoutbutton;
-        private studentTeacherUserControl.teacher_classesv teacher_classesv1;
     }
 }
