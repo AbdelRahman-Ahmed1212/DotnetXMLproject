@@ -2,11 +2,10 @@
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./userValidate.xsd">
   <user>
     <id>1</id>
-    <name>ali</name>
-    <userName>ali</userName>
-
+    <email>asmaa</email>
+    <username>asmaa</username>
     <password>123</password>
-    <role>Teacher</role>
+    <role>Admin</role>
   </user>
   <student>
     <id>2</id>
