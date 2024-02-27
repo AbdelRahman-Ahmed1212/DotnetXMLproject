@@ -62,11 +62,11 @@
             pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel4 = new Panel();
+            button1 = new Button();
             labelWelcome = new Label();
             label2 = new Label();
             labelTime = new Label();
             timerDate = new System.Windows.Forms.Timer(components);
-            button1 = new Button();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -115,25 +115,29 @@
             // 
             // pictureBox10
             // 
+            pictureBox10.Image = Properties.Resources.training;
             resources.ApplyResources(pictureBox10, "pictureBox10");
             pictureBox10.Name = "pictureBox10";
             pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
-            pictureBox9.Image = Properties.Resources.report;
+            pictureBox9.Image = Properties.Resources.sheet;
             resources.ApplyResources(pictureBox9, "pictureBox9");
             pictureBox9.Name = "pictureBox9";
             pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
+            pictureBox8.Image = Properties.Resources.session;
             resources.ApplyResources(pictureBox8, "pictureBox8");
             pictureBox8.Name = "pictureBox8";
             pictureBox8.TabStop = false;
             // 
             // pictureBox6
             // 
+            pictureBox6.Image = Properties.Resources.books;
+            pictureBox6.InitialImage = Properties.Resources.online_learning;
             resources.ApplyResources(pictureBox6, "pictureBox6");
             pictureBox6.Name = "pictureBox6";
             pictureBox6.TabStop = false;
@@ -142,20 +146,22 @@
             // 
             manageBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(manageBtn, "manageBtn");
-            manageBtn.ForeColor = Color.White;
+            manageBtn.ForeColor = Color.Azure;
             manageBtn.Name = "manageBtn";
             manageBtn.UseVisualStyleBackColor = true;
             manageBtn.Click += manageBtn_Click;
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources._new;
+            pictureBox5.Image = Properties.Resources.add_friend;
             resources.ApplyResources(pictureBox5, "pictureBox5");
             pictureBox5.Name = "pictureBox5";
             pictureBox5.TabStop = false;
             // 
             // pictureBox3
             // 
+            pictureBox3.Image = Properties.Resources.dashboardTwo;
+            pictureBox3.InitialImage = Properties.Resources.magnifie;
             resources.ApplyResources(pictureBox3, "pictureBox3");
             pictureBox3.Name = "pictureBox3";
             pictureBox3.TabStop = false;
@@ -164,7 +170,7 @@
             // 
             dashboardBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(dashboardBtn, "dashboardBtn");
-            dashboardBtn.ForeColor = Color.White;
+            dashboardBtn.ForeColor = Color.Azure;
             dashboardBtn.Name = "dashboardBtn";
             dashboardBtn.UseVisualStyleBackColor = true;
             dashboardBtn.Click += dashboardBtn_Click;
@@ -173,7 +179,7 @@
             // 
             addClassBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(addClassBtn, "addClassBtn");
-            addClassBtn.ForeColor = Color.White;
+            addClassBtn.ForeColor = Color.Azure;
             addClassBtn.Name = "addClassBtn";
             addClassBtn.UseVisualStyleBackColor = true;
             addClassBtn.Click += addClassBtn_Click;
@@ -182,7 +188,7 @@
             // 
             addUserBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(addUserBtn, "addUserBtn");
-            addUserBtn.ForeColor = Color.White;
+            addUserBtn.ForeColor = Color.Azure;
             addUserBtn.Name = "addUserBtn";
             addUserBtn.UseVisualStyleBackColor = true;
             addUserBtn.Click += addUserBtn_Click;
@@ -197,7 +203,7 @@
             // 
             attendanveBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(attendanveBtn, "attendanveBtn");
-            attendanveBtn.ForeColor = Color.White;
+            attendanveBtn.ForeColor = Color.Azure;
             attendanveBtn.Name = "attendanveBtn";
             attendanveBtn.UseVisualStyleBackColor = true;
             attendanveBtn.Click += attendanveBtn_Click;
@@ -206,7 +212,7 @@
             // 
             reportBtn.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(reportBtn, "reportBtn");
-            reportBtn.ForeColor = Color.White;
+            reportBtn.ForeColor = Color.Azure;
             reportBtn.Name = "reportBtn";
             reportBtn.UseVisualStyleBackColor = true;
             reportBtn.Click += reportBtn_Click;
@@ -223,13 +229,14 @@
             // label5
             // 
             resources.ApplyResources(label5, "label5");
-            label5.ForeColor = Color.White;
+            label5.ForeColor = Color.Azure;
             label5.Name = "label5";
             // 
             // label4
             // 
             resources.ApplyResources(label4, "label4");
-            label4.ForeColor = Color.White;
+            label4.BackColor = Color.DarkCyan;
+            label4.ForeColor = Color.Azure;
             label4.Name = "label4";
             // 
             // pictureBox1
@@ -252,6 +259,7 @@
             panel10.Controls.Add(classManagement2);
             resources.ApplyResources(panel10, "panel10");
             panel10.Name = "panel10";
+            panel10.Paint += panel10_Paint;
             // 
             // test1
             // 
@@ -259,6 +267,7 @@
             resources.ApplyResources(test1, "test1");
             test1.ForeColor = Color.DarkCyan;
             test1.Name = "test1";
+            test1.Load += test1_Load;
             // 
             // attendanceMangement1
             // 
@@ -269,9 +278,9 @@
             // 
             // addUser1
             // 
-            addUser1.BackColor = Color.White;
+            addUser1.BackColor = Color.Azure;
             resources.ApplyResources(addUser1, "addUser1");
-            addUser1.ForeColor = Color.Salmon;
+            addUser1.ForeColor = Color.DarkCyan;
             addUser1.Name = "addUser1";
             // 
             // manageClasses1
@@ -299,6 +308,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Image = Properties.Resources.minimizeTwo1;
             resources.ApplyResources(pictureBox4, "pictureBox4");
             pictureBox4.Name = "pictureBox4";
             pictureBox4.TabStop = false;
@@ -306,6 +316,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Image = Properties.Resources.fire_exit1;
             resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
@@ -321,33 +332,33 @@
             resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             // 
-            // labelWelcome
-            // 
-            resources.ApplyResources(labelWelcome, "labelWelcome");
-            labelWelcome.ForeColor = Color.White;
-            labelWelcome.Name = "labelWelcome";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(label2, "label2");
-            label2.ForeColor = Color.White;
-            label2.Name = "label2";
-            // 
-            // labelTime
-            // 
-            resources.ApplyResources(labelTime, "labelTime");
-            labelTime.ForeColor = Color.White;
-            labelTime.Name = "labelTime";
-            // 
-            // timerDate
-            // 
-            timerDate.Tick += timerDate_Tick;
-            // 
             // button1
             // 
             resources.ApplyResources(button1, "button1");
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = true;
+            // 
+            // labelWelcome
+            // 
+            resources.ApplyResources(labelWelcome, "labelWelcome");
+            labelWelcome.ForeColor = Color.Azure;
+            labelWelcome.Name = "labelWelcome";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(label2, "label2");
+            label2.ForeColor = Color.Azure;
+            label2.Name = "label2";
+            // 
+            // labelTime
+            // 
+            resources.ApplyResources(labelTime, "labelTime");
+            labelTime.ForeColor = Color.Azure;
+            labelTime.Name = "labelTime";
+            // 
+            // timerDate
+            // 
+            timerDate.Tick += timerDate_Tick;
             // 
             // Admin
             // 
@@ -391,8 +402,6 @@
         private Button attendanveBtn;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private adminUserControl.addUser addUser1;
-        private adminUserControl.attendanceMangement attendanceMangement1;
         private adminUserControl.ClassManagement classManagement1;
         private Panel panel10;
         private Button manageBtn;
@@ -417,9 +426,11 @@
         private PictureBox pictureBox8;
         private System.Windows.Forms.Timer timerDate;
         private PictureBox pictureBox10;
-        private adminUserControl.ClassManagement classManagement2;
-        private adminUserControl.ManageClasses manageClasses1;
-        private adminUserControl.test test1;
         private Button button1;
+        private adminUserControl.test test1;
+        private adminUserControl.attendanceMangement attendanceMangement1;
+        private adminUserControl.addUser addUser1;
+        private adminUserControl.ManageClasses manageClasses1;
+        private adminUserControl.ClassManagement classManagement2;
     }
 }

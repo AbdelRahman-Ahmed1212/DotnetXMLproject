@@ -3,7 +3,7 @@
 using DotnetXmlProject.Classes;
 using Microsoft.VisualBasic.ApplicationServices;
 
-﻿using DotnetXmlProject.Classes;
+
 
 
 
@@ -12,8 +12,12 @@ namespace DotnetXmlProject
     public partial class Admin : Form
     {
         public static string username;
+
+
         public Admin()
         {
+
+
             InitializeComponent();
 
             addUser1.Visible = false;
@@ -26,6 +30,14 @@ namespace DotnetXmlProject
             timerDate.Start();
 
 
+            // Subscribe to events from addUser UserControl
+            addUser1.UserAdded += AddUser1_UserAdded;
+            addUser1.UserDeleted += AddUser1_UserDeleted;
+
+            classManagement2.SessionDeleted += sessionDelete;
+            classManagement2.SessionAdded += sessionDelete;
+
+
         }
 
         private void MovePanel(Control button)
@@ -33,7 +45,7 @@ namespace DotnetXmlProject
             panelSide.Location = new Point(button.Location.X - button.Location.X, button.Location.Y);
         }
 
-      
+
         private void addUserBtn_Click(object sender, EventArgs e)
         {
             addUser1.Visible = true;
@@ -70,19 +82,15 @@ namespace DotnetXmlProject
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
-            addUser1.Visible = false;
-            attendanceMangement1.Visible = false;
-            classManagement2.Visible = false;
-            manageClasses1.Visible = false;
-            test1.Visible = false;
+           
 
             MovePanel(reportBtn);
-        //    classManagement1.Visible = false;
+            //    classManagement1.Visible = false;
             Reports r1 = new Reports();
             r1.Show();
         }
 
-       
+
 
         private void manageBtn_Click(object sender, EventArgs e)
         {
@@ -132,6 +140,53 @@ namespace DotnetXmlProject
             test1.Visible = true;
         }
 
-       
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void classManagement2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void test1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void AddUser1_UserAdded(object sender, EventArgs e)
+        {
+            // Reload ComboBox in attendanceMangement UserControl when a user is added
+            classManagement2.comboxTeacherData();
+            manageClasses1.comboxStdData();
+            manageClasses1.comboxTeacherData();
+            manageClasses1.comboxUserData();
+            
+        }
+
+        private void AddUser1_UserDeleted(object sender, EventArgs e)
+        {
+            // Reload ComboBox in attendanceMangement UserControl when a user is deleted
+            classManagement2.comboxTeacherData();
+            manageClasses1.comboxStdData();
+            manageClasses1.comboxTeacherData();
+            manageClasses1.comboxUserData();
+        }
+
+        private void sessionAdd(object sender, EventArgs e)
+        {
+            // Reload ComboBox in attendanceMangement UserControl when a user is added
+            manageClasses1.comboxClassData();
+            attendanceMangement1.comboxSubjectData();
+        }
+
+        private void sessionDelete(object sender, EventArgs e)
+        {
+            // Reload ComboBox in attendanceMangement UserControl when a user is deleted
+            manageClasses1.comboxClassData();
+            attendanceMangement1.comboxSubjectData();
+        }
     }
 }

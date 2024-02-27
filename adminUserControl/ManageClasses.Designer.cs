@@ -32,6 +32,7 @@
             toolTip1 = new ToolTip(components);
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            stdClassID = new ListBox();
             addClassTeacher = new Button();
             addClassStd = new Button();
             teacherClassID = new ComboBox();
@@ -40,7 +41,6 @@
             panel2 = new Panel();
             label1 = new Label();
             label2 = new Label();
-            stdClassID = new ComboBox();
             classStdID = new ComboBox();
             panel4 = new Panel();
             panel3 = new Panel();
@@ -73,6 +73,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Azure;
+            tabPage1.Controls.Add(stdClassID);
             tabPage1.Controls.Add(addClassTeacher);
             tabPage1.Controls.Add(addClassStd);
             tabPage1.Controls.Add(teacherClassID);
@@ -81,7 +82,6 @@
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(stdClassID);
             tabPage1.Controls.Add(classStdID);
             tabPage1.Controls.Add(panel4);
             tabPage1.Controls.Add(panel3);
@@ -93,8 +93,21 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(934, 460);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Add Classes";
+            tabPage1.Text = "Add Subjects";
             tabPage1.Click += tabPage1_Click;
+            // 
+            // stdClassID
+            // 
+            stdClassID.BorderStyle = BorderStyle.None;
+            stdClassID.ForeColor = Color.DarkCyan;
+            stdClassID.FormattingEnabled = true;
+            stdClassID.ItemHeight = 15;
+            stdClassID.Location = new Point(107, 71);
+            stdClassID.MultiColumn = true;
+            stdClassID.Name = "stdClassID";
+            stdClassID.SelectionMode = SelectionMode.MultiExtended;
+            stdClassID.Size = new Size(197, 90);
+            stdClassID.TabIndex = 33;
             // 
             // addClassTeacher
             // 
@@ -162,9 +175,9 @@
             label1.ForeColor = Color.DarkCyan;
             label1.Location = new Point(418, 341);
             label1.Name = "label1";
-            label1.Size = new Size(72, 21);
+            label1.Size = new Size(87, 21);
             label1.TabIndex = 27;
-            label1.Text = "Class ID :";
+            label1.Text = "Subject ID :";
             // 
             // label2
             // 
@@ -176,15 +189,6 @@
             label2.Size = new Size(88, 21);
             label2.TabIndex = 28;
             label2.Text = "Teacher ID :";
-            // 
-            // stdClassID
-            // 
-            stdClassID.FlatStyle = FlatStyle.Flat;
-            stdClassID.FormattingEnabled = true;
-            stdClassID.Location = new Point(107, 142);
-            stdClassID.Name = "stdClassID";
-            stdClassID.Size = new Size(200, 23);
-            stdClassID.TabIndex = 24;
             // 
             // classStdID
             // 
@@ -216,11 +220,11 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
             label4.ForeColor = Color.DarkCyan;
-            label4.Location = new Point(427, 140);
+            label4.Location = new Point(411, 140);
             label4.Name = "label4";
-            label4.Size = new Size(72, 21);
+            label4.Size = new Size(87, 21);
             label4.TabIndex = 6;
-            label4.Text = "Class ID :";
+            label4.Text = "Subject ID :";
             // 
             // label3
             // 
@@ -248,7 +252,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(934, 460);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Manage Classes";
+            tabPage2.Text = "Manage Subjects";
             // 
             // classesData
             // 
@@ -345,7 +349,6 @@
         private Panel panel2;
         private Label label1;
         private Label label2;
-        private ComboBox stdClassID;
         private ComboBox classStdID;
         private Panel panel4;
         private Panel panel3;
@@ -359,5 +362,6 @@
         private Button button4;
         private Button button3;
         private DataGridView classesData;
+        private ListBox stdClassID;
     }
 }

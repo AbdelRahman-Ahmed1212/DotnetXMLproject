@@ -118,28 +118,129 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="stdNumLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 97</value>
+  </data>
   <data name="stdNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 35</value>
+    <value>71, 28</value>
   </data>
   <data name="stdNumLabel.Text" xml:space="preserve">
     <value>الطلاب</value>
   </data>
+  <data name="classesNumLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>636, 295</value>
+  </data>
   <data name="classesNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 35</value>
+    <value>77, 28</value>
   </data>
   <data name="classesNumLabel.Text" xml:space="preserve">
     <value>الفصول</value>
   </data>
+  <data name="SessionsNumLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>226, 295</value>
+  </data>
   <data name="SessionsNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 35</value>
+    <value>100, 28</value>
   </data>
   <data name="SessionsNumLabel.Text" xml:space="preserve">
     <value>المحاضرات</value>
   </data>
+  <data name="teachersNumLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>634, 97</value>
+  </data>
   <data name="teachersNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 35</value>
+    <value>89, 28</value>
   </data>
   <data name="teachersNumLabel.Text" xml:space="preserve">
     <value>المدرسين</value>
+  </data>
+  <data name="classesNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>654, 323</value>
+  </data>
+  <data name="classesNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 21</value>
+  </data>
+  <data name="sessionNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 323</value>
+  </data>
+  <data name="sessionNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 21</value>
+  </data>
+  <data name="techerNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>654, 125</value>
+  </data>
+  <data name="techerNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 21</value>
+  </data>
+  <data name="stdNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 125</value>
+  </data>
+  <data name="stdNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 21</value>
+  </data>
+  <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 37</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="restore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="restore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 37</value>
+  </data>
+  <data name="language.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 37</value>
+  </data>
+  <data name="language.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 2, 3, 2</value>
+  </data>
+  <data name="language.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 37</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 182</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 91</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>587, 182</value>
+  </data>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 91</value>
+  </data>
+  <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 91</value>
+  </data>
+  <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 91</value>
+  </data>
+  <data name="pictureBox4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>942, 501</value>
   </data>
 </root>

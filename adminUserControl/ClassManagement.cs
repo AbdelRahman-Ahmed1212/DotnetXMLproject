@@ -16,9 +16,16 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class ClassManagement : UserControl
     {
-        public string classPath = "D:\\teacherB\\DotnetXMLproject\\Data\\classes.xml";
-        public string userPath = "D:\\teacherB\\DotnetXMLproject\\Data\\users.xml";
-        public string sessionPath = "D:\\teacherB\\DotnetXMLproject\\Data\\session.xml";
+        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
+        public string userPath = "D:\\c#xmlv4\\Data\\users.xml";
+        public string sessionPath = "D:\\c#xmlv4\\Data\\session.xml";
+
+
+        // Define events to notify the parent form when a Session is added or deleted
+        public event EventHandler SessionAdded;
+        public event EventHandler SessionDeleted;
+
+
         public ClassManagement()
         {
             InitializeComponent();
@@ -38,7 +45,7 @@ namespace DotnetXmlProject.adminUserControl
             {
                 var classes = XElement.Load(readerClass);
                 var sourceClass = classes.Elements("stdClass")
-                                        .Select(u => new classData
+                                        .Select(u => new stdClass
                                         {
                                             id = (int)u.Element("id"),
                                             name = (string)u.Element("name"),
@@ -72,14 +79,14 @@ namespace DotnetXmlProject.adminUserControl
             try
             {
                 string name = NameText.Text;
-                int teacherID = Convert.ToInt32(techercb.Text);
+               
 
-                if (string.IsNullOrEmpty(name) || teacherID == 0)
+                if (string.IsNullOrEmpty(name) || techercb.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill in all fields.");
                     return;
                 }
-
+                int teacherID = Convert.ToInt32(techercb.Text);
                 AddClassToXml(name, teacherID);
 
                 NameText.Text = "";
@@ -89,14 +96,13 @@ namespace DotnetXmlProject.adminUserControl
 
                 comboxTeacherData();
 
+                //events
+                OnSessionAdded(EventArgs.Empty);
+
 
                 MessageBox.Show("Class added successfully.");
 
-                attendanceMangement am = new attendanceMangement();
-                am.comboxSubjectData();
-
-                ManageClasses mc = new ManageClasses();
-                mc.comboxClassData();
+               
             }
             catch (Exception ex)
             {
@@ -339,6 +345,9 @@ namespace DotnetXmlProject.adminUserControl
 
             PopulateDataGridViewClass();
             MessageBox.Show("Class deleted successfully.");
+
+            //events
+            OnSessionDeleted(EventArgs.Empty);
         }
 
 
@@ -493,6 +502,18 @@ namespace DotnetXmlProject.adminUserControl
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected virtual void OnSessionAdded(EventArgs e)
+        {
+            // Raise the UserAdded event
+            SessionAdded?.Invoke(this, e);
+        }
+
+        protected virtual void OnSessionDeleted(EventArgs e)
+        {
+            // Raise the UserDeleted event
+            SessionDeleted?.Invoke(this, e);
         }
     }
 }

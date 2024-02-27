@@ -25,8 +25,8 @@ namespace DotnetXmlProject.adminUserControl
             comboxTeacherData();
             comboxUserData();
         }
-        public string classPath = "D:\\teacherB\\DotnetXMLproject\\Data\\classes.xml";
-        public string userPath = "D:\\teacherB\\DotnetXMLproject\\Data\\users.xml";
+        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
+        public string userPath = "D:\\c#xmlv4\\Data\\users.xml";
 
         public void RefrchData()
         {
@@ -96,12 +96,14 @@ namespace DotnetXmlProject.adminUserControl
         {
             classStdID.Items.Clear();
             classTeacherID.Items.Clear();
+
             using (var reader = XmlReader.Create(classPath))
             {
                 var Users = XElement.Load(reader);
                 var classIds = Users.Elements("stdClass")
                                       .Select(u => (int)u.Element("id"))
                                       .ToList();
+
 
                 classTeacherID.Items.AddRange(classIds.Select(id => id.ToString()).ToArray());
                 classStdID.Items.AddRange(classIds.Select(id => id.ToString()).ToArray());
@@ -118,7 +120,7 @@ namespace DotnetXmlProject.adminUserControl
                     var userData = users.Descendants()
                                         .Where(e => (string)e.Element("id") == id.ToString())
                                         .SelectMany(u => u.Descendants("class")
-                                            .Select(c => new classData
+                                            .Select(c => new stdClass
                                             {
                                                 id = (int)c.Element("classID"),
                                                 TeacherId = id,
@@ -153,6 +155,66 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         //Add
         //==========================================================================
+        private void AddClassDataToStudent(List<int> studentIDs, int classID)
+        {
+            try
+            {
+                if (!Validation.CheckIfIdExists(classPath, "stdClass", "id", classID))
+                {
+                    MessageBox.Show("Class with the specified ID not found.");
+                    return;
+                }
+
+                XDocument xmlDoc = XDocument.Load(userPath);
+
+                foreach (int userID in studentIDs)
+                {
+                    var userElement = xmlDoc.Descendants()
+                        .Where(e => e.Name == "student")
+                        .FirstOrDefault(u => (int)u.Element("id") == userID);
+
+                    if (userElement != null)
+                    {
+                        // Check if the class already exists for the user
+                        var existingClasses = userElement.Descendants("class")
+                                                         .Where(c => (int)c.Element("classID") == classID);
+
+                        if (existingClasses.Any())
+                        {
+                            MessageBox.Show($"The class is already assigned to the user {userID}" );
+                            continue; // Move to the next student
+                        }
+
+                        var classNameElement = userElement.Element("classes");
+                        if (classNameElement == null)
+                        {
+                            classNameElement = new XElement("classes");
+                            userElement.Add(classNameElement);
+                        }
+
+                        classNameElement.Add(new XElement("class",
+                                        new XElement("classID", classID),
+                                        new XElement("className", GetClassNameById(classID))));
+                    }
+                    else
+                    {
+                        MessageBox.Show($"User with ID {userID} not found.");
+                    }
+                }
+
+                xmlDoc.Save(userPath);
+
+                MessageBox.Show("Class added successfully.");
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show($"Error adding class: {ex.Message}. Please make sure the XML file is not open in another program.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding class: {ex.Message}");
+            }
+        }
 
 
         private void AddClassDataToUser(int userID, int classID)
@@ -168,13 +230,22 @@ namespace DotnetXmlProject.adminUserControl
                 {
                     XDocument xmlDoc = XDocument.Load(userPath);
 
-
                     var userElement = xmlDoc.Descendants()
                         .Where(e => e.Name == "student" || e.Name == "teacher")
                         .FirstOrDefault(u => (int)u.Element("id") == userID);
 
                     if (userElement != null)
                     {
+                        // Check if the class already exists for the user
+                        var existingClasses = userElement.Descendants("class")
+                                                         .Where(c => (int)c.Element("classID") == classID);
+
+                        if (existingClasses.Any())
+                        {
+                            MessageBox.Show($"The class is already assigned to the user {userID}" );
+                            return;
+                        }
+
                         var classNameElement = userElement.Element("classes");
                         if (classNameElement == null)
                         {
@@ -188,23 +259,21 @@ namespace DotnetXmlProject.adminUserControl
 
                         xmlDoc.Save(userPath);
 
-                        MessageBox.Show("Class add successfully.");
+                        MessageBox.Show("Class added successfully.");
                     }
                     else
                     {
                         MessageBox.Show("User with the specified ID not found.");
                     }
-
                 }
-               
             }
             catch (IOException ex)
             {
-                MessageBox.Show($"Error adding class name: {ex.Message}. Please make sure the XML file is not open in another program.");
+                MessageBox.Show($"Error adding class: {ex.Message}. Please make sure the XML file is not open in another program.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error adding class name: {ex.Message}");
+                MessageBox.Show($"Error adding class: {ex.Message}");
             }
         }
 
@@ -234,14 +303,33 @@ namespace DotnetXmlProject.adminUserControl
 
         private void addClassStd_Click(object sender, EventArgs e)
         {
+            if (stdClassID.SelectedItems.Count == 0 || classStdID.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select students and a class.");
+                return;
+            }
+
+            List<int> studentIDs = new List<int>();
+            foreach (var item in stdClassID.SelectedItems)
+            {
+               
+                    studentIDs.Add(Convert.ToInt32(item));
+               
+            }
+
             int classID = Convert.ToInt32(classStdID.Text);
-            int userID = Convert.ToInt32(stdClassID.Text);
-            AddClassDataToUser(userID, classID);
+            AddClassDataToStudent(studentIDs, classID);
             clearInput();
         }
 
         private void addClassTeacher_Click(object sender, EventArgs e)
         {
+            if (classTeacherID.SelectedIndex == -1 || teacherClassID.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
+
             int classID = Convert.ToInt32(classTeacherID.Text);
             int userID = Convert.ToInt32(teacherClassID.Text);
             AddClassDataToUser(userID, classID);

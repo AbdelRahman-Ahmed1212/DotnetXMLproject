@@ -1,15 +1,15 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿//*using Microsoft.Office.Interop.Excel;
 using System;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DotnetXmlProject
 {
     public partial class GenerateReport : Form
     {
         private DataGridView attendeceGrid;
-        Microsoft.Office.Interop.Excel.Application oXL;
+       /* Microsoft.Office.Interop.Excel.Application oXL;
         Microsoft.Office.Interop.Excel._Workbook oWB;
-        Microsoft.Office.Interop.Excel._Worksheet oSheet;
+        Microsoft.Office.Interop.Excel._Worksheet oSheet;*/
         private string exportMode { get; set; }
         public GenerateReport(DataGridView attendeceGrid)
         {
@@ -47,10 +47,10 @@ namespace DotnetXmlProject
             {
                 MessageBox.Show("Invalid file Name");
             }
-            else
+            /* else
             {
                 // Create a new Excel application
-                Excel.Application excelApp = new Excel.Application();
+               Excel.Application excelApp = new Excel.Application();
                 excelApp.Visible = false; // Optional: Make Excel visible
 
                 // Add a new workbook
@@ -97,7 +97,7 @@ namespace DotnetXmlProject
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
 
-            Generate.Enabled = true;
+            Generate.Enabled = true;*/
 
         }
 

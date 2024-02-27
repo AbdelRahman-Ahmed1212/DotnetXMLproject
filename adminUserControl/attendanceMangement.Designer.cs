@@ -139,7 +139,7 @@
             // 
             // dateSession
             // 
-            dateSession.Location = new Point(527, 184);
+            dateSession.Location = new Point(565, 267);
             dateSession.Name = "dateSession";
             dateSession.Size = new Size(200, 23);
             dateSession.TabIndex = 36;
@@ -147,7 +147,7 @@
             // panel3
             // 
             panel3.BackColor = Color.DarkCyan;
-            panel3.Location = new Point(527, 213);
+            panel3.Location = new Point(565, 296);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 2);
             panel3.TabIndex = 33;
@@ -157,7 +157,7 @@
             Date.AutoSize = true;
             Date.Font = new Font("Segoe UI", 12F);
             Date.ForeColor = Color.DarkCyan;
-            Date.Location = new Point(527, 142);
+            Date.Location = new Point(565, 225);
             Date.Name = "Date";
             Date.Size = new Size(59, 21);
             Date.TabIndex = 34;
@@ -169,7 +169,7 @@
             label5.BackColor = Color.Azure;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label5.ForeColor = Color.DarkCyan;
-            label5.Location = new Point(359, 54);
+            label5.Location = new Point(397, 137);
             label5.Name = "label5";
             label5.Size = new Size(126, 28);
             label5.TabIndex = 29;
@@ -179,7 +179,7 @@
             // 
             addRecordBtn.BackColor = Color.DarkCyan;
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(359, 282);
+            addRecordBtn.Location = new Point(397, 365);
             addRecordBtn.Name = "addRecordBtn";
             addRecordBtn.Size = new Size(133, 42);
             addRecordBtn.TabIndex = 28;
@@ -191,7 +191,7 @@
             // 
             subjectCombobox.FlatStyle = FlatStyle.Flat;
             subjectCombobox.FormattingEnabled = true;
-            subjectCombobox.Location = new Point(89, 187);
+            subjectCombobox.Location = new Point(127, 270);
             subjectCombobox.Name = "subjectCombobox";
             subjectCombobox.Size = new Size(200, 23);
             subjectCombobox.TabIndex = 27;
@@ -199,7 +199,7 @@
             // panel4
             // 
             panel4.BackColor = Color.DarkCyan;
-            panel4.Location = new Point(89, 219);
+            panel4.Location = new Point(127, 302);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 2);
             panel4.TabIndex = 21;
@@ -209,7 +209,7 @@
             ClassIDcb.AutoSize = true;
             ClassIDcb.Font = new Font("Segoe UI", 12F);
             ClassIDcb.ForeColor = Color.DarkCyan;
-            ClassIDcb.Location = new Point(89, 142);
+            ClassIDcb.Location = new Point(127, 225);
             ClassIDcb.Name = "ClassIDcb";
             ClassIDcb.Size = new Size(83, 21);
             ClassIDcb.TabIndex = 23;
