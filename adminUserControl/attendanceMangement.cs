@@ -18,10 +18,10 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class attendanceMangement : UserControl
     {
-        public string recordPath = "..\\..\\..\\Data\\attendence.xml";
-        public string userPath = "..\\..\\..\\Data\\users.xml";
-        public string classPath = "..\\..\\..\\Data\\classes.xml";
-        public string sessionPath = "..\\..\\..\\Data\\session.xml";
+        public string recordPath = "D:\\teacherB\\DotnetXMLproject\\Data\\attendence.xml";
+        public string userPath = "D:\\teacherB\\DotnetXMLproject\\Data\\users.xml";
+        public string classPath = "D:\\teacherB\\DotnetXMLproject\\Data\\classes.xml";
+        public string sessionPath = "D:\\teacherB\\DotnetXMLproject\\Data\\session.xml";
         public attendanceMangement()
         {
             InitializeComponent();

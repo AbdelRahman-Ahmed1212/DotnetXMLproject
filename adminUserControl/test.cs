@@ -13,9 +13,9 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class test : UserControl
     {
-        public string userPath= "D:\\c#xmlv2\\Data\\users.xml";
-        public string classPath = "D:\\c#xmlv2\\Data\\classes.xml";
-        public string sessionPath = "D:\\c#xmlv2\\Data\\session.xml";
+        public string userPath = "D:\\teacherB\\DotnetXMLproject\\Data\\users.xml";
+        public string classPath = "D:\\teacherB\\DotnetXMLproject\\Data\\classes.xml";
+        public string sessionPath = "D:\\teacherB\\DotnetXMLproject\\Data\\session.xml";
 
         public test()
         {
@@ -46,6 +46,11 @@ namespace DotnetXmlProject.adminUserControl
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 return 0;
             }
+        }
+
+        private void stdNumLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

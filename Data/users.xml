@@ -10,7 +10,7 @@
   <student>
     <id>24</id>
     <name>ppp</name>
-    <userName>Ahmed</userName>
+    <username>Ahmed</username>
     <password>123</password>
     <role>Admin</role>
     <classes>
@@ -35,7 +35,7 @@
   <teacher>
     <id>25</id>
     <email>d123@gmail.com</email>
-    <userName>hamed</userName>
+    <username>hamed</username>
     <password>12345678</password>
     <role>Teacher</role>
     <classes>
@@ -56,7 +56,7 @@
   <student>
     <id>26</id>
     <email>j123@gmail.com</email>
-    <userName>jihad</userName>
+    <username>jas</username>
     <password>12345678</password>
     <role>Student</role>
     <classes>

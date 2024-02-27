@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(test));
             stdNumLabel = new Label();
             classesNumLabel = new Label();
             SessionsNumLabel = new Label();
@@ -36,101 +37,78 @@
             sessionNum = new Label();
             techerNum = new Label();
             stdNum = new Label();
+            restore = new Button();
+            language = new Button();
             SuspendLayout();
             // 
             // stdNumLabel
             // 
-            stdNumLabel.AutoSize = true;
-            stdNumLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            resources.ApplyResources(stdNumLabel, "stdNumLabel");
             stdNumLabel.ForeColor = Color.DarkCyan;
-            stdNumLabel.Location = new Point(226, 97);
             stdNumLabel.Name = "stdNumLabel";
-            stdNumLabel.Size = new Size(95, 28);
-            stdNumLabel.TabIndex = 1;
-            stdNumLabel.Text = "Students";
+            stdNumLabel.Click += stdNumLabel_Click;
             // 
             // classesNumLabel
             // 
-            classesNumLabel.AutoSize = true;
-            classesNumLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            resources.ApplyResources(classesNumLabel, "classesNumLabel");
             classesNumLabel.ForeColor = Color.DarkCyan;
-            classesNumLabel.Location = new Point(634, 295);
             classesNumLabel.Name = "classesNumLabel";
-            classesNumLabel.Size = new Size(79, 28);
-            classesNumLabel.TabIndex = 2;
-            classesNumLabel.Text = "Classes";
             // 
             // SessionsNumLabel
             // 
-            SessionsNumLabel.AutoSize = true;
-            SessionsNumLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            resources.ApplyResources(SessionsNumLabel, "SessionsNumLabel");
             SessionsNumLabel.ForeColor = Color.DarkCyan;
-            SessionsNumLabel.Location = new Point(226, 295);
             SessionsNumLabel.Name = "SessionsNumLabel";
-            SessionsNumLabel.Size = new Size(91, 28);
-            SessionsNumLabel.TabIndex = 3;
-            SessionsNumLabel.Text = "Sessions";
             // 
             // teachersNumLabel
             // 
-            teachersNumLabel.AutoSize = true;
-            teachersNumLabel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            resources.ApplyResources(teachersNumLabel, "teachersNumLabel");
             teachersNumLabel.ForeColor = Color.DarkCyan;
-            teachersNumLabel.Location = new Point(634, 97);
             teachersNumLabel.Name = "teachersNumLabel";
-            teachersNumLabel.Size = new Size(94, 28);
-            teachersNumLabel.TabIndex = 4;
-            teachersNumLabel.Text = "Teachers";
             // 
             // classesNum
             // 
-            classesNum.AutoSize = true;
-            classesNum.Font = new Font("Segoe UI", 12F);
+            resources.ApplyResources(classesNum, "classesNum");
             classesNum.ForeColor = Color.DarkCyan;
-            classesNum.Location = new Point(654, 323);
             classesNum.Name = "classesNum";
-            classesNum.Size = new Size(59, 21);
-            classesNum.TabIndex = 15;
-            classesNum.Text = "Name :";
             // 
             // sessionNum
             // 
-            sessionNum.AutoSize = true;
-            sessionNum.Font = new Font("Segoe UI", 12F);
+            resources.ApplyResources(sessionNum, "sessionNum");
             sessionNum.ForeColor = Color.DarkCyan;
-            sessionNum.Location = new Point(241, 323);
             sessionNum.Name = "sessionNum";
-            sessionNum.Size = new Size(59, 21);
-            sessionNum.TabIndex = 16;
-            sessionNum.Text = "Name :";
             // 
             // techerNum
             // 
-            techerNum.AutoSize = true;
-            techerNum.Font = new Font("Segoe UI", 12F);
+            resources.ApplyResources(techerNum, "techerNum");
             techerNum.ForeColor = Color.DarkCyan;
-            techerNum.Location = new Point(654, 125);
             techerNum.Name = "techerNum";
-            techerNum.Size = new Size(59, 21);
-            techerNum.TabIndex = 17;
-            techerNum.Text = "Name :";
             // 
             // stdNum
             // 
-            stdNum.AutoSize = true;
-            stdNum.Font = new Font("Segoe UI", 12F);
+            resources.ApplyResources(stdNum, "stdNum");
             stdNum.ForeColor = Color.DarkCyan;
-            stdNum.Location = new Point(241, 125);
             stdNum.Name = "stdNum";
-            stdNum.Size = new Size(59, 21);
-            stdNum.TabIndex = 18;
-            stdNum.Text = "Name :";
+            // 
+            // restore
+            // 
+            resources.ApplyResources(restore, "restore");
+            restore.Name = "restore";
+            restore.UseVisualStyleBackColor = true;
+            // 
+            // language
+            // 
+            resources.ApplyResources(language, "language");
+            language.Name = "language";
+            language.UseVisualStyleBackColor = true;
             // 
             // test
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
+            Controls.Add(language);
+            Controls.Add(restore);
             Controls.Add(stdNum);
             Controls.Add(techerNum);
             Controls.Add(sessionNum);
@@ -141,7 +119,6 @@
             Controls.Add(stdNumLabel);
             ForeColor = Color.DarkCyan;
             Name = "test";
-            Size = new Size(942, 501);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -156,5 +133,7 @@
         private Label sessionNum;
         private Label techerNum;
         private Label stdNum;
+        private Button restore;
+        private Button language;
     }
 }

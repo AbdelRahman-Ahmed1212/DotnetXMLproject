@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             panel1 = new Panel();
             panel5 = new Panel();
             pictureBox10 = new PictureBox();
@@ -65,6 +66,7 @@
             label2 = new Label();
             labelTime = new Label();
             timerDate = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -88,13 +90,9 @@
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel11);
             panel1.Controls.Add(panel3);
-            panel1.Dock = DockStyle.Left;
+            resources.ApplyResources(panel1, "panel1");
             panel1.ForeColor = Color.Azure;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(258, 681);
-            panel1.TabIndex = 0;
             // 
             // panel5
             // 
@@ -112,167 +110,104 @@
             panel5.Controls.Add(panelSide);
             panel5.Controls.Add(attendanveBtn);
             panel5.Controls.Add(reportBtn);
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(0, 179);
+            resources.ApplyResources(panel5, "panel5");
             panel5.Name = "panel5";
-            panel5.Size = new Size(258, 502);
-            panel5.TabIndex = 5;
             // 
             // pictureBox10
             // 
-           // pictureBox10.Image = Properties.Resources.manageClass_removebg_preview;
-            pictureBox10.Location = new Point(12, 426);
+            resources.ApplyResources(pictureBox10, "pictureBox10");
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(63, 82);
-            pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox10.TabIndex = 15;
             pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
             pictureBox9.Image = Properties.Resources.report;
-            pictureBox9.Location = new Point(12, 261);
+            resources.ApplyResources(pictureBox9, "pictureBox9");
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(63, 75);
-            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox9.TabIndex = 14;
             pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
-            pictureBox8.Image = Properties.Resources.session_removebg_preview;
-            pictureBox8.Location = new Point(12, 344);
+            resources.ApplyResources(pictureBox8, "pictureBox8");
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(63, 82);
-            pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 13;
             pictureBox8.TabStop = false;
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = Properties.Resources.elearning;
-            pictureBox6.Location = new Point(12, 177);
+            resources.ApplyResources(pictureBox6, "pictureBox6");
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(63, 84);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 12;
             pictureBox6.TabStop = false;
             // 
             // manageBtn
             // 
             manageBtn.FlatAppearance.BorderSize = 0;
-            manageBtn.FlatStyle = FlatStyle.Flat;
-            manageBtn.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(manageBtn, "manageBtn");
             manageBtn.ForeColor = Color.White;
-            manageBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            manageBtn.Location = new Point(12, 432);
             manageBtn.Name = "manageBtn";
-            manageBtn.Size = new Size(199, 67);
-            manageBtn.TabIndex = 12;
-            manageBtn.Text = "               Manage Classes";
             manageBtn.UseVisualStyleBackColor = true;
             manageBtn.Click += manageBtn_Click;
             // 
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources._new;
-            pictureBox5.Location = new Point(12, 92);
+            resources.ApplyResources(pictureBox5, "pictureBox5");
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(63, 79);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 11;
             pictureBox5.TabStop = false;
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.magnifie;
-            pictureBox3.Location = new Point(12, 11);
+            resources.ApplyResources(pictureBox3, "pictureBox3");
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(63, 69);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 
             // dashboardBtn
             // 
             dashboardBtn.FlatAppearance.BorderSize = 0;
-            dashboardBtn.FlatStyle = FlatStyle.Flat;
-            dashboardBtn.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(dashboardBtn, "dashboardBtn");
             dashboardBtn.ForeColor = Color.White;
-            dashboardBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            dashboardBtn.Location = new Point(12, 9);
             dashboardBtn.Name = "dashboardBtn";
-            dashboardBtn.Size = new Size(199, 69);
-            dashboardBtn.TabIndex = 10;
-            dashboardBtn.Text = "       Dashboard";
             dashboardBtn.UseVisualStyleBackColor = true;
             dashboardBtn.Click += dashboardBtn_Click;
             // 
             // addClassBtn
             // 
             addClassBtn.FlatAppearance.BorderSize = 0;
-            addClassBtn.FlatStyle = FlatStyle.Flat;
-            addClassBtn.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(addClassBtn, "addClassBtn");
             addClassBtn.ForeColor = Color.White;
-            addClassBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addClassBtn.Location = new Point(12, 177);
             addClassBtn.Name = "addClassBtn";
-            addClassBtn.Size = new Size(199, 84);
-            addClassBtn.TabIndex = 8;
-            addClassBtn.Text = "     Classes";
             addClassBtn.UseVisualStyleBackColor = true;
             addClassBtn.Click += addClassBtn_Click;
             // 
             // addUserBtn
             // 
             addUserBtn.FlatAppearance.BorderSize = 0;
-            addUserBtn.FlatStyle = FlatStyle.Flat;
-            addUserBtn.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(addUserBtn, "addUserBtn");
             addUserBtn.ForeColor = Color.White;
-            addUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addUserBtn.Location = new Point(12, 92);
             addUserBtn.Name = "addUserBtn";
-            addUserBtn.Size = new Size(199, 79);
-            addUserBtn.TabIndex = 7;
-            addUserBtn.Text = "     Users";
             addUserBtn.UseVisualStyleBackColor = true;
             addUserBtn.Click += addUserBtn_Click;
             // 
             // panelSide
             // 
             panelSide.BackColor = Color.Azure;
-            panelSide.Location = new Point(0, 2);
+            resources.ApplyResources(panelSide, "panelSide");
             panelSide.Name = "panelSide";
-            panelSide.Size = new Size(8, 75);
-            panelSide.TabIndex = 0;
             // 
             // attendanveBtn
             // 
             attendanveBtn.FlatAppearance.BorderSize = 0;
-            attendanveBtn.FlatStyle = FlatStyle.Flat;
-            attendanveBtn.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(attendanveBtn, "attendanveBtn");
             attendanveBtn.ForeColor = Color.White;
-            attendanveBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            attendanveBtn.Location = new Point(12, 344);
             attendanveBtn.Name = "attendanveBtn";
-            attendanveBtn.Size = new Size(199, 82);
-            attendanveBtn.TabIndex = 9;
-            attendanveBtn.Text = "       Sessions";
             attendanveBtn.UseVisualStyleBackColor = true;
             attendanveBtn.Click += attendanveBtn_Click;
             // 
             // reportBtn
             // 
             reportBtn.FlatAppearance.BorderSize = 0;
-            reportBtn.FlatStyle = FlatStyle.Flat;
-            reportBtn.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(reportBtn, "reportBtn");
             reportBtn.ForeColor = Color.White;
-            reportBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            reportBtn.Location = new Point(12, 261);
             reportBtn.Name = "reportBtn";
-            reportBtn.Size = new Size(199, 75);
-            reportBtn.TabIndex = 9;
-            reportBtn.Text = "     Report";
             reportBtn.UseVisualStyleBackColor = true;
             reportBtn.Click += reportBtn_Click;
             // 
@@ -282,52 +217,31 @@
             panel11.Controls.Add(label5);
             panel11.Controls.Add(label4);
             panel11.Controls.Add(pictureBox1);
-            panel11.Dock = DockStyle.Top;
-            panel11.Location = new Point(0, 0);
+            resources.ApplyResources(panel11, "panel11");
             panel11.Name = "panel11";
-            panel11.Size = new Size(258, 179);
-            panel11.TabIndex = 3;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Variable Display", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label5, "label5");
             label5.ForeColor = Color.White;
-            label5.Location = new Point(81, 135);
             label5.Name = "label5";
-            label5.Size = new Size(77, 26);
-            label5.TabIndex = 4;
-            label5.Text = "System";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Variable Display", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label4, "label4");
             label4.ForeColor = Color.White;
-            label4.Location = new Point(12, 106);
             label4.Name = "label4";
-            label4.Size = new Size(240, 26);
-            label4.TabIndex = 3;
-            label4.Text = "Attendance Management ";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
-            pictureBox1.ImageLocation = "D:\\c#xmlv2\\Images\\absent.png";
-            pictureBox1.Location = new Point(81, 4);
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(93, 87);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
             // panel3
             // 
-            panel3.Location = new Point(265, 0);
+            resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
-            panel3.Size = new Size(530, 114);
-            panel3.TabIndex = 4;
             // 
             // panel10
             // 
@@ -336,61 +250,43 @@
             panel10.Controls.Add(addUser1);
             panel10.Controls.Add(manageClasses1);
             panel10.Controls.Add(classManagement2);
-            panel10.Location = new Point(264, 171);
+            resources.ApplyResources(panel10, "panel10");
             panel10.Name = "panel10";
-            panel10.Size = new Size(1094, 507);
-            panel10.TabIndex = 2;
             // 
             // test1
             // 
             test1.BackColor = Color.Azure;
-            test1.Dock = DockStyle.Fill;
+            resources.ApplyResources(test1, "test1");
             test1.ForeColor = Color.DarkCyan;
-            test1.Location = new Point(0, 0);
-            test1.Margin = new Padding(4);
             test1.Name = "test1";
-            test1.Size = new Size(1094, 507);
-            test1.TabIndex = 0;
             // 
             // attendanceMangement1
             // 
             attendanceMangement1.BackColor = Color.Azure;
-            attendanceMangement1.Dock = DockStyle.Fill;
+            resources.ApplyResources(attendanceMangement1, "attendanceMangement1");
             attendanceMangement1.ForeColor = Color.DarkCyan;
-            attendanceMangement1.Location = new Point(0, 0);
             attendanceMangement1.Name = "attendanceMangement1";
-            attendanceMangement1.Size = new Size(1094, 507);
-            attendanceMangement1.TabIndex = 0;
             // 
             // addUser1
             // 
             addUser1.BackColor = Color.White;
-            addUser1.Dock = DockStyle.Fill;
+            resources.ApplyResources(addUser1, "addUser1");
             addUser1.ForeColor = Color.Salmon;
-            addUser1.Location = new Point(0, 0);
             addUser1.Name = "addUser1";
-            addUser1.Size = new Size(1094, 507);
-            addUser1.TabIndex = 0;
             // 
             // manageClasses1
             // 
             manageClasses1.BackColor = Color.Azure;
-            manageClasses1.Dock = DockStyle.Fill;
+            resources.ApplyResources(manageClasses1, "manageClasses1");
             manageClasses1.ForeColor = Color.DarkCyan;
-            manageClasses1.Location = new Point(0, 0);
             manageClasses1.Name = "manageClasses1";
-            manageClasses1.Size = new Size(1094, 507);
-            manageClasses1.TabIndex = 0;
             // 
             // classManagement2
             // 
             classManagement2.BackColor = Color.Azure;
-            classManagement2.Dock = DockStyle.Fill;
+            resources.ApplyResources(classManagement2, "classManagement2");
             classManagement2.ForeColor = Color.DarkCyan;
-            classManagement2.Location = new Point(0, 0);
             classManagement2.Name = "classManagement2";
-            classManagement2.Size = new Size(1094, 507);
-            classManagement2.TabIndex = 0;
             // 
             // panel2
             // 
@@ -398,101 +294,72 @@
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(panel4);
-            panel2.Location = new Point(258, 0);
+            resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
-            panel2.Size = new Size(1116, 165);
-            panel2.TabIndex = 3;
             // 
             // pictureBox4
             // 
-            pictureBox4.ImageLocation = "D:\\c#xmlv2\\Images\\minimize.png";
-            pictureBox4.Location = new Point(913, 19);
+            resources.ApplyResources(pictureBox4, "pictureBox4");
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(90, 40);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 7;
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
             // 
             // pictureBox2
             // 
-            pictureBox2.ImageLocation = "D:\\c#xmlv2\\Images\\exit.png";
-            pictureBox2.Location = new Point(1009, 0);
+            resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(91, 79);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
             // panel4
             // 
             panel4.BackColor = Color.DarkCyan;
+            panel4.Controls.Add(button1);
             panel4.Controls.Add(labelWelcome);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(labelTime);
-            panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 65);
+            resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
-            panel4.Size = new Size(1116, 100);
-            panel4.TabIndex = 0;
             // 
             // labelWelcome
             // 
-            labelWelcome.AutoSize = true;
-            labelWelcome.Font = new Font("Segoe UI Variable Display", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(labelWelcome, "labelWelcome");
             labelWelcome.ForeColor = Color.White;
-            labelWelcome.Location = new Point(238, 1);
             labelWelcome.Name = "labelWelcome";
-            labelWelcome.Size = new Size(103, 26);
-            labelWelcome.TabIndex = 6;
-            labelWelcome.Text = "Welcome :";
-            labelWelcome.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Variable Display", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label2, "label2");
             label2.ForeColor = Color.White;
-            label2.Location = new Point(129, 0);
             label2.Name = "label2";
-            label2.Size = new Size(103, 26);
-            label2.TabIndex = 5;
-            label2.Text = "Welcome :";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // labelTime
             // 
-            labelTime.AutoSize = true;
-            labelTime.Font = new Font("Segoe UI Variable Display", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(labelTime, "labelTime");
             labelTime.ForeColor = Color.White;
-            labelTime.Location = new Point(482, 0);
             labelTime.Name = "labelTime";
-            labelTime.Size = new Size(52, 26);
-            labelTime.TabIndex = 4;
-            labelTime.Text = "time";
-            labelTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // timerDate
             // 
             timerDate.Tick += timerDate_Tick;
             // 
+            // button1
+            // 
+            resources.ApplyResources(button1, "button1");
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Admin
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightCyan;
-            ClientSize = new Size(1370, 681);
             Controls.Add(panel2);
             Controls.Add(panel10);
             Controls.Add(panel1);
-            Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = Color.Indigo;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
             Name = "Admin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Attendance Management ";
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -553,5 +420,6 @@
         private adminUserControl.ClassManagement classManagement2;
         private adminUserControl.ManageClasses manageClasses1;
         private adminUserControl.test test1;
+        private Button button1;
     }
 }

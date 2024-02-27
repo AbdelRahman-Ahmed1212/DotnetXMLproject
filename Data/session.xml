@@ -47,7 +47,7 @@
     <AttendenceRecord>
       <stdid>26</stdid>
       <stdName>jihad</stdName>
-      <status>Present</status>
+      <status>Absent</status>
     </AttendenceRecord>
   </Session>
 </Sessions>
