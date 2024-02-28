@@ -18,14 +18,15 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class attendanceMangement : UserControl
     {
-        public string recordPath = "D:\\teacherB\\DotnetXMLproject\\Data\\attendence.xml";
-        public string userPath = "D:\\teacherB\\DotnetXMLproject\\Data\\users.xml";
-        public string classPath = "D:\\teacherB\\DotnetXMLproject\\Data\\classes.xml";
-        public string sessionPath = "D:\\teacherB\\DotnetXMLproject\\Data\\session.xml";
+        //public string recordPath = "D:\\teacherB\\DotnetXMLproject\\Data\\attendence.xml";
+        public string userPath = "D:\\c#xmlv4\\Data\\users.xml";
+        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
+        public string sessionPath = "D:\\c#xmlv4\\Data\\session.xml";
         public attendanceMangement()
         {
             InitializeComponent();
 
+           
             comboxSubjectData();
             PopulateDataGridViewSession();
             PopulateSessionIds();
@@ -38,10 +39,12 @@ namespace DotnetXmlProject.adminUserControl
         //==========================================================================
         public void comboxSubjectData()
         {
-            subjectCombobox.Items.Clear();
+            
 
             using (var reader = XmlReader.Create(classPath))
             {
+                subjectCombobox.Items.Clear();
+
                 var Users = XElement.Load(reader);
                 var subjectIds = Users.Elements("stdClass")
                                       .Select(u => (int)u.Element("id"))
@@ -52,6 +55,7 @@ namespace DotnetXmlProject.adminUserControl
         }
         public void PopulateSessionIds()
         {
+           
             try
             {
                 using (var reader = XmlReader.Create(sessionPath))
@@ -153,17 +157,27 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                
                 if (Validation.CheckIfIdExists(classPath, "stdClass", "id", subjectId))
                 {
-                    
+                    // Check if any student is enrolled in a class with the specified subject ID
+                    if (!CheckIfStudentsEnrolledForSubject(classPath, userPath, subjectId))
+                    {
+                        MessageBox.Show("No students are enrolled in a class with the specified subject ID. Please enroll students before adding a session.");
+                        return;
+                    }
+
                     XDocument xmlDoc = XDocument.Load(sessionPath);
 
-                    int newSessionId = xmlDoc.Descendants("Session").Max(s => (int)s.Attribute("id")) + 1;
+                    int newSessionId = 1;
+
+                    if (xmlDoc.Descendants("Session").Any())
+                    {
+                        newSessionId = xmlDoc.Descendants("Session").Max(s => (int)s.Attribute("id")) + 1;
+                    }
+
                     string className = GetClassNameFromId(subjectId);
                     int teacherID = GetteacherIDFromId(subjectId);
 
-                   
                     XElement newSession = new XElement("Session",
                         new XAttribute("id", newSessionId),
                         new XAttribute("date", date.ToString("dd/MM/yyyy")),
@@ -180,7 +194,7 @@ namespace DotnetXmlProject.adminUserControl
                                           .Select(u => new
                                           {
                                               ID = (int)u.Element("id"),
-                                              Name = (string)u.Element("userName")
+                                              Name = (string)u.Element("username")
                                           });
 
                     foreach (var student in students)
@@ -210,6 +224,27 @@ namespace DotnetXmlProject.adminUserControl
             catch (Exception ex)
             {
                 MessageBox.Show($"Error adding new session: {ex.Message}");
+            }
+        }
+
+        // Method to check if any students are enrolled in a class with the specified subject ID
+        private bool CheckIfStudentsEnrolledForSubject(string classPath, string userPath, int subjectId)
+        {
+            try
+            {
+                XDocument classXml = XDocument.Load(classPath);
+                XDocument userXml = XDocument.Load(userPath);
+
+                var enrolledStudents = userXml.Descendants("student")
+                                              .Where(u => u.Element("classes")?.Elements("class")
+                                                           .Any(c => (int)c.Element("classID") == subjectId) ?? false);
+
+                return enrolledStudents.Any();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking student enrollment: {ex.Message}");
+                return false;
             }
         }
 
@@ -250,6 +285,11 @@ namespace DotnetXmlProject.adminUserControl
 
         private void addRecordBtn_Click(object sender, EventArgs e)
         {
+            if (subjectCombobox.SelectedIndex == -1 )
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
             int subjectID = Convert.ToInt32(subjectCombobox.Text);
             DateTime date = Convert.ToDateTime(dateSession.Text);
 

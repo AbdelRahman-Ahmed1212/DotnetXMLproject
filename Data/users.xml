@@ -1,86 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./userValidate.xsd">
   <user>
-    <id>24</id>
-    <name>ppp</name>
-    <email>ppp</email>
+    <id>1</id>
+    <name>asmaa</name>
+    <email>asmaa</email>
     <password>123</password>
     <role>Admin</role>
   </user>
   <student>
-    <id>24</id>
-    <name>ppp</name>
-    <username>Ahmed</username>
-    <password>123</password>
-    <role>Admin</role>
-    <classes>
-      <class>
-        <classID>30</classID>
-        <className />
-      </class>
-      <class>
-        <classID>4</classID>
-        <className>html</className>
-      </class>
-      <class>
-        <classID>4</classID>
-        <className>html</className>
-      </class>
-    </classes>
-    <attendanceIds>
-      <attendanceId>101</attendanceId>
-      <attendanceId>102</attendanceId>
-    </attendanceIds>
-  </student>
-  <teacher>
-    <id>25</id>
-    <email>d123@gmail.com</email>
-    <username>hamed</username>
-    <password>12345678</password>
-    <role>Teacher</role>
-    <classes>
-      <class>
-        <classID>5</classID>
-        <className>ooo</className>
-      </class>
-      <class>
-        <classID>7</classID>
-        <className>iiiikjh</className>
-      </class>
-      <class>
-        <classID>14</classID>
-        <className>node js</className>
-      </class>
-    </classes>
-  </teacher>
-  <student>
-    <id>26</id>
-    <email>j123@gmail.com</email>
-    <username>jas</username>
-    <password>12345678</password>
+    <id>2</id>
+    <email>asmaaS@yahoo.com</email>
+    <username>asmaaS</username>
+    <password>123456789</password>
     <role>Student</role>
     <classes>
       <class>
-        <classID>4</classID>
+        <classID>1</classID>
         <className>html</className>
-      </class>
-      <class>
-        <classID>5</classID>
-        <className>ooo</className>
-      </class>
-      <class>
-        <classID>5</classID>
-        <className>ooo</className>
-      </class>
-      <class>
-        <classID>7</classID>
-        <className>iiiikjh</className>
-      </class>
-      <class>
-        <classID>14</classID>
-        <className>node js</className>
       </class>
     </classes>
     <attendanceIds />
   </student>
+  <teacher>
+    <id>3</id>
+    <email>asmaaT@yahoo.com</email>
+    <username>asmaaT</username>
+    <password>123456789</password>
+    <role>Teacher</role>
+    <classes>
+      <class>
+        <classID>1</classID>
+        <className>html</className>
+      </class>
+      <class>
+        <classID>2</classID>
+        <className>oop</className>
+      </class>
+      <class>
+        <classID>3</classID>
+        <className>xml</className>
+      </class>
+    </classes>
+  </teacher>
+  <teacher>
+    <id>4</id>
+    <email>smsma@gmail.com</email>
+    <username>smsma</username>
+    <password>123456789</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
+  <student>
+    <id>5</id>
+    <email>asomaaa@yahoo.com</email>
+    <username>asomaaa</username>
+    <password>123456789</password>
+    <role>Student</role>
+    <classes>
+      <class>
+        <classID>1</classID>
+        <className>html</className>
+      </class>
+    </classes>
+    <attendanceIds />
+  </student>
+  <student>
+    <id>6</id>
+    <email>smsmaa@yahoo.com</email>
+    <username>smsmaa</username>
+    <password>123456789</password>
+    <role>Student</role>
+    <classes>
+      <class>
+        <classID>1</classID>
+        <className>html</className>
+      </class>
+    </classes>
+    <attendanceIds />
+  </student>
+  <teacher>
+    <id>7</id>
+    <email>asmaT@yahoo.com</email>
+    <username>asma</username>
+    <password>123456789</password>
+    <role>Teacher</role>
+    <classes />
+  </teacher>
 </Users>

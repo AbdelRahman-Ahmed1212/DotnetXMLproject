@@ -100,17 +100,17 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label5.ForeColor = Color.DarkCyan;
-            label5.Location = new Point(421, 64);
+            label5.Location = new Point(430, 127);
             label5.Name = "label5";
-            label5.Size = new Size(103, 28);
+            label5.Size = new Size(126, 28);
             label5.TabIndex = 20;
-            label5.Text = "Add Class";
+            label5.Text = "Add Subject";
             // 
             // button1
             // 
             button1.BackColor = Color.DarkCyan;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(421, 292);
+            button1.Location = new Point(430, 355);
             button1.Name = "button1";
             button1.Size = new Size(133, 42);
             button1.TabIndex = 19;
@@ -122,7 +122,7 @@
             // 
             techercb.FlatStyle = FlatStyle.Flat;
             techercb.FormattingEnabled = true;
-            techercb.Location = new Point(600, 189);
+            techercb.Location = new Point(609, 252);
             techercb.Name = "techercb";
             techercb.Size = new Size(200, 23);
             techercb.TabIndex = 18;
@@ -130,7 +130,7 @@
             // panel4
             // 
             panel4.BackColor = Color.DarkCyan;
-            panel4.Location = new Point(600, 221);
+            panel4.Location = new Point(609, 284);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 2);
             panel4.TabIndex = 7;
@@ -138,7 +138,7 @@
             // NameText
             // 
             NameText.BorderStyle = BorderStyle.None;
-            NameText.Location = new Point(139, 196);
+            NameText.Location = new Point(148, 259);
             NameText.Name = "NameText";
             NameText.Size = new Size(200, 16);
             NameText.TabIndex = 15;
@@ -146,7 +146,7 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkCyan;
-            panel1.Location = new Point(139, 218);
+            panel1.Location = new Point(148, 281);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 2);
             panel1.TabIndex = 10;
@@ -156,7 +156,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
             label4.ForeColor = Color.DarkCyan;
-            label4.Location = new Point(600, 157);
+            label4.Location = new Point(609, 220);
             label4.Name = "label4";
             label4.Size = new Size(84, 21);
             label4.TabIndex = 11;
@@ -167,7 +167,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
             label2.ForeColor = Color.Indigo;
-            label2.Location = new Point(323, 251);
+            label2.Location = new Point(332, 314);
             label2.Name = "label2";
             label2.Size = new Size(0, 21);
             label2.TabIndex = 13;
@@ -177,7 +177,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
             label1.ForeColor = Color.DarkCyan;
-            label1.Location = new Point(139, 159);
+            label1.Location = new Point(148, 222);
             label1.Name = "label1";
             label1.Size = new Size(59, 21);
             label1.TabIndex = 14;
@@ -192,7 +192,7 @@
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(931, 473);
+            tabPage2.Size = new Size(934, 473);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Classes";
             // 

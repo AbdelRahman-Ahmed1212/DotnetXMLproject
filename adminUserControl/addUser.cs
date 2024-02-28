@@ -16,9 +16,14 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class addUser : UserControl
     {
-        public string pathUser = "D:\\teacherB\\DotnetXMLproject\\Data\\users.xml";
-        public string classPath = "D:\\teacherB\\DotnetXMLproject\\Data\\classes.xml";
-        public string sessionPath = "D:\\teacherB\\DotnetXMLproject\\Data\\session.xml";
+        public string pathUser = "D:\\c#xmlv4\\Data\\users.xml";
+        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
+        public string sessionPath = "D:\\c#xmlv4\\Data\\session.xml";
+
+
+        // Define events to notify the parent form when a user is added or deleted
+        public event EventHandler UserAdded;
+        public event EventHandler UserDeleted;  
 
         public addUser()
         {
@@ -100,38 +105,36 @@ namespace DotnetXmlProject.adminUserControl
                 string email = EmailText.Text;
                 string userName = usernameText.Text;
                 string password = passwordText.Text;
-                Role role = (Role)Enum.Parse(typeof(Role), RoleCombobox.Text, true); // Convert string to enum
+               
 
-                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password) || role == null)
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(userName) || string.IsNullOrEmpty(password) || RoleCombobox.SelectedIndex==-1)
                 {
                     MessageBox.Show("Please fill in all fields.");
                     return;
                 }
-
+                Role role = (Role)Enum.Parse(typeof(Role), RoleCombobox.Text, true);
                 if (!Validation.ValidateUserData(userName, password, email))
                 {
                     return;
                 }
 
                 AddUserToXml(email, userName, password, role);
-                PopulateData.refreshAllData();
 
-                ManageClasses mc = new ManageClasses();
-                mc.RefrchData();
-
-                ClassManagement cm = new ClassManagement();
-                cm.comboxTeacherData();
-                clearInput();
 
                 PopulateDataGridViewStudent();
                 PopulateDataGridViewTeacher();
 
-                MessageBox.Show("User added successfully.");
+               
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error adding user: {ex.Message}");
             }
+
+
+
+            //events
+            OnUserAdded(EventArgs.Empty);
 
         }
         private void AddUserToXml(string email, string userName, string password, Role role)
@@ -211,6 +214,10 @@ namespace DotnetXmlProject.adminUserControl
                     stream.Position = 0;
                     xmlDoc.Save(stream);
 
+                    clearInput();
+
+
+                    MessageBox.Show("User added successfully.");
 
                 }
 
@@ -227,7 +234,7 @@ namespace DotnetXmlProject.adminUserControl
 
 
             RefrchAllData();
-
+           
 
         }
 
@@ -241,12 +248,18 @@ namespace DotnetXmlProject.adminUserControl
                 MessageBox.Show("Please select a user to edit.");
                 return;
             }
-
+            if (teacherData.SelectedRows[0].Cells["password"].Value == null || teacherData.SelectedRows[0].Cells["username"].Value ==null) 
+            {
+                MessageBox.Show("Please Enter New Data");
+                return;
+            }
             int userId = Convert.ToInt32(teacherData.SelectedRows[0].Cells["id"].Value);
             string userName = teacherData.SelectedRows[0].Cells["username"].Value.ToString();
             string password = teacherData.SelectedRows[0].Cells["password"].Value.ToString();
             string email = teacherData.SelectedRows[0].Cells["email"].Value.ToString();
 
+
+           
             if (!Validation.ValidateUserData(userName, password, email))
             {
                 return;
@@ -339,6 +352,10 @@ namespace DotnetXmlProject.adminUserControl
 
             PopulateDataGridViewTeacher();
 
+
+            //events
+            OnUserDeleted(EventArgs.Empty);
+
         }
 
         private void deleteStdBtn_Click(object sender, EventArgs e)
@@ -353,9 +370,12 @@ namespace DotnetXmlProject.adminUserControl
             DeleteUserFromXml(userId);
 
             PopulateDataGridViewStudent();
-            MessageBox.Show("User deleted successfully.");
+           
 
-            RefrchAllData();
+           
+
+            //events
+            OnUserDeleted(EventArgs.Empty);
         }
 
         private void DeleteUserFromXml(int userId)
@@ -566,7 +586,7 @@ namespace DotnetXmlProject.adminUserControl
 
         private void teacherData_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            List<string> columnsToPreventEditing = new List<string> { "id", "role" };
+            List<string> columnsToPreventEditing = new List<string> { "id", "role" ,"Email"};
             if (columnsToPreventEditing.Contains(teacherData.Columns[e.ColumnIndex].Name))
             {
                 e.Cancel = true;
@@ -575,7 +595,7 @@ namespace DotnetXmlProject.adminUserControl
 
         private void studentData_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            List<string> columnsToPreventEditing = new List<string> { "id", "role","email" };
+            List<string> columnsToPreventEditing = new List<string> { "id", "role","Email" };
 
             if (columnsToPreventEditing.Contains(studentData.Columns[e.ColumnIndex].Name))
             {
@@ -594,6 +614,19 @@ namespace DotnetXmlProject.adminUserControl
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        protected virtual void OnUserAdded(EventArgs e)
+        {
+            // Raise the UserAdded event
+            UserAdded?.Invoke(this, e);
+        }
+
+        protected virtual void OnUserDeleted(EventArgs e)
+        {
+            // Raise the UserDeleted event
+            UserDeleted?.Invoke(this, e);
         }
     }
 }
