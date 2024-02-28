@@ -2,8 +2,7 @@
 ﻿using DotnetXmlProject.adminUserControl;
 using DotnetXmlProject.Classes;
 using Microsoft.VisualBasic.ApplicationServices;
-
-
+using System.Windows.Forms;
 
 
 
@@ -13,13 +12,17 @@ namespace DotnetXmlProject
     {
         public static string username;
 
-
+        public System.Windows.Forms.Timer copyTimer;
         public Admin()
         {
 
 
             InitializeComponent();
+            copyTimer = new System.Windows.Forms.Timer();
+            copyTimer.Interval = 6000; 
+            copyTimer.Tick += util.CopyFilesPeriodically;
 
+            copyTimer.Start();
             addUser1.Visible = false;
             attendanceMangement1.Visible = false;
             classManagement2.Visible = false;

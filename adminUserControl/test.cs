@@ -55,6 +55,11 @@ namespace DotnetXmlProject.adminUserControl
 
         private void classesNumLabel_Click(object sender, EventArgs e)
         {
+        }
+        private void restore_Click(object sender, EventArgs e)
+        {
+            backup backup = new backup();
+            backup.ShowDialog();
 
         }
     }

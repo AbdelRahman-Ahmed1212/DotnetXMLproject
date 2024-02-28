@@ -104,6 +104,7 @@
             resources.ApplyResources(restore, "restore");
             restore.Name = "restore";
             restore.UseVisualStyleBackColor = true;
+            restore.Click += restore_Click;
             // 
             // language
             // 
