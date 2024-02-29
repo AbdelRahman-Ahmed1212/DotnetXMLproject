@@ -31,7 +31,7 @@ namespace DotnetXmlProject
                 foreach (string fileName in openFileDialog.FileNames)
                 {
                     // Assuming "destinationPath" is the destination directory path
-                    string destinationPath = "..//..//..//backup";
+                    string destinationPath = "..//..//..//Data";
 
                     // Combine destination path with just the file name, not the full path
                     string destinationFile = Path.Combine(destinationPath, Path.GetFileName(fileName));
