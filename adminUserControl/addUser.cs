@@ -16,9 +16,9 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class addUser : UserControl
     {
-        public string pathUser = "D:\\c#xmlv4\\Data\\users.xml";
-        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
-        public string sessionPath = "D:\\c#xmlv4\\Data\\session.xml";
+        public string pathUser = util.getDatapath("users.xml");
+        public string classPath = util.getDatapath("classes.xml"); 
+        public string sessionPath = util.getDatapath("session.xml"); 
 
 
         // Define events to notify the parent form when a user is added or deleted

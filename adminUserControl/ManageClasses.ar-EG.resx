@@ -117,44 +117,122 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="manageBtn.Text" xml:space="preserve">
-    <value>ادارة الفصول</value>
+  <data name="stdClassID.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="addClassTeacher.Text" xml:space="preserve">
+    <value>اضافة</value>
+  </data>
+  <data name="addClassTeacher.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="addClassStd.Text" xml:space="preserve">
+    <value>اضافة</value>
+  </data>
+  <data name="addClassStd.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="teacherClassID.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="classTeacherID.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dashboardBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 69</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>463, 459</value>
   </data>
-  <data name="dashboardBtn.Text" xml:space="preserve">
-    <value>لوحة التحكم</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 28</value>
   </data>
-  <data name="addClassBtn.Text" xml:space="preserve">
-    <value>المواد</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>رقم المادة :</value>
   </data>
-  <data name="addUserBtn.Text" xml:space="preserve">
-    <value>المستخدمين</value>
-  </data>
-  <data name="attendanveBtn.Text" xml:space="preserve">
-    <value>المحاضرات</value>
-  </data>
-  <data name="reportBtn.Text" xml:space="preserve">
-    <value>التقارير</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 0</value>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 29</value>
+    <value>112, 28</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>مرحبا</value>
+    <value>رقم المدرس:</value>
   </data>
-  <data name="labelTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 1</value>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="labelTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 29</value>
+  <data name="classStdID.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="labelTime.Text" xml:space="preserve">
-    <value>الوقت</value>
+  <data name="panel4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 28</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>رقم المادة :</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>رقم الطالب :</value>
+  </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="classesData.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>اظهار</value>
+  </data>
+  <data name="button4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="button3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="userID.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 69</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 28</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>رقم المستخدم :</value>
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

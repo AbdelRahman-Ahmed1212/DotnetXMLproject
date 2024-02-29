@@ -16,9 +16,10 @@ namespace DotnetXmlProject.adminUserControl
 {
     public partial class ClassManagement : UserControl
     {
-        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
-        public string userPath = "D:\\c#xmlv4\\Data\\users.xml";
-        public string sessionPath = "D:\\c#xmlv4\\Data\\session.xml";
+        public string pathUser = util.getDatapath("users.xml");
+        public string classPath = util.getDatapath("classes.xml");
+        public string sessionPath = util.getDatapath("session.xml");
+
 
 
         // Define events to notify the parent form when a Session is added or deleted
@@ -58,7 +59,7 @@ namespace DotnetXmlProject.adminUserControl
 
         public void comboxTeacherData()
         {
-            using (var reader = XmlReader.Create(userPath))
+            using (var reader = XmlReader.Create(pathUser))
             {
                 techercb.Items.Clear();
                 var Users = XElement.Load(reader);
@@ -115,7 +116,7 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                if (!Validation.CheckIfIdExists(userPath, "teacher","id", teacherID))
+                if (!Validation.CheckIfIdExists(pathUser, "teacher","id", teacherID))
                 {
                     MessageBox.Show("Teacher with the specified ID not found.");
                     return;
@@ -163,7 +164,7 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                XDocument xmlDoc = XDocument.Load(userPath);
+                XDocument xmlDoc = XDocument.Load(pathUser);
 
 
                 var teacherElement = xmlDoc.Descendants()
@@ -183,7 +184,7 @@ namespace DotnetXmlProject.adminUserControl
                                     new XElement("classID", classID),
                                     new XElement("className", className)));
 
-                    xmlDoc.Save(userPath);
+                    xmlDoc.Save(pathUser);
                 }
                 else
                 {
@@ -246,7 +247,7 @@ namespace DotnetXmlProject.adminUserControl
                     return;
                 }
 
-                XDocument userXmlDoc = XDocument.Load(userPath);
+                XDocument userXmlDoc = XDocument.Load(pathUser);
 
                 // Update class name in teacher's classes
                 XElement teacherElement = userXmlDoc.Descendants("teacher").FirstOrDefault(t => (int)t.Element("id") == teacherId);
@@ -290,7 +291,7 @@ namespace DotnetXmlProject.adminUserControl
                     }
                 }
 
-                userXmlDoc.Save(userPath);
+                userXmlDoc.Save(pathUser);
                
 
             }
@@ -370,7 +371,7 @@ namespace DotnetXmlProject.adminUserControl
                     return;
                 }
 
-                XDocument usersXmlDoc = XDocument.Load(userPath);
+                XDocument usersXmlDoc = XDocument.Load(pathUser);
 
                 // delete class  from teacher
                 XElement teacherElement = usersXmlDoc.Descendants("teacher").FirstOrDefault(t => (int)t.Element("id") == teacherId);
@@ -414,7 +415,7 @@ namespace DotnetXmlProject.adminUserControl
                     }
                 }
 
-                usersXmlDoc.Save(userPath);
+                usersXmlDoc.Save(pathUser);
             }
             catch (IOException ex)
             {

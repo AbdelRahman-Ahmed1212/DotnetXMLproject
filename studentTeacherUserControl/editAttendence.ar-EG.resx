@@ -117,44 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="manageBtn.Text" xml:space="preserve">
-    <value>ادارة الفصول</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dashboardBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 69</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 20</value>
   </data>
-  <data name="dashboardBtn.Text" xml:space="preserve">
-    <value>لوحة التحكم</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>المحاضرات المتاحة</value>
   </data>
-  <data name="addClassBtn.Text" xml:space="preserve">
-    <value>المواد</value>
+  <data name="EditeAttendencebtn.Text" xml:space="preserve">
+    <value>حفظ</value>
   </data>
-  <data name="addUserBtn.Text" xml:space="preserve">
-    <value>المستخدمين</value>
-  </data>
-  <data name="attendanveBtn.Text" xml:space="preserve">
-    <value>المحاضرات</value>
-  </data>
-  <data name="reportBtn.Text" xml:space="preserve">
-    <value>التقارير</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 0</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 29</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>مرحبا</value>
-  </data>
-  <data name="labelTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 1</value>
-  </data>
-  <data name="labelTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 29</value>
-  </data>
-  <data name="labelTime.Text" xml:space="preserve">
-    <value>الوقت</value>
+  <data name="displaytoeditbtn.Text" xml:space="preserve">
+    <value>عرض</value>
   </data>
 </root>

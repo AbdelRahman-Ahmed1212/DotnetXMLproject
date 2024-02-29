@@ -69,9 +69,10 @@ namespace DotnetXmlProject
             foreach (var session in sessions.Elements("Session"))
             {
                 var sessionDate = DateTime.ParseExact(session.Attribute("date").Value, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                var CurrentClass= session.Attribute("class").Value.ToString();
 
                 // Check if the session date is within the specified range
-                if (sessionDate >= Date1 && sessionDate <= Date2)
+                if (sessionDate >= Date1 && sessionDate <= Date2/* && CurrentClass == classList.SelectedItem*/)
                 {
                     foreach (var attendanceRecord in session.Elements("AttendenceRecord"))
                     {

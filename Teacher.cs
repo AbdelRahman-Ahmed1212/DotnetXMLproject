@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,14 +19,37 @@ namespace DotnetXmlProject
     {
         public string userName;
         public string role;
-        public Teacher(string userName,string role)
+        public System.Windows.Forms.Timer copyTimer;
+
+        public Teacher(string userName, string role,string language)
         {
+            copyTimer = new System.Windows.Forms.Timer();
+            copyTimer.Interval = 60000;
+            copyTimer.Tick += util.CopyFilesPeriodically;
+            SetFormCulture(language);
             InitializeComponent();
             this.userName = userName;
             this.role = role;
-
+       
         }
+        private void SetFormCulture(string language)
+        {
+            string selectedCulture;
 
+            if (language == "ar")
+            {
+                selectedCulture = "ar-EG";
+            }
+            else
+            {
+                selectedCulture = "en-US";
+            }
+
+            // Set the current thread's culture
+            CultureInfo ci = new CultureInfo(selectedCulture);
+            Thread.CurrentThread.CurrentCulture = ci;
+            Thread.CurrentThread.CurrentUICulture = ci;
+        }
 
         private void Teacher_Load(object sender, EventArgs e)
         {
@@ -33,7 +57,7 @@ namespace DotnetXmlProject
             usernamelabel.Text = userName;
             rolelabel.Text = role;
         }
-       
+
         private void MoveSidePanel(Control button)
         {
             TchSidepanel.Location = new Point(button.Location.X - button.Location.X, button.Location.Y - 180);
@@ -42,7 +66,7 @@ namespace DotnetXmlProject
         private void TchClassesbutton_Click(object sender, EventArgs e)
         {
             teacher_classesv1.BringToFront();
-            teacher_classesv1.Visible=true;
+            teacher_classesv1.Visible = true;
             MoveSidePanel(TchClassesbutton);
 
         }
@@ -71,5 +95,9 @@ namespace DotnetXmlProject
                 return;
         }
 
+        private void teacher_classesv1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

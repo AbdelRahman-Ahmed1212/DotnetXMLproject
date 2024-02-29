@@ -118,402 +118,370 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SessionsNumLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
   <data name="stdNumLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="teachersNumLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 129</value>
+  <data name="stdNumLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;stdNumLabel.Name" xml:space="preserve">
-    <value>stdNumLabel</value>
+  <data name="stdNumLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 129</value>
   </data>
-  <data name="SessionsNumLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;stdNumLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="restore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 29</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;restore.Name" xml:space="preserve">
-    <value>restore</value>
-  </data>
-  <data name="stdNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 167</value>
-  </data>
-  <data name="&gt;&gt;restore.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="sessionNum.Text" xml:space="preserve">
-    <value>Name :</value>
-  </data>
-  <data name="&gt;&gt;classesNum.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;language.Name" xml:space="preserve">
-    <value>language</value>
-  </data>
-  <data name="language.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;language.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="classesNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 35</value>
-  </data>
-  <data name="sessionNum.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;stdNum.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1077, 668</value>
-  </data>
-  <data name="&gt;&gt;techerNum.Name" xml:space="preserve">
-    <value>techerNum</value>
-
-  </data>
-  <data name="&gt;&gt;sessionNum.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="classesNumLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 393</value>
-  </data>
-  <data name="&gt;&gt;teachersNumLabel.Name" xml:space="preserve">
-    <value>teachersNumLabel</value>
-  </data>
-  <data name="teachersNumLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-
-  </data>
-  <data name="&gt;&gt;stdNum.Name" xml:space="preserve">
-    <value>stdNum</value>
-  </data>
-  <data name="&gt;&gt;sessionNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-
-  </data>
-  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="classesNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>747, 431</value>
-  </data>
-  <data name="&gt;&gt;techerNum.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pictureBox4.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="teachersNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 35</value>
-  </data>
-  <data name="language.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 29</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;classesNumLabel.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="techerNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>747, 167</value>
-  </data>
-  <data name="stdNum.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="restore.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="stdNumLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 35</value>
   </data>
   <data name="stdNumLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;stdNum.Name" xml:space="preserve">
-    <value>stdNum</value>
+  <data name="stdNumLabel.Text" xml:space="preserve">
+    <value>students</value>
   </data>
-  <data name="techerNum.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="&gt;&gt;stdNumLabel.Name" xml:space="preserve">
+    <value>stdNumLabel</value>
   </data>
-  <data name="&gt;&gt;SessionsNumLabel.Name" xml:space="preserve">
-    <value>SessionsNumLabel</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
-    <value>0</value>
-
-  </data>
-  <data name="language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 3</value>
-  </data>
-  <data name="classesNum.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;stdNum.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
-    <value>pictureBox3</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="&gt;&gt;restore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stdNum.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="classesNum.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="&gt;&gt;stdNumLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;stdNumLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="SessionsNumLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 393</value>
-
+  <data name="&gt;&gt;stdNumLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="teachersNumLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="teachersNumLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15pt, style=Bold</value>
+  </data>
+  <data name="teachersNumLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 129</value>
+  </data>
+  <data name="teachersNumLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 35</value>
+  </data>
+  <data name="teachersNumLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="teachersNumLabel.Text" xml:space="preserve">
+    <value>teachers</value>
+  </data>
+  <data name="&gt;&gt;teachersNumLabel.Name" xml:space="preserve">
+    <value>teachersNumLabel</value>
+  </data>
+  <data name="&gt;&gt;teachersNumLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;teachersNumLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;teachersNumLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="classesNum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="classesNum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="classesNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>747, 431</value>
+  </data>
+  <data name="classesNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 28</value>
+  </data>
+  <data name="classesNum.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="classesNum.Text" xml:space="preserve">
     <value>Name :</value>
   </data>
-  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;classesNum.Name" xml:space="preserve">
+    <value>classesNum</value>
   </data>
-  <data name="classesNumLabel.Text" xml:space="preserve">
-    <value>Classes</value>
-
-  </data>
-  <data name="&gt;&gt;stdNum.Type" xml:space="preserve">
+  <data name="&gt;&gt;classesNum.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;classesNum.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;techerNum.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;sessionNum.Name" xml:space="preserve">
-    <value>sessionNum</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="techerNum.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;teachersNumLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;classesNum.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="&gt;&gt;classesNum.Name" xml:space="preserve">
-    <value>classesNum</value>
-  </data>
-  <data name="&gt;&gt;SessionsNumLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;stdNumLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
-
-  </data>
-  <data name="&gt;&gt;techerNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sessionNum.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="techerNum.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 373</value>
-  </data>
-  <data name="classesNumLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="classesNumLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 170</value>
-  </data>
-  <data name="techerNum.Text" xml:space="preserve">
-    <value>Name :</value>
-  </data>
-  <data name="&gt;&gt;teachersNumLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-
-  </data>
-  <data name="&gt;&gt;stdNumLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SessionsNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 35</value>
-  </data>
-  <data name="stdNumLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 129</value>
-  </data>
-  <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 3</value>
-  </data>
-  <data name="&gt;&gt;classesNumLabel.Name" xml:space="preserve">
-    <value>classesNumLabel</value>
   </data>
   <data name="sessionNum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
-  <data name="&gt;&gt;SessionsNumLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
-
-  </data>
-  <data name="stdNum.Text" xml:space="preserve">
-    <value>Name :</value>
-  </data>
-  <data name="restore.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 3</value>
-
-  </data>
-  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="stdNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 28</value>
-  </data>
-  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
-    <value>pictureBox4</value>
+  <data name="sessionNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 431</value>
   </data>
   <data name="sessionNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 28</value>
   </data>
-  <data name="&gt;&gt;SessionsNumLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="sessionNum.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
-  <data name="&gt;&gt;language.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="classesNum.Text" xml:space="preserve">
+  <data name="sessionNum.Text" xml:space="preserve">
     <value>Name :</value>
   </data>
-  <data name="stdNumLabel.Text" xml:space="preserve">
-    <value>Students</value>
+  <data name="&gt;&gt;sessionNum.Name" xml:space="preserve">
+    <value>sessionNum</value>
   </data>
-  <data name="&gt;&gt;classesNum.Type" xml:space="preserve">
+  <data name="&gt;&gt;sessionNum.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="classesNum.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;language.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="classesNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 28</value>
-
+  <data name="&gt;&gt;sessionNum.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;sessionNum.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 20</value>
+  <data name="techerNum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="techerNum.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
-  <data name="&gt;&gt;classesNumLabel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="techerNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>747, 167</value>
   </data>
   <data name="techerNum.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 28</value>
   </data>
+  <data name="techerNum.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="techerNum.Text" xml:space="preserve">
+    <value>Name :</value>
+  </data>
+  <data name="&gt;&gt;techerNum.Name" xml:space="preserve">
+    <value>techerNum</value>
+  </data>
+  <data name="&gt;&gt;techerNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;techerNum.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;techerNum.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="stdNum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="stdNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 167</value>
+  </data>
+  <data name="stdNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
   <data name="stdNum.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
+  </data>
+  <data name="stdNum.Text" xml:space="preserve">
+    <value>Name :</value>
+  </data>
+  <data name="&gt;&gt;stdNum.Name" xml:space="preserve">
+    <value>stdNum</value>
+  </data>
+  <data name="&gt;&gt;stdNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stdNum.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;stdNum.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 3</value>
+  </data>
+  <data name="restore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 29</value>
+  </data>
+  <data name="restore.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
   <data name="restore.Text" xml:space="preserve">
     <value>restore</value>
   </data>
-  <data name="language.Text" xml:space="preserve">
-    <value>language</value>
+  <data name="&gt;&gt;restore.Name" xml:space="preserve">
+    <value>restore</value>
   </data>
-  <data name="stdNumLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 35</value>
+  <data name="&gt;&gt;restore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="teachersNumLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 15pt, style=Bold</value>
-
-  </data>
-  <data name="classesNumLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;restore.Parent" xml:space="preserve">
     <value>$this</value>
-
   </data>
-  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>587, 170</value>
+  <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
-
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 199</value>
   </data>
-  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 111</value>
   </data>
-  <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>587, 373</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
-  <data name="sessionNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 431</value>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="SessionsNumLabel.Text" xml:space="preserve">
-    <value>Sessions</value>
-  </data>
-  <data name="stdNumLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 15pt, style=Bold</value>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;classesNumLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>697, 199</value>
+  </data>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 111</value>
+  </data>
+  <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 462</value>
+  </data>
+  <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 98</value>
+  </data>
+  <data name="pictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
   <data name="pictureBox3.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
-
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>ar-EG</value>
-  </metadata>
+  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
+    <value>pictureBox3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>697, 462</value>
+  </data>
+  <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 111</value>
+  </data>
+  <data name="pictureBox4.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
+    <value>pictureBox4</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 396</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>lectures</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>747, 387</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>classes</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1077, 668</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>test</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

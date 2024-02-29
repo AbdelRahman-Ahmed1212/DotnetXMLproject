@@ -2,6 +2,7 @@
 ﻿using DotnetXmlProject.adminUserControl;
 using DotnetXmlProject.Classes;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Globalization;
 using System.Windows.Forms;
 
 
@@ -13,13 +14,13 @@ namespace DotnetXmlProject
         public static string username;
 
         public System.Windows.Forms.Timer copyTimer;
-        public Admin()
+        public Admin(string language)
         {
-
+            SetFormCulture(language);
 
             InitializeComponent();
             copyTimer = new System.Windows.Forms.Timer();
-            copyTimer.Interval = 6000; 
+            copyTimer.Interval = 600000; 
             copyTimer.Tick += util.CopyFilesPeriodically;
 
             copyTimer.Start();
@@ -42,7 +43,24 @@ namespace DotnetXmlProject
 
 
         }
+        private void SetFormCulture(string language)
+        {
+            string selectedCulture;
 
+            if (language == "ar")
+            {
+                selectedCulture = "ar-EG";
+            }
+            else
+            {
+                selectedCulture = "en-US";
+            }
+
+            // Set the current thread's culture
+            CultureInfo ci = new CultureInfo(selectedCulture);
+            Thread.CurrentThread.CurrentCulture = ci;
+            Thread.CurrentThread.CurrentUICulture = ci;
+        }
         private void MovePanel(Control button)
         {
             panelSide.Location = new Point(button.Location.X - button.Location.X, button.Location.Y);

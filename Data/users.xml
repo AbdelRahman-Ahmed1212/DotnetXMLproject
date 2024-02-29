@@ -18,6 +18,10 @@
         <classID>1</classID>
         <className>html</className>
       </class>
+      <class>
+        <classID>3</classID>
+        <className>xml</className>
+      </class>
     </classes>
     <attendanceIds />
   </student>
@@ -61,6 +65,10 @@
         <classID>1</classID>
         <className>html</className>
       </class>
+      <class>
+        <classID>3</classID>
+        <className>xml</className>
+      </class>
     </classes>
     <attendanceIds />
   </student>
@@ -74,6 +82,10 @@
       <class>
         <classID>1</classID>
         <className>html</className>
+      </class>
+      <class>
+        <classID>3</classID>
+        <className>xml</className>
       </class>
     </classes>
     <attendanceIds />

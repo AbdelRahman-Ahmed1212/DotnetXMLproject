@@ -117,44 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="manageBtn.Text" xml:space="preserve">
-    <value>ادارة الفصول</value>
+  <data name="stdAttendencebtn.Text" xml:space="preserve">
+    <value>حضورى</value>
+  </data>
+  <data name="StdReportbtn.Text" xml:space="preserve">
+    <value>تقارير</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dashboardBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 69</value>
+  <data name="stdwelcomlabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
   </data>
-  <data name="dashboardBtn.Text" xml:space="preserve">
-    <value>لوحة التحكم</value>
+  <data name="stdwelcomlabel.Text" xml:space="preserve">
+    <value>مرحبا :</value>
   </data>
-  <data name="addClassBtn.Text" xml:space="preserve">
-    <value>المواد</value>
+  <data name="rolelabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
   </data>
-  <data name="addUserBtn.Text" xml:space="preserve">
-    <value>المستخدمين</value>
+  <data name="rolelabel.Text" xml:space="preserve">
+    <value>الدور :</value>
   </data>
-  <data name="attendanveBtn.Text" xml:space="preserve">
-    <value>المحاضرات</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>798, 52</value>
   </data>
-  <data name="reportBtn.Text" xml:space="preserve">
-    <value>التقارير</value>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 29</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 0</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>تسجيل الخروج</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 29</value>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 20</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>مرحبا</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>تاريخ المحاضرة</value>
   </data>
-  <data name="labelTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 1</value>
+  <data name="reserbtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABYAAAAaCAYAAACzdqxAAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAhFJREFUSEutlU1LG2EUhTPJZBJTkzRZ6cYsSvU/qVikFaluFLEIXURQ9HdYaEUU
+        wWV3xdCKhUI31YKbQpfBQv2qViV97swZSNTGJM6By8w9995n3vnIm1g7cl13XKfRKh6PnwKfVhqdHMc5
+        IWqe583KikQwnWMDCz4nvz3lcrkitz3B7W8RP4D9CaF18NZXXiqV0qlUagGYf9vNIpFI7DCSCCabKJ1O
+        l2j+Wjd8zQU+cJznOMrxLKyRfyoUCnmN/l8GpflnOMgFVln5E5V94Z8K+pG0O3Cby6P5i4Yuk8nkqPwG
+        UTvngp/z+XxBVnPxkl6HKwX6TPYtAa20dPsmrv6YlRwJvCL7ThWLxZxO7xcrHBP0L2lf4EYggGsCv5cV
+        jQB+F3heVjQCeGhgnvMLWQ9SuVyO12o1x8BVgcdU61h8XS/hXBEXBv5mYGJR9Y4FY1msPUveKNlWvWOx
+        0m2xVi0ZVnLNbjWgnraVzWYHjGEsmEPmdXPyywye0Ybf1YH4PWwKWiV95JskM2ZasPG0/XUw8zychzUl
+        25eLUVHhisaWvxBbCDOXmq1gNe7PmUymh8JBeGUeyzrPvF/lW6L21HrCfpuF0atyo6xAw27YTNhGb296
+        CcikBTvcMp5t/v6LsiC3/fluaJ08AK9o9l/oPVGlb4YZNxhtTfa1jDD8jtgjfhP2P7hPvKU2SE9X0HpT
+        sdg/OBGQEw6WIuEAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="labelTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 29</value>
-  </data>
-  <data name="labelTime.Text" xml:space="preserve">
-    <value>الوقت</value>
+  <data name="reserbtn.Text" xml:space="preserve">
+    <value>اعادة الضبط</value>
   </data>
 </root>

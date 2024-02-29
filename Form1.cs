@@ -33,7 +33,7 @@ namespace DotnetXmlProject
         {
             var username = textBox1.Text;
             var password = textBox2.Text;
-            
+            var currentLanguage = "";
             Admin.username = username;
 
             using (var reader = XmlReader.Create("..\\..\\..\\Data\\users.xml"))
@@ -53,21 +53,29 @@ namespace DotnetXmlProject
                     if (storedPassword == password)
                     {
                         MessageBox.Show("Login successful");
+                        if (radioButton1.Checked)
+                        {
+                            currentLanguage = "ar";
+                        }
+                        if(radioButton2.Checked)
+                        {
+                            currentLanguage = "en";
+                        }
                         switch (user.Element("role")?.Value)
                         {
                             case "Admin":
-                                Admin admin = new Admin();
+                                Admin admin = new Admin(currentLanguage);
                                 admin.Show();
                                 break;
                             case "Student":
-                                Student student = new Student(textBox1.Text,"Student");
+                                Student student = new Student(textBox1.Text, "Student");
                                 student.Show();
                                 //amr edited here
                                 student.userName = textBox1.Text;
                                 student.role = "Student";
                                 break;
                             case "Teacher":
-                                Teacher teacher = new Teacher(textBox1.Text,"Teacher");
+                                Teacher teacher = new Teacher(textBox1.Text, "Teacher",currentLanguage);
                                 teacher.Show();
                                 teacher.userName = textBox1.Text; // Assign username to Teacher instance
                                 teacher.role = "Teacher";
@@ -93,15 +101,15 @@ namespace DotnetXmlProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-            /*
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("Ar-eg");
-
-            this.Controls.Clear();
-            this.InitializeComponent();
-            */
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

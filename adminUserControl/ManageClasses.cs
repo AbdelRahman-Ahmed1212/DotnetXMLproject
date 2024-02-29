@@ -25,8 +25,10 @@ namespace DotnetXmlProject.adminUserControl
             comboxTeacherData();
             comboxUserData();
         }
-        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
-        public string userPath = "D:\\c#xmlv4\\Data\\users.xml";
+        public string pathUser = util.getDatapath("users.xml");
+        public string classPath = util.getDatapath("classes.xml");
+        public string sessionPath = util.getDatapath("session.xml");
+
 
         public void RefrchData()
         {
@@ -43,7 +45,7 @@ namespace DotnetXmlProject.adminUserControl
         public void comboxStdData()
         {
             stdClassID.Items.Clear();
-            using (var reader = XmlReader.Create(userPath))
+            using (var reader = XmlReader.Create(pathUser))
             {
                 var Users = XElement.Load(reader);
                 var studentIds = Users.Elements("student")
@@ -58,7 +60,7 @@ namespace DotnetXmlProject.adminUserControl
         public void comboxTeacherData()
         {
             teacherClassID.Items.Clear();
-            using (var reader = XmlReader.Create(userPath))
+            using (var reader = XmlReader.Create(pathUser))
             {
                 var Users = XElement.Load(reader);
                 var teacherIds = Users.Elements("teacher")
@@ -75,7 +77,7 @@ namespace DotnetXmlProject.adminUserControl
             userID.Items.Clear();
             try
             {
-                using (var reader = XmlReader.Create(userPath))
+                using (var reader = XmlReader.Create(pathUser))
                 {
                     var users = XElement.Load(reader);
                     var allUserIds = users.Descendants()
@@ -114,7 +116,7 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                using (var stream = new FileStream(userPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var stream = new FileStream(pathUser, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     var users = XElement.Load(stream);
                     var userData = users.Descendants()
@@ -165,7 +167,7 @@ namespace DotnetXmlProject.adminUserControl
                     return;
                 }
 
-                XDocument xmlDoc = XDocument.Load(userPath);
+                XDocument xmlDoc = XDocument.Load(pathUser);
 
                 foreach (int userID in studentIDs)
                 {
@@ -202,7 +204,7 @@ namespace DotnetXmlProject.adminUserControl
                     }
                 }
 
-                xmlDoc.Save(userPath);
+                xmlDoc.Save(pathUser);
 
                 MessageBox.Show("Class added successfully.");
             }
@@ -228,7 +230,7 @@ namespace DotnetXmlProject.adminUserControl
                 }
                 else
                 {
-                    XDocument xmlDoc = XDocument.Load(userPath);
+                    XDocument xmlDoc = XDocument.Load(pathUser);
 
                     var userElement = xmlDoc.Descendants()
                         .Where(e => e.Name == "student" || e.Name == "teacher")
@@ -257,7 +259,7 @@ namespace DotnetXmlProject.adminUserControl
                                         new XElement("classID", classID),
                                         new XElement("className", GetClassNameById(classID))));
 
-                        xmlDoc.Save(userPath);
+                        xmlDoc.Save(pathUser);
 
                         MessageBox.Show("Class added successfully.");
                     }
@@ -344,7 +346,7 @@ namespace DotnetXmlProject.adminUserControl
         {
             try
             {
-                XDocument xmlDoc = XDocument.Load(userPath);
+                XDocument xmlDoc = XDocument.Load(pathUser);
                 var a = xmlDoc.Descendants();
 
                 var userElement = xmlDoc.Descendants()
@@ -379,7 +381,7 @@ namespace DotnetXmlProject.adminUserControl
 
 
 
-                xmlDoc.Save(userPath);
+                xmlDoc.Save(pathUser);
             }
             catch (IOException ex)
             {

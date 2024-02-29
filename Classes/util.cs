@@ -30,12 +30,19 @@ namespace DotnetXmlProject.Classes
                     File.Copy(file, destinationFile, true);
                 }
 
-                MessageBox.Show("XML and XSD files copied successfully!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        public static string getDatapath(string file) {
+            if(file == "")
+            {
+                return "..\\..\\..\\Data\\";
+            }
+            string filePath = "..\\..\\..\\Data\\" + file;
+            return filePath;
         }
     }
 }

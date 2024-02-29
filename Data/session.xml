@@ -14,4 +14,21 @@
       <status>notAsssigned</status>
     </AttendenceRecord>
   </Session>
+  <Session id="3" date="12/12/2024" subjectId="3" class="xml" teacherId="3">
+    <AttendenceRecord>
+      <stdid>2</stdid>
+      <stdName>asmaaS</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>5</stdid>
+      <stdName>asomaaa</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+    <AttendenceRecord>
+      <stdid>6</stdid>
+      <stdName>smsmaa</stdName>
+      <status>notAsssigned</status>
+    </AttendenceRecord>
+  </Session>
 </Sessions>

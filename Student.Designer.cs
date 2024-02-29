@@ -70,64 +70,60 @@
             ((System.ComponentModel.ISupportInitialize)searchbtn).BeginInit();
             SuspendLayout();
             // 
-
             // panel4
             // 
+            resources.ApplyResources(panel4, "panel4");
             panel4.Controls.Add(stdSmallSidePanel);
             panel4.Controls.Add(stdAttendencebtn);
-            resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             // 
             // stdSmallSidePanel
             // 
-            stdSmallSidePanel.BackColor = Color.White;
             resources.ApplyResources(stdSmallSidePanel, "stdSmallSidePanel");
+            stdSmallSidePanel.BackColor = Color.White;
             stdSmallSidePanel.Name = "stdSmallSidePanel";
             // 
             // stdAttendencebtn
             // 
+            resources.ApplyResources(stdAttendencebtn, "stdAttendencebtn");
             stdAttendencebtn.Cursor = Cursors.Hand;
             stdAttendencebtn.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(stdAttendencebtn, "stdAttendencebtn");
-          //  stdAttendencebtn.Image = Properties.Resources.attendenceIcon_1;
-
             stdAttendencebtn.Name = "stdAttendencebtn";
             stdAttendencebtn.UseVisualStyleBackColor = true;
             stdAttendencebtn.Click += stdAttendencebtn_Click;
             // 
             // panel5
             // 
-            panel5.Controls.Add(StdReportbtn);
             resources.ApplyResources(panel5, "panel5");
+            panel5.Controls.Add(StdReportbtn);
             panel5.Name = "panel5";
             // 
             // StdReportbtn
             // 
+            resources.ApplyResources(StdReportbtn, "StdReportbtn");
             StdReportbtn.Cursor = Cursors.Hand;
             StdReportbtn.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(StdReportbtn, "StdReportbtn");
-           // StdReportbtn.Image = Properties.Resources.Report1;
             StdReportbtn.Name = "StdReportbtn";
             StdReportbtn.UseVisualStyleBackColor = true;
             StdReportbtn.Click += StdReportbtn_Click;
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.DarkCyan;
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel2);
-            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             panel1.Paint += panel1_Paint;
             // 
             // panel2
             // 
+            resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.DarkCyan;
             panel2.Controls.Add(applabel);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(panel8);
-            resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
             // 
             // applabel
@@ -138,32 +134,31 @@
             // 
             // pictureBox1
             // 
-          //  pictureBox1.Image = Properties.Resources.vector_male_student_icon_removebg_preview;
             resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
             pictureBox1.TabStop = false;
             // 
             // panel8
             // 
+            resources.ApplyResources(panel8, "panel8");
             panel8.Controls.Add(pictureBox2);
             panel8.Controls.Add(panel9);
             panel8.Controls.Add(label1);
             panel8.Controls.Add(dataGridView1);
             panel8.Controls.Add(textBox1);
-            resources.ApplyResources(panel8, "panel8");
             panel8.Name = "panel8";
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.search_removebg_preview;
             resources.ApplyResources(pictureBox2, "pictureBox2");
+            pictureBox2.Image = Properties.Resources.search_removebg_preview;
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
             // 
             // panel9
             // 
-            panel9.BackColor = Color.Gray;
             resources.ApplyResources(panel9, "panel9");
+            panel9.BackColor = Color.Gray;
             panel9.Name = "panel9";
             // 
             // label1
@@ -173,15 +168,15 @@
             // 
             // dataGridView1
             // 
+            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.Name = "dataGridView1";
             // 
             // textBox1
             // 
-            textBox1.BorderStyle = BorderStyle.None;
             resources.ApplyResources(textBox1, "textBox1");
+            textBox1.BorderStyle = BorderStyle.None;
             textBox1.Name = "textBox1";
             // 
             // stdwelcomlabel
@@ -206,21 +201,21 @@
             // 
             // button1
             // 
-            button1.Cursor = Cursors.Hand;
             resources.ApplyResources(button1, "button1");
+            button1.Cursor = Cursors.Hand;
             button1.Name = "button1";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // panel3
             // 
+            resources.ApplyResources(panel3, "panel3");
             panel3.BackColor = Color.DarkCyan;
             panel3.Controls.Add(button1);
             panel3.Controls.Add(stdroleNamelabel);
             panel3.Controls.Add(rolelabel);
             panel3.Controls.Add(stdusernamelabel);
             panel3.Controls.Add(stdwelcomlabel);
-            resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             // 
             // panel6
@@ -230,24 +225,24 @@
             // 
             // stddataGridView
             // 
+            resources.ApplyResources(stddataGridView, "stddataGridView");
             stddataGridView.BackgroundColor = Color.White;
             stddataGridView.BorderStyle = BorderStyle.None;
             stddataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(stddataGridView, "stddataGridView");
             stddataGridView.Name = "stddataGridView";
             // 
             // searchbtn
             // 
-            searchbtn.Image = Properties.Resources.search_removebg_preview;
             resources.ApplyResources(searchbtn, "searchbtn");
+            searchbtn.Image = Properties.Resources.search_removebg_preview;
             searchbtn.Name = "searchbtn";
             searchbtn.TabStop = false;
             searchbtn.Click += searchBox_Click;
             // 
             // panel7
             // 
-            panel7.BackColor = Color.Gray;
             resources.ApplyResources(panel7, "panel7");
+            panel7.BackColor = Color.Gray;
             panel7.Name = "panel7";
             // 
             // label6
@@ -257,15 +252,15 @@
             // 
             // searchBox
             // 
-            searchBox.BorderStyle = BorderStyle.None;
             resources.ApplyResources(searchBox, "searchBox");
+            searchBox.BorderStyle = BorderStyle.None;
             searchBox.Name = "searchBox";
             // 
             // reserbtn
             // 
+            resources.ApplyResources(reserbtn, "reserbtn");
             reserbtn.BackColor = Color.White;
             reserbtn.Cursor = Cursors.Hand;
-            resources.ApplyResources(reserbtn, "reserbtn");
             reserbtn.Name = "reserbtn";
             reserbtn.UseVisualStyleBackColor = false;
             reserbtn.Click += reserbtn_Click;

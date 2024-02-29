@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(teacher_classesv));
             toolbtn = new ToolStrip();
             editeStudents = new TabControl();
             tabPage2 = new TabPage();
@@ -63,31 +64,23 @@
             // 
             // toolbtn
             // 
+            resources.ApplyResources(toolbtn, "toolbtn");
             toolbtn.ImageScalingSize = new Size(20, 20);
-            toolbtn.Location = new Point(0, 0);
             toolbtn.Name = "toolbtn";
-            toolbtn.Size = new Size(942, 25);
-            toolbtn.TabIndex = 0;
-            toolbtn.Text = "toolStrip1";
             // 
             // editeStudents
             // 
-            editeStudents.AccessibleName = "";
-            editeStudents.Alignment = TabAlignment.Bottom;
+            resources.ApplyResources(editeStudents, "editeStudents");
             editeStudents.Controls.Add(tabPage2);
             editeStudents.Controls.Add(tabcontroleaddstd);
-            editeStudents.Location = new Point(0, 0);
             editeStudents.Name = "editeStudents";
             editeStudents.SelectedIndex = 0;
-            editeStudents.ShowToolTips = true;
-            editeStudents.Size = new Size(942, 501);
-            editeStudents.TabIndex = 1;
             editeStudents.Tag = "";
             // 
             // tabPage2
             // 
+            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.BackColor = Color.White;
-            tabPage2.BackgroundImageLayout = ImageLayout.None;
             tabPage2.Controls.Add(addstdbtn);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(textBoxstatus);
@@ -101,131 +94,91 @@
             tabPage2.Controls.Add(panel1);
             tabPage2.Controls.Add(textBoxstdName);
             tabPage2.Controls.Add(stdNameLabel);
-            tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(934, 468);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Add Student";
             // 
             // addstdbtn
             // 
+            resources.ApplyResources(addstdbtn, "addstdbtn");
             addstdbtn.BackColor = Color.MediumBlue;
             addstdbtn.FlatAppearance.BorderColor = Color.White;
             addstdbtn.FlatAppearance.BorderSize = 0;
-            addstdbtn.FlatStyle = FlatStyle.Flat;
-            addstdbtn.Location = new Point(178, 328);
             addstdbtn.Name = "addstdbtn";
-            addstdbtn.Size = new Size(94, 29);
-            addstdbtn.TabIndex = 15;
-            addstdbtn.Text = "Add";
             addstdbtn.UseVisualStyleBackColor = false;
             addstdbtn.Click += addstdbtn_Click;
             // 
             // panel4
             // 
+            resources.ApplyResources(panel4, "panel4");
             panel4.BackColor = Color.Gray;
-            panel4.Location = new Point(547, 256);
             panel4.Name = "panel4";
-            panel4.Size = new Size(270, 2);
-            panel4.TabIndex = 14;
             // 
             // textBoxstatus
             // 
+            resources.ApplyResources(textBoxstatus, "textBoxstatus");
             textBoxstatus.BorderStyle = BorderStyle.None;
-            textBoxstatus.Location = new Point(547, 231);
             textBoxstatus.Name = "textBoxstatus";
-            textBoxstatus.Size = new Size(270, 20);
-            textBoxstatus.TabIndex = 13;
             // 
             // Statuslabel
             // 
-            Statuslabel.AutoSize = true;
-            Statuslabel.Location = new Point(548, 208);
+            resources.ApplyResources(Statuslabel, "Statuslabel");
             Statuslabel.Name = "Statuslabel";
-            Statuslabel.Size = new Size(49, 20);
-            Statuslabel.TabIndex = 12;
-            Statuslabel.Text = "Status";
             // 
             // panel3
             // 
+            resources.ApplyResources(panel3, "panel3");
             panel3.BackColor = Color.Gray;
-            panel3.Location = new Point(114, 256);
             panel3.Name = "panel3";
-            panel3.Size = new Size(270, 2);
-            panel3.TabIndex = 11;
             // 
             // textBoxdate
             // 
+            resources.ApplyResources(textBoxdate, "textBoxdate");
             textBoxdate.BorderStyle = BorderStyle.None;
-            textBoxdate.Location = new Point(114, 231);
             textBoxdate.Name = "textBoxdate";
-            textBoxdate.Size = new Size(270, 20);
-            textBoxdate.TabIndex = 10;
             // 
             // stdPasslabel
             // 
-            stdPasslabel.AutoSize = true;
-            stdPasslabel.Location = new Point(115, 208);
+            resources.ApplyResources(stdPasslabel, "stdPasslabel");
             stdPasslabel.Name = "stdPasslabel";
-            stdPasslabel.Size = new Size(39, 20);
-            stdPasslabel.TabIndex = 9;
-            stdPasslabel.Text = "date";
             // 
             // panel2
             // 
+            resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.Gray;
-            panel2.Location = new Point(547, 166);
             panel2.Name = "panel2";
-            panel2.Size = new Size(270, 2);
-            panel2.TabIndex = 8;
             // 
             // textBoxclass
             // 
+            resources.ApplyResources(textBoxclass, "textBoxclass");
             textBoxclass.BackColor = Color.White;
             textBoxclass.BorderStyle = BorderStyle.None;
-            textBoxclass.Location = new Point(547, 141);
             textBoxclass.Name = "textBoxclass";
-            textBoxclass.Size = new Size(270, 20);
-            textBoxclass.TabIndex = 7;
             // 
             // classlabel
             // 
-            classlabel.AutoSize = true;
-            classlabel.Location = new Point(547, 118);
+            resources.ApplyResources(classlabel, "classlabel");
             classlabel.Name = "classlabel";
-            classlabel.Size = new Size(40, 20);
-            classlabel.TabIndex = 6;
-            classlabel.Text = "class";
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Gray;
-            panel1.Location = new Point(114, 166);
             panel1.Name = "panel1";
-            panel1.Size = new Size(270, 2);
-            panel1.TabIndex = 5;
             // 
             // textBoxstdName
             // 
+            resources.ApplyResources(textBoxstdName, "textBoxstdName");
             textBoxstdName.BackColor = Color.White;
             textBoxstdName.BorderStyle = BorderStyle.None;
-            textBoxstdName.Location = new Point(114, 141);
             textBoxstdName.Name = "textBoxstdName";
-            textBoxstdName.Size = new Size(270, 20);
-            textBoxstdName.TabIndex = 4;
             // 
             // stdNameLabel
             // 
-            stdNameLabel.AutoSize = true;
-            stdNameLabel.Location = new Point(114, 118);
+            resources.ApplyResources(stdNameLabel, "stdNameLabel");
             stdNameLabel.Name = "stdNameLabel";
-            stdNameLabel.Size = new Size(49, 20);
-            stdNameLabel.TabIndex = 3;
-            stdNameLabel.Text = "Name";
             // 
             // tabcontroleaddstd
             // 
+            resources.ApplyResources(tabcontroleaddstd, "tabcontroleaddstd");
             tabcontroleaddstd.BackColor = Color.White;
             tabcontroleaddstd.Controls.Add(dataGridView1);
             tabcontroleaddstd.Controls.Add(searchpictureBox);
@@ -236,113 +189,81 @@
             tabcontroleaddstd.Controls.Add(classIdtextBox);
             tabcontroleaddstd.Controls.Add(label5);
             tabcontroleaddstd.Controls.Add(serchtextBox);
-            tabcontroleaddstd.Location = new Point(4, 4);
             tabcontroleaddstd.Name = "tabcontroleaddstd";
-            tabcontroleaddstd.Padding = new Padding(3);
-            tabcontroleaddstd.Size = new Size(934, 468);
-            tabcontroleaddstd.TabIndex = 0;
-            tabcontroleaddstd.Text = "show students";
             tabcontroleaddstd.Click += tabcontroleaddstd_Click;
             // 
             // dataGridView1
             // 
+            resources.ApplyResources(dataGridView1, "dataGridView1");
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 131);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.ShowCellErrors = false;
             dataGridView1.ShowEditingIcon = false;
             dataGridView1.ShowRowErrors = false;
-            dataGridView1.Size = new Size(872, 318);
-            dataGridView1.TabIndex = 11;
             // 
             // searchpictureBox
             // 
+            resources.ApplyResources(searchpictureBox, "searchpictureBox");
             searchpictureBox.Image = Properties.Resources.search_removebg_preview;
-            searchpictureBox.Location = new Point(835, 66);
             searchpictureBox.Name = "searchpictureBox";
-            searchpictureBox.Size = new Size(19, 26);
-            searchpictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            searchpictureBox.TabIndex = 10;
             searchpictureBox.TabStop = false;
             searchpictureBox.Click += searchpictureBox_Click;
             // 
             // panel6
             // 
+            resources.ApplyResources(panel6, "panel6");
             panel6.BackColor = Color.Gray;
-            panel6.Location = new Point(587, 91);
             panel6.Name = "panel6";
-            panel6.Size = new Size(270, 2);
-            panel6.TabIndex = 9;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(587, 43);
+            resources.ApplyResources(label6, "label6");
             label6.Name = "label6";
-            label6.Size = new Size(77, 20);
-            label6.TabIndex = 7;
-            label6.Text = "Student Id";
             // 
             // displayClassbtn
             // 
-            displayClassbtn.Location = new Point(382, 66);
+            resources.ApplyResources(displayClassbtn, "displayClassbtn");
             displayClassbtn.Name = "displayClassbtn";
-            displayClassbtn.Size = new Size(74, 29);
-            displayClassbtn.TabIndex = 6;
-            displayClassbtn.Text = "Display";
             displayClassbtn.UseVisualStyleBackColor = true;
             displayClassbtn.Click += displayClassbtn_Click;
             // 
             // panel5
             // 
+            resources.ApplyResources(panel5, "panel5");
             panel5.BackColor = Color.Gray;
-            panel5.Location = new Point(94, 91);
             panel5.Name = "panel5";
-            panel5.Size = new Size(270, 2);
-            panel5.TabIndex = 5;
             // 
             // classIdtextBox
             // 
+            resources.ApplyResources(classIdtextBox, "classIdtextBox");
             classIdtextBox.BorderStyle = BorderStyle.None;
-            classIdtextBox.Location = new Point(94, 66);
             classIdtextBox.Name = "classIdtextBox";
-            classIdtextBox.Size = new Size(270, 20);
-            classIdtextBox.TabIndex = 4;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(94, 43);
+            resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
-            label5.Size = new Size(57, 20);
-            label5.TabIndex = 3;
-            label5.Text = "class Id";
             // 
             // serchtextBox
             // 
+            resources.ApplyResources(serchtextBox, "serchtextBox");
             serchtextBox.BorderStyle = BorderStyle.None;
-            serchtextBox.Location = new Point(587, 66);
             serchtextBox.Name = "serchtextBox";
-            serchtextBox.Size = new Size(270, 20);
-            serchtextBox.TabIndex = 8;
             // 
             // teacher_classesv
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(toolbtn);
             Controls.Add(editeStudents);
-            Location = new Point(122, 125);
             Name = "teacher_classesv";
-            Size = new Size(942, 501);
             editeStudents.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();

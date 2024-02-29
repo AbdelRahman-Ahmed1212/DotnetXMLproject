@@ -19,9 +19,10 @@ namespace DotnetXmlProject.adminUserControl
     public partial class attendanceMangement : UserControl
     {
         //public string recordPath = "D:\\teacherB\\DotnetXMLproject\\Data\\attendence.xml";
-        public string userPath = "D:\\c#xmlv4\\Data\\users.xml";
-        public string classPath = "D:\\c#xmlv4\\Data\\classes.xml";
-        public string sessionPath = "D:\\c#xmlv4\\Data\\session.xml";
+        public string pathUser = util.getDatapath("users.xml");
+        public string classPath = util.getDatapath("classes.xml");
+        public string sessionPath = util.getDatapath("session.xml");
+
         public attendanceMangement()
         {
             InitializeComponent();
@@ -160,7 +161,7 @@ namespace DotnetXmlProject.adminUserControl
                 if (Validation.CheckIfIdExists(classPath, "stdClass", "id", subjectId))
                 {
                     // Check if any student is enrolled in a class with the specified subject ID
-                    if (!CheckIfStudentsEnrolledForSubject(classPath, userPath, subjectId))
+                    if (!CheckIfStudentsEnrolledForSubject(classPath, pathUser, subjectId))
                     {
                         MessageBox.Show("No students are enrolled in a class with the specified subject ID. Please enroll students before adding a session.");
                         return;
@@ -187,7 +188,7 @@ namespace DotnetXmlProject.adminUserControl
                     );
 
                     // Add attendance records for associated students
-                    XDocument userDoc = XDocument.Load(userPath);
+                    XDocument userDoc = XDocument.Load(pathUser);
                     var students = userDoc.Descendants("student")
                                           .Where(u => u.Element("classes")?.Elements("class")
                                                        .Any(c => (string)c.Element("className") == className) ?? false)

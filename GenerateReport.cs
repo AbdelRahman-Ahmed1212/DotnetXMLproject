@@ -1,15 +1,15 @@
-﻿//*using Microsoft.Office.Interop.Excel;
+﻿using Microsoft.Office.Interop.Excel;
 using System;
-//using Excel = Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DotnetXmlProject
 {
     public partial class GenerateReport : Form
     {
         private DataGridView attendeceGrid;
-       /* Microsoft.Office.Interop.Excel.Application oXL;
+        Microsoft.Office.Interop.Excel.Application oXL;
         Microsoft.Office.Interop.Excel._Workbook oWB;
-        Microsoft.Office.Interop.Excel._Worksheet oSheet;*/
+        Microsoft.Office.Interop.Excel._Worksheet oSheet;
         private string exportMode { get; set; }
         public GenerateReport(DataGridView attendeceGrid)
         {
@@ -42,16 +42,17 @@ namespace DotnetXmlProject
             else if (Path.GetInvalidFileNameChars().Any(x => fileName.Contains(x)))
             {
                 MessageBox.Show("Invalid file Name");
- 
-            }else if(fileName.Trim().Length == 0)
+
+            }
+            else if (fileName.Trim().Length == 0)
             {
                 MessageBox.Show("Invalid file Name");
             }
-            /* else
+            else
             {
                 // Create a new Excel application
-               Excel.Application excelApp = new Excel.Application();
-                excelApp.Visible = false; // Optional: Make Excel visible
+                Excel.Application excelApp = new Excel.Application();
+                excelApp.Visible = true; // Optional: Make Excel visible
 
                 // Add a new workbook
                 Excel.Workbook workbook = excelApp.Workbooks.Add();
@@ -62,7 +63,7 @@ namespace DotnetXmlProject
                 for (int i = 0; i < attendeceGrid.Columns.Count; i++)
                 {
                     worksheet.Cells[3, i + 1] = attendeceGrid.Columns[i].HeaderText;
-                
+
                 }
                 worksheet.Columns.ColumnWidth = 20;
                 // Add data rows to the worksheet
@@ -97,7 +98,7 @@ namespace DotnetXmlProject
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
             }
 
-            Generate.Enabled = true;*/
+            Generate.Enabled = true;
 
         }
 

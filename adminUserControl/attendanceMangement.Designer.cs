@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(attendanceMangement));
             toolTip1 = new ToolTip(components);
             tabPage3 = new TabPage();
             sessionData = new DataGridView();
@@ -62,65 +63,57 @@
             // 
             // tabPage3
             // 
+            resources.ApplyResources(tabPage3, "tabPage3");
             tabPage3.BackColor = Color.Azure;
             tabPage3.Controls.Add(sessionData);
             tabPage3.Controls.Add(panel1);
             tabPage3.ForeColor = Color.DarkCyan;
-            tabPage3.Location = new Point(4, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(934, 481);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Sessions";
+            toolTip1.SetToolTip(tabPage3, resources.GetString("tabPage3.ToolTip"));
             // 
             // sessionData
             // 
+            resources.ApplyResources(sessionData, "sessionData");
             sessionData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             sessionData.BackgroundColor = Color.Azure;
             sessionData.BorderStyle = BorderStyle.None;
             sessionData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             sessionData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            sessionData.Location = new Point(92, 58);
             sessionData.Name = "sessionData";
-            sessionData.Size = new Size(775, 252);
-            sessionData.TabIndex = 7;
+            toolTip1.SetToolTip(sessionData, resources.GetString("sessionData.ToolTip"));
             sessionData.CellBeginEdit += sessionData_CellBeginEdit;
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.Controls.Add(DeleteRecordBtn);
             panel1.Controls.Add(EditRecordBtn);
-            panel1.Location = new Point(194, 349);
             panel1.Name = "panel1";
-            panel1.Size = new Size(592, 50);
-            panel1.TabIndex = 6;
+            toolTip1.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
             // 
             // DeleteRecordBtn
             // 
+            resources.ApplyResources(DeleteRecordBtn, "DeleteRecordBtn");
             DeleteRecordBtn.BackColor = Color.DarkCyan;
             DeleteRecordBtn.ForeColor = Color.White;
-            DeleteRecordBtn.Location = new Point(487, 7);
             DeleteRecordBtn.Name = "DeleteRecordBtn";
-            DeleteRecordBtn.Size = new Size(86, 31);
-            DeleteRecordBtn.TabIndex = 7;
-            DeleteRecordBtn.Text = "Delete";
+            toolTip1.SetToolTip(DeleteRecordBtn, resources.GetString("DeleteRecordBtn.ToolTip"));
             DeleteRecordBtn.UseVisualStyleBackColor = false;
             DeleteRecordBtn.Click += DeleteRecordBtn_Click;
             // 
             // EditRecordBtn
             // 
+            resources.ApplyResources(EditRecordBtn, "EditRecordBtn");
             EditRecordBtn.BackColor = Color.DarkCyan;
             EditRecordBtn.ForeColor = Color.White;
-            EditRecordBtn.Location = new Point(395, 7);
             EditRecordBtn.Name = "EditRecordBtn";
-            EditRecordBtn.Size = new Size(86, 31);
-            EditRecordBtn.TabIndex = 8;
-            EditRecordBtn.Text = "Edit";
+            toolTip1.SetToolTip(EditRecordBtn, resources.GetString("EditRecordBtn.ToolTip"));
             EditRecordBtn.UseVisualStyleBackColor = false;
             EditRecordBtn.Click += EditRecordBtn_Click;
             // 
             // tabPage2
             // 
+            resources.ApplyResources(tabPage2, "tabPage2");
             tabPage2.BackColor = Color.Azure;
             tabPage2.Controls.Add(dateSession);
             tabPage2.Controls.Add(panel3);
@@ -130,106 +123,82 @@
             tabPage2.Controls.Add(subjectCombobox);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(ClassIDcb);
-            tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(934, 481);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Add";
+            toolTip1.SetToolTip(tabPage2, resources.GetString("tabPage2.ToolTip"));
             // 
             // dateSession
             // 
-            dateSession.Location = new Point(565, 267);
+            resources.ApplyResources(dateSession, "dateSession");
             dateSession.Name = "dateSession";
-            dateSession.Size = new Size(200, 23);
-            dateSession.TabIndex = 36;
+            toolTip1.SetToolTip(dateSession, resources.GetString("dateSession.ToolTip"));
             // 
             // panel3
             // 
+            resources.ApplyResources(panel3, "panel3");
             panel3.BackColor = Color.DarkCyan;
-            panel3.Location = new Point(565, 296);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 2);
-            panel3.TabIndex = 33;
+            toolTip1.SetToolTip(panel3, resources.GetString("panel3.ToolTip"));
             // 
             // Date
             // 
-            Date.AutoSize = true;
-            Date.Font = new Font("Segoe UI", 12F);
+            resources.ApplyResources(Date, "Date");
             Date.ForeColor = Color.DarkCyan;
-            Date.Location = new Point(565, 225);
             Date.Name = "Date";
-            Date.Size = new Size(59, 21);
-            Date.TabIndex = 34;
-            Date.Text = "Status :";
+            toolTip1.SetToolTip(Date, resources.GetString("Date.ToolTip"));
             // 
             // label5
             // 
-            label5.AutoSize = true;
+            resources.ApplyResources(label5, "label5");
             label5.BackColor = Color.Azure;
-            label5.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label5.ForeColor = Color.DarkCyan;
-            label5.Location = new Point(397, 137);
             label5.Name = "label5";
-            label5.Size = new Size(126, 28);
-            label5.TabIndex = 29;
-            label5.Text = "Add Session";
+            toolTip1.SetToolTip(label5, resources.GetString("label5.ToolTip"));
             // 
             // addRecordBtn
             // 
+            resources.ApplyResources(addRecordBtn, "addRecordBtn");
             addRecordBtn.BackColor = Color.DarkCyan;
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(397, 365);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(133, 42);
-            addRecordBtn.TabIndex = 28;
-            addRecordBtn.Text = "Add";
+            toolTip1.SetToolTip(addRecordBtn, resources.GetString("addRecordBtn.ToolTip"));
             addRecordBtn.UseVisualStyleBackColor = false;
             addRecordBtn.Click += addRecordBtn_Click;
             // 
             // subjectCombobox
             // 
-            subjectCombobox.FlatStyle = FlatStyle.Flat;
+            resources.ApplyResources(subjectCombobox, "subjectCombobox");
             subjectCombobox.FormattingEnabled = true;
-            subjectCombobox.Location = new Point(127, 270);
             subjectCombobox.Name = "subjectCombobox";
-            subjectCombobox.Size = new Size(200, 23);
-            subjectCombobox.TabIndex = 27;
+            toolTip1.SetToolTip(subjectCombobox, resources.GetString("subjectCombobox.ToolTip"));
             // 
             // panel4
             // 
+            resources.ApplyResources(panel4, "panel4");
             panel4.BackColor = Color.DarkCyan;
-            panel4.Location = new Point(127, 302);
             panel4.Name = "panel4";
-            panel4.Size = new Size(200, 2);
-            panel4.TabIndex = 21;
+            toolTip1.SetToolTip(panel4, resources.GetString("panel4.ToolTip"));
             // 
             // ClassIDcb
             // 
-            ClassIDcb.AutoSize = true;
-            ClassIDcb.Font = new Font("Segoe UI", 12F);
+            resources.ApplyResources(ClassIDcb, "ClassIDcb");
             ClassIDcb.ForeColor = Color.DarkCyan;
-            ClassIDcb.Location = new Point(127, 225);
             ClassIDcb.Name = "ClassIDcb";
-            ClassIDcb.Size = new Size(83, 21);
-            ClassIDcb.TabIndex = 23;
-            ClassIDcb.Text = "Subject ID:";
+            toolTip1.SetToolTip(ClassIDcb, resources.GetString("ClassIDcb.ToolTip"));
             // 
             // tabControl1
             // 
-            tabControl1.Alignment = TabAlignment.Bottom;
+            resources.ApplyResources(tabControl1, "tabControl1");
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage1);
-            tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(942, 509);
-            tabControl1.TabIndex = 0;
+            toolTip1.SetToolTip(tabControl1, resources.GetString("tabControl1.ToolTip"));
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
+            resources.ApplyResources(tabPage1, "tabPage1");
             tabPage1.BackColor = Color.Azure;
             tabPage1.Controls.Add(stdSessionData);
             tabPage1.Controls.Add(button1);
@@ -237,75 +206,61 @@
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(label1);
             tabPage1.ForeColor = Color.DarkCyan;
-            tabPage1.Location = new Point(4, 4);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(934, 481);
-            tabPage1.TabIndex = 3;
-            tabPage1.Text = "Students In Session";
+            toolTip1.SetToolTip(tabPage1, resources.GetString("tabPage1.ToolTip"));
             // 
             // stdSessionData
             // 
+            resources.ApplyResources(stdSessionData, "stdSessionData");
             stdSessionData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             stdSessionData.BackgroundColor = Color.Azure;
             stdSessionData.BorderStyle = BorderStyle.None;
             stdSessionData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             stdSessionData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             stdSessionData.EditMode = DataGridViewEditMode.EditProgrammatically;
-            stdSessionData.Location = new Point(70, 144);
             stdSessionData.Name = "stdSessionData";
-            stdSessionData.Size = new Size(786, 255);
-            stdSessionData.TabIndex = 32;
+            toolTip1.SetToolTip(stdSessionData, resources.GetString("stdSessionData.ToolTip"));
             // 
             // button1
             // 
+            resources.ApplyResources(button1, "button1");
             button1.BackColor = Color.DarkCyan;
             button1.ForeColor = Color.White;
-            button1.Location = new Point(522, 69);
             button1.Name = "button1";
-            button1.Size = new Size(133, 42);
-            button1.TabIndex = 31;
-            button1.Text = "Show";
+            toolTip1.SetToolTip(button1, resources.GetString("button1.ToolTip"));
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // sessionIDText
             // 
-            sessionIDText.FlatStyle = FlatStyle.Flat;
+            resources.ApplyResources(sessionIDText, "sessionIDText");
             sessionIDText.FormattingEnabled = true;
-            sessionIDText.Location = new Point(249, 76);
             sessionIDText.Name = "sessionIDText";
-            sessionIDText.Size = new Size(200, 23);
-            sessionIDText.TabIndex = 30;
+            toolTip1.SetToolTip(sessionIDText, resources.GetString("sessionIDText.ToolTip"));
             // 
             // panel2
             // 
+            resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.DarkCyan;
-            panel2.Location = new Point(249, 105);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 2);
-            panel2.TabIndex = 28;
+            toolTip1.SetToolTip(panel2, resources.GetString("panel2.ToolTip"));
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
+            resources.ApplyResources(label1, "label1");
             label1.ForeColor = Color.DarkCyan;
-            label1.Location = new Point(151, 78);
             label1.Name = "label1";
-            label1.Size = new Size(85, 21);
-            label1.TabIndex = 29;
-            label1.Text = "Session ID:";
+            toolTip1.SetToolTip(label1, resources.GetString("label1.ToolTip"));
             // 
             // attendanceMangement
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Azure;
             Controls.Add(tabControl1);
             ForeColor = Color.DarkCyan;
             Name = "attendanceMangement";
-            Size = new Size(942, 501);
+            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)sessionData).EndInit();
             panel1.ResumeLayout(false);
